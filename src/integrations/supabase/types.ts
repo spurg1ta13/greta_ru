@@ -80,6 +80,36 @@ export type Database = {
         }
         Relationships: []
       }
+      cv_downloads: {
+        Row: {
+          city: string | null
+          country: string | null
+          created_at: string
+          id: string
+          ip_address: string | null
+          language: string | null
+          region: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          region?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          region?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
