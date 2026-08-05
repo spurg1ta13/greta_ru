@@ -133,8 +133,9 @@ export const dictionaries = {
       heading: "Let's build something that ships clean.",
       lead: "Open to career opportunities and custom product development. Let's turn your idea into a production-ready application.",
       inquiry: "What is this about?",
-      inquiryJob: "Project",
-      inquiryProject: "Offer",
+      inquiryProject: "Project",
+      inquiryJob: "Offer",
+
 
       phone: "Call",
       phoneNumber: "+30 697 583 5277",
