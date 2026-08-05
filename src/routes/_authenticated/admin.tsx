@@ -77,6 +77,36 @@ function AdminPage() {
       {data ? (
         <>
           <section className="mt-12">
+            <h2 className="text-xl font-semibold">CV downloads</h2>
+            <div className="mt-5 panel p-6">
+              <p className="font-mono text-4xl font-bold text-primary">{data.cvDownloadCount}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Total clicks on the "Download my CV" button.
+              </p>
+              {data.cvDownloads.length > 0 ? (
+                <ul className="mt-5 space-y-2 border-t border-border pt-4">
+                  {data.cvDownloads.map((d) => (
+                    <li
+                      key={d.id}
+                      className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground"
+                    >
+                      <span className="rounded-full border border-border px-3 py-1">
+                        {[d.city, d.region, d.country].filter(Boolean).join(", ") || "Unknown location"}
+                      </span>
+                      <span className="rounded-full border border-border px-3 py-1 uppercase">
+                        {d.language ?? "en"}
+                      </span>
+                      <span className="ml-auto font-mono">{formatDate(d.created_at)}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-4 text-sm text-muted-foreground">No downloads yet.</p>
+              )}
+            </div>
+          </section>
+
+          <section className="mt-12">
             <h2 className="text-xl font-semibold">
               Contact messages <span className="text-muted-foreground">({data.messages.length})</span>
             </h2>

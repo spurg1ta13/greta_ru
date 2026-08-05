@@ -26,7 +26,7 @@ const buildSchema = (t: Dictionary) =>
 
 
 export function ContactFooter() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [inquiryType, setInquiryType] = useState<"job" | "project">("job");
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -149,7 +149,18 @@ export function ContactFooter() {
 
             <div className="mt-4">
               <Button asChild variant="outlineSignal" className="gap-2">
-                <a href={cvAsset.url} download="Greta_Rusecke_CV.pdf">
+                <a
+                  href={cvAsset.url}
+                  download="Greta_Rusecke_CV.pdf"
+                  onClick={() => {
+                    void fetch("/api/public/cv-download", {
+                      method: "POST",
+                      headers: { "content-type": "application/json" },
+                      body: JSON.stringify({ language }),
+                      keepalive: true,
+                    }).catch(() => undefined);
+                  }}
+                >
                   <Download className="size-4" />
                   {t.contact.downloadCv}
                 </a>
