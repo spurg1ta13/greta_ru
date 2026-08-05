@@ -93,7 +93,10 @@ export function Hero() {
               {t.hero.titleA}<span className="text-gradient">{t.hero.titleB}</span>
             </h1>
 
-            <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p
+              className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+              style={{ textShadow: "0 2px 10px oklch(0.16 0.014 250 / 0.7)" }}
+            >
               {t.hero.tagline}
             </p>
 
