@@ -75,8 +75,9 @@ export function Hero() {
         </picture>
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
         <div
-          className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full blur-3xl animate-glow"
-          style={{ background: "var(--gradient-signal)", opacity: 0.18 }}
+          className="pointer-events-none absolute -top-20 right-[-5%] h-[360px] w-[360px] rounded-full blur-3xl animate-glow sm:h-[420px] sm:w-[420px] sm:-top-32 sm:right-[-8%] lg:h-[520px] lg:w-[520px] lg:-top-40 lg:right-[-10%]"
+          style={{ background: "var(--gradient-signal)", opacity: 0.12 }}
+          aria-hidden="true"
         />
 
 
@@ -92,7 +93,10 @@ export function Hero() {
               {t.hero.titleA}<span className="text-gradient">{t.hero.titleB}</span>
             </h1>
 
-            <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p
+              className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+              style={{ textShadow: "0 2px 10px oklch(0.16 0.014 250 / 0.7)" }}
+            >
               {t.hero.tagline}
             </p>
 
