@@ -4,7 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 
 const projects = [
   {
-    name: "Devcraft101",
+    name: "Devcraft",
     url: "https://devcraft.gr",
     summary:
       "Company landing page featuring an interactive AI assistant that handles client support and qualifies enquiries automatically.",

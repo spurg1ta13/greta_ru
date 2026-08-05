@@ -24,7 +24,7 @@ CAREER TIMELINE
 5) AI Product Builder / Full-Stack Builder (ongoing): independently builds, tests and ships production web products with AI tooling, GitHub and Vercel, including DNS and environment configuration.
 
 PROJECTS (all built, QA-tested and launched by Greta)
-- Devcraft101 — https://devcraft.gr — company landing page with an interactive AI assistant for automated client support.
+- Devcraft — https://devcraft.gr — company landing page with an interactive AI assistant for automated client support.
 - Lotus Bloom — https://lotusbloom.gr — beauty salon platform with interactive service menus, pricing and a photo gallery.
 - CleanUpSKG — https://cleanupskg.gr — informational commercial cleaning services platform with an integrated blog.
 All three passed complete manual QA cycles across multiple devices and viewports with zero critical launch bugs.

@@ -1,6 +1,5 @@
 import { Github, Linkedin } from "lucide-react";
 
-import gretaPortrait from "@/assets/greta-portrait.png.asset.json";
 import heroBg from "@/assets/hero-bg.jpg";
 
 import { Button } from "@/components/ui/button";
@@ -66,7 +65,7 @@ export function Hero() {
       </nav>
 
       <div id="top" className="relative z-10 mx-auto max-w-6xl px-5 pb-24 pt-14 sm:pb-32 sm:pt-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
+        <div>
           <div className="min-w-0">
             <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <span className="size-1.5 rounded-full bg-signal" />
@@ -91,27 +90,13 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="animate-rise relative mx-auto w-full max-w-xs lg:max-w-none">
-            <div
-              className="pointer-events-none absolute -inset-3 rounded-3xl blur-2xl"
-              style={{ background: "var(--gradient-signal)", opacity: 0.16 }}
-            />
-            <img
-              src={gretaPortrait.url}
-              alt="Portrait of Greta Rusecke, ISTQB certified QA Product Engineer"
-              width={800}
-              height={1000}
-              className="relative w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-panel)]"
-            />
-          </div>
         </div>
 
-        <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
+        <dl className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-3">
           {[
             { k: "8+ yrs", v: "IT & QA experience" },
             { k: "ISTQB", v: "Certified Tester (CTFL)" },
             { k: "3 live", v: "Products shipped solo" },
-            { k: "0", v: "Critical launch bugs" },
           ].map((stat) => (
             <div key={stat.v} className="min-w-0">
               <dt className="font-display text-2xl font-bold text-foreground">{stat.k}</dt>

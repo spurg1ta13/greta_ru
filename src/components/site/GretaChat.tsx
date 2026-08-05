@@ -22,7 +22,7 @@ import { Reveal } from "@/components/site/Reveal";
 
 const suggestions = [
   "What does Greta's ISTQB certification cover?",
-  "Tell me about the Devcraft101 project.",
+  "Tell me about the Devcraft project.",
   "How did she move from QA into AI building?",
   "Which testing tools does she use?",
 ];
