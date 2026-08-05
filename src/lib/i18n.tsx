@@ -86,8 +86,27 @@ export const dictionaries = {
     skills: {
       eyebrow: "03 / Skills",
       heading: "The toolkit.",
-      groups: ["AI & Prototyping", "QA & Testing", "Management & Agile", "Frontend Stack"],
+      groups: ["AI & Prototyping", "QA & Testing", "Management & Agile", "Systems & Frontend"],
+      items: [
+        ["Lovable AI", "AI-Assisted Development", "Prompt Engineering", "GitHub", "Vercel Deployment", "DNS & Env Config"],
+        [
+          "ISTQB Certified",
+          "Test Strategy",
+          "Test Case Design",
+          "Functional & Non-functional",
+          "Regression Testing",
+          "Smoke Testing",
+          "E2E & UAT",
+          "Cross-browser & Cross-platform",
+          "Cross-Platform Testing (iOS, macOS, Windows via BrowserStack)",
+          "Defect Lifecycle",
+          "BrowserStack",
+        ],
+        ["Jira", "Confluence", "Trello", "Scrum", "Kanban", "Sprint Planning", "Requirement Analysis", "Client Communication"],
+        ["SaaS", "ERP", "CRM", "E-commerce", "React", "TypeScript", "Tailwind CSS", "Responsive Web Design"],
+      ],
     },
+
     chat: {
       eyebrow: "04 / Greta AI",
       heading: "Ask Greta AI",
