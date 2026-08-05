@@ -85,10 +85,8 @@ export function Hero() {
       <div id="top" className="relative z-10 mx-auto max-w-6xl px-5 pb-24 pt-14 sm:pb-32 sm:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="min-w-0">
-            <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              <span className="size-1.5 rounded-full bg-signal" />
-              {t.hero.badge}
-            </p>
+
+
 
             <h1 className="animate-rise mt-6 max-w-4xl text-4xl font-bold leading-[1.05] sm:text-6xl">
               {t.hero.titleA}<span className="text-gradient">{t.hero.titleB}</span>
