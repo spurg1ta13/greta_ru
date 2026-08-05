@@ -28,7 +28,7 @@ const buildSchema = (t: Dictionary) =>
 export function ContactFooter() {
   const { t, language } = useLanguage();
   const [values, setValues] = useState({ name: "", email: "", message: "" });
-  const [inquiryType, setInquiryType] = useState<"job" | "project">("job");
+  const [inquiryType, setInquiryType] = useState<"job" | "project">("project");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   // Bot protection: hidden honeypot field + minimum time-on-form + submit cooldown.
