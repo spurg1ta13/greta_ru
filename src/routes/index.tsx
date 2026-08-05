@@ -171,7 +171,7 @@ function Index() {
       <Timeline />
       <Projects />
       <Skills />
-      <Suspense fallback={<div id="greta-ai" className="min-h-[640px] scroll-mt-24" aria-hidden="true" />}>
+      <Suspense fallback={<div id="greta-ai" className="min-h-[880px] scroll-mt-24" aria-hidden="true" />}>
         <GretaChat />
       </Suspense>
       <ContactFooter />

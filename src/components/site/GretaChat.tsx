@@ -147,7 +147,6 @@ export function GretaChat() {
               <PromptInput onSubmit={handleSubmit}>
                 <PromptInputTextarea
                   ref={textareaRef}
-                  autoFocus
                   value={input}
                   onChange={(event) => setInput(event.currentTarget.value)}
                   placeholder={t.chat.placeholder}
