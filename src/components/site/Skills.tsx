@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/site/Reveal";
+import { useLanguage } from "@/lib/i18n";
 
 const groups = [
   {
@@ -27,11 +28,13 @@ const groups = [
 ];
 
 export function Skills() {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
       <Reveal>
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">03 / Skills</p>
-        <h2 className="mt-4 text-3xl font-bold sm:text-4xl">The toolkit.</h2>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t.skills.eyebrow}</p>
+        <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{t.skills.heading}</h2>
       </Reveal>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -39,7 +42,7 @@ export function Skills() {
           <Reveal key={group.title} delay={i * 100}>
             <div className="panel h-full p-6">
               <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-signal">
-                {group.title}
+                {t.skills.groups[i]}
               </h3>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {group.items.map((item) => (

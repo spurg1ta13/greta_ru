@@ -2,17 +2,20 @@ import { Github, Linkedin } from "lucide-react";
 
 import heroBg from "@/assets/hero-bg.jpg";
 
+import { LanguageToggle } from "@/components/site/LanguageToggle";
 import { Button } from "@/components/ui/button";
-
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#greta-ai", label: "Greta AI" },
-  { href: "#contact", label: "Contact" },
-];
+import { useLanguage } from "@/lib/i18n";
 
 export function Hero() {
+  const { t } = useLanguage();
+  const links = [
+    { href: "#about", label: t.nav.about },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#greta-ai", label: t.nav.gretaAi },
+    { href: "#contact", label: t.nav.contact },
+  ];
+
   return (
     <>
       <div className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -30,6 +33,7 @@ export function Hero() {
             ))}
           </ul>
           <div className="flex shrink-0 items-center gap-1">
+            <LanguageToggle />
             <a
               href="https://github.com/spurg1ta13"
               target="_blank"
@@ -75,23 +79,23 @@ export function Hero() {
           <div className="min-w-0">
             <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <span className="size-1.5 rounded-full bg-signal" />
-              Thessaloniki, Greece · Open to work
+              {t.hero.badge}
             </p>
 
             <h1 className="animate-rise mt-6 max-w-4xl text-4xl font-bold leading-[1.05] sm:text-6xl">
-              ISTQB QA Specialist <span className="text-gradient">&amp; AI Product Builder</span>
+              {t.hero.titleA}<span className="text-gradient">{t.hero.titleB}</span>
             </h1>
 
             <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Bridging the gap between QA precision, product logic, and rapid AI-assisted execution.
+              {t.hero.tagline}
             </p>
 
             <div className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" variant="hero">
-                <a href="#greta-ai">Chat with Greta AI</a>
+                <a href="#greta-ai">{t.hero.ctaChat}</a>
               </Button>
               <Button asChild size="lg" variant="outlineSignal">
-                <a href="#projects">View Projects</a>
+                <a href="#projects">{t.hero.ctaProjects}</a>
               </Button>
             </div>
           </div>
@@ -99,11 +103,7 @@ export function Hero() {
         </div>
 
         <dl className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-3">
-          {[
-            { k: "8+ yrs", v: "IT & QA experience" },
-            { k: "ISTQB", v: "Certified Tester (CTFL)" },
-            { k: "3 live", v: "Products shipped solo" },
-          ].map((stat) => (
+          {t.hero.stats.map((stat) => (
             <div key={stat.v} className="min-w-0">
               <dt className="font-display text-2xl font-bold text-foreground">{stat.k}</dt>
               <dd className="mt-1 text-xs text-muted-foreground">{stat.v}</dd>

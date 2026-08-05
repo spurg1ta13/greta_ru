@@ -1,54 +1,24 @@
 import { Bot, ClipboardCheck, KanbanSquare } from "lucide-react";
 
 import { Reveal } from "@/components/site/Reveal";
+import { useLanguage } from "@/lib/i18n";
 
-const steps = [
-  {
-    icon: KanbanSquare,
-    period: "2016 — 2018",
-    role: "IT Project Manager",
-    org: "SJ Digital · Capital Realty (Lithuania)",
-    points: [
-      "Ran agile delivery for .NET, PHP and Ruby teams — standups, sprint planning, timelines.",
-      "Owned client relations with B2B stakeholders in the USA, UK, Spain, New Zealand and Latvia.",
-      "Stayed hands-on with manual QA for every release before it reached the client.",
-    ],
-  },
-  {
-    icon: ClipboardCheck,
-    period: "2021 — 2026",
-    role: "QA Product Engineer · ISTQB Certified",
-    org: "Sonaro UAB · Zebracloud AB (remote)",
-    points: [
-      "End-to-end manual, functional and regression suites across Windows, macOS and iOS via BrowserStack.",
-      "Full defect lifecycle in Jira with high-detail reports that cut developer resolution time.",
-      "Refined system logic with developers and product owners, removing requirement ambiguity before sprint planning.",
-    ],
-  },
-  {
-    icon: Bot,
-    period: "2024 — now",
-    role: "AI Product Builder / Full-Stack Developer",
-    org: "Independent · Lovable, Vercel, TypeScript",
-    points: [
-      "Prototypes and ships production-ready apps with AI tooling — days of work compressed into hours.",
-      "Owns the whole pipeline: prototype, QA cycle, GitHub version control, Vercel deploy, DNS and env config.",
-      "Three live products launched solo with zero critical launch bugs.",
-    ],
-  },
-];
+const icons = [KanbanSquare, ClipboardCheck, Bot];
+
 
 export function Timeline() {
+  const { t } = useLanguage();
+  const steps = t.about.steps.map((step, i) => ({ ...step, icon: icons[i]! }));
+
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
       <Reveal>
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">01 / About</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t.about.eyebrow}</p>
         <h2 className="mt-4 max-w-3xl text-3xl font-bold sm:text-4xl">
-          From managing delivery, to guarding quality, to building the product.
+          {t.about.heading}
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          A QA Product Engineer who connects business logic with technical execution across SaaS,
-          ERP, CRM and e-commerce — and now builds the products too.
+          {t.about.lead}
         </p>
       </Reveal>
 
