@@ -27,6 +27,7 @@ const buildSchema = (t: Dictionary) =>
 export function ContactFooter() {
   const { t } = useLanguage();
   const [values, setValues] = useState({ name: "", email: "", message: "" });
+  const [inquiryType, setInquiryType] = useState<"job" | "project">("job");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   // Bot protection: hidden honeypot field + minimum time-on-form + submit cooldown.
@@ -66,7 +67,7 @@ export function ContactFooter() {
     setErrors({});
     setSending(true);
     lastSubmit.current = Date.now();
-    const { error } = await supabase.from("contact_messages").insert(parsed.data);
+    const { error } = await supabase.from("contact_messages").insert({ ...parsed.data, inquiry_type: inquiryType });
     setSending(false);
 
     if (error) {
@@ -77,6 +78,7 @@ export function ContactFooter() {
 
     toast.success(t.contact.success);
     setValues({ name: "", email: "", message: "" });
+    setInquiryType("job");
   };
 
   return (
@@ -158,6 +160,31 @@ export function ContactFooter() {
                   value={honeypot}
                   onChange={(e) => setHoneypot(e.target.value)}
                 />
+              </div>
+
+              <div className="space-y-2">
+                <Label>{t.contact.inquiry}</Label>
+                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label={t.contact.inquiry}>
+                  {([
+                    ["job", t.contact.inquiryJob],
+                    ["project", t.contact.inquiryProject],
+                  ] as const).map(([key, label]) => (
+                    <button
+                      key={key}
+                      type="button"
+                      role="radio"
+                      aria-checked={inquiryType === key}
+                      onClick={() => setInquiryType(key)}
+                      className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
+                        inquiryType === key
+                          ? "border-primary bg-primary/10 text-primary"
+                          : "border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="space-y-2">

@@ -100,7 +100,10 @@ export const dictionaries = {
     contact: {
       eyebrow: "05 / Contact",
       heading: "Let's build something that ships clean.",
-      lead: "Open to QA Product Engineer, QA Lead and AI product roles — remote or in Thessaloniki.",
+      lead: "Open to career opportunities and custom product development. Let's turn your idea into a production-ready application.",
+      inquiry: "What is this about?",
+      inquiryJob: "Job opportunity",
+      inquiryProject: "Custom project",
       phone: "Call",
       phoneNumber: "+30 697 583 5277",
       name: "Name",
@@ -288,7 +291,10 @@ export const dictionaries = {
     contact: {
       eyebrow: "05 / Επικοινωνία",
       heading: "Ας φτιάξουμε κάτι που κυκλοφορεί χωρίς σφάλματα.",
-      lead: "Ανοιχτή σε θέσεις QA Product Engineer, QA Lead και AI product — εξ αποστάσεως ή στη Θεσσαλονίκη.",
+      lead: "Ανοιχτή σε επαγγελματικές ευκαιρίες και ανάπτυξη προϊόντων κατά παραγγελία. Ας μετατρέψουμε την ιδέα σου σε μια εφαρμογή έτοιμη για παραγωγή.",
+      inquiry: "Για ποιο θέμα επικοινωνείς;",
+      inquiryJob: "Ευκαιρία εργασίας",
+      inquiryProject: "Έργο κατά παραγγελία",
       phone: "Κλήση",
       phoneNumber: "+30 697 583 5277",
       name: "Όνομα",
