@@ -39,6 +39,8 @@ export const dictionaries = {
         items: [
           "ISTQB Certified Tester (CTFL)",
           "Cyber Hygiene at Work — National Cyber Security Center (2025)",
+          "The Knowledge Academy — ISTQB Software Testing Foundation Level Course (Oct 2023)",
+          "Udemy — Manual QA Software Testing (Mar 2022)",
           "Vilnius University — Bachelor's in Business Administration (2011-2016)",
         ],
       },
@@ -256,6 +258,8 @@ export const dictionaries = {
         items: [
           "ISTQB Certified Tester (CTFL)",
           "Cyber Hygiene at Work — Εθνικό Κέντρο Κυβερνοασφάλειας (2025)",
+          "The Knowledge Academy — ISTQB Software Testing Foundation Level Course (Οκτ 2023)",
+          "Udemy — Manual QA Software Testing (Μάρ 2022)",
           "Πανεπιστήμιο Βίλνιους — Πτυχίο στη Διοίκηση Επιχειρήσεων (2011-2016)",
         ],
       },
