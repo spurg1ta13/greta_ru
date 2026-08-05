@@ -58,9 +58,11 @@ export function GretaChat() {
   const send = (text: string) => {
     const value = text.trim();
     if (!value || busy) return;
+    hasInteracted.current = true;
     setInput("");
     void sendMessage({ text: value });
   };
+
 
   const handleSubmit = (message: PromptInputMessage) => {
     send(message.text ?? "");
