@@ -26,12 +26,15 @@
 
 ## Skills
 
-- QA: test strategy, test case design, regression and exploratory testing, E2E testing,
-  API testing, bug triage, release readiness, ISTQB practices.
-- AI product building: prompt engineering, AI-assisted full-stack prototyping, shipping
-  production-ready web apps solo.
-- Frontend & tooling: React, TypeScript, Tailwind CSS, Supabase, Jira, Git.
-- Management: requirement analysis, stakeholder communication, agile delivery.
+- QA: test strategy, test case design, functional and non-functional testing, regression, smoke,
+  E2E and UAT, cross-browser and cross-platform testing (Windows, macOS, iOS/iPadOS),
+  defect lifecycle, bug triage, release readiness, BrowserStack, ISTQB practices.
+- AI product building: prompt engineering, Lovable AI, AI-assisted full-stack prototyping,
+  shipping production-ready web apps solo, GitHub and Vercel deployment with DNS/env setup.
+- Systems: SaaS, ERP, CRM and e-commerce platforms.
+- Frontend & tooling: React, TypeScript, Tailwind CSS, responsive web design, Jira, Confluence,
+  Trello, Git.
+- Management: requirement analysis, sprint planning, stakeholder communication, agile delivery.
 
 ## Projects
 
