@@ -6,6 +6,7 @@ import { Hero } from "@/components/site/Hero";
 import { Projects } from "@/components/site/Projects";
 import { Skills } from "@/components/site/Skills";
 import { Timeline } from "@/components/site/Timeline";
+import { projectJsonLdNodes } from "@/lib/project-schema";
 
 const title = "Greta Rusecke — ISTQB QA Specialist & AI Product Builder";
 const description =
@@ -105,8 +106,10 @@ const jsonLd = {
       description,
       isPartOf: { "@id": "/#website" },
       mainEntity: { "@id": "/#greta" },
+      hasPart: { "@id": "/#projects" },
     },
     faq,
+    ...projectJsonLdNodes,
   ],
 };
 
