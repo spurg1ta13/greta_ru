@@ -95,6 +95,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Greta Rusecke — ISTQB QA Specialist & AI Product Builder" },
+      { name: "twitter:description", content: "ISTQB certified QA Product Engineer and AI product builder based in Thessaloniki, Greece." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png" },
     ],
     links: [
       {
