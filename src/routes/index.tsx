@@ -10,6 +10,7 @@ import { Projects } from "@/components/site/Projects";
 import { Skills } from "@/components/site/Skills";
 import { Timeline } from "@/components/site/Timeline";
 import { projectJsonLdNodes } from "@/lib/project-schema";
+import { trackVisit } from "@/lib/visit-tracker";
 
 const GretaChat = lazy(() =>
   import("@/components/site/GretaChat").then((m) => ({ default: m.GretaChat })),
@@ -162,7 +163,9 @@ function Index() {
     if (typeof window === "undefined") return;
     if (window.history.scrollRestoration) window.history.scrollRestoration = "manual";
     if (!window.location.hash) window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    trackVisit(document.documentElement.lang || "en");
   }, []);
+
 
   return (
     <main>

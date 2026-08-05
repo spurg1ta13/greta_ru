@@ -110,6 +110,42 @@ export type Database = {
         }
         Relationships: []
       }
+      site_visits: {
+        Row: {
+          city: string | null
+          country: string | null
+          created_at: string
+          id: string
+          ip_address: string | null
+          language: string | null
+          path: string | null
+          region: string | null
+          visitor_id: string
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          path?: string | null
+          region?: string | null
+          visitor_id: string
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          path?: string | null
+          region?: string | null
+          visitor_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

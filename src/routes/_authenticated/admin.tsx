@@ -1,10 +1,17 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import { getAdminData, type AdminChatLog } from "@/lib/admin.functions";
+import {
+  deleteChatMessage,
+  deleteChatSession,
+  getAdminData,
+  type AdminChatLog,
+} from "@/lib/admin.functions";
+
 
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
@@ -36,12 +43,36 @@ function AdminPage() {
     retry: false,
   });
 
+  const removeSession = useServerFn(deleteChatSession);
+  const removeMessage = useServerFn(deleteChatMessage);
+
+  const invalidate = () => queryClient.invalidateQueries({ queryKey: ["admin-data"] });
+
+  const sessionMutation = useMutation({
+    mutationFn: (sessionId: string) => removeSession({ data: { sessionId } }),
+    onSuccess: () => {
+      toast.success("Conversation deleted");
+      void invalidate();
+    },
+    onError: () => toast.error("Could not delete conversation"),
+  });
+
+  const messageMutation = useMutation({
+    mutationFn: (id: string) => removeMessage({ data: { id } }),
+    onSuccess: () => {
+      toast.success("Message deleted");
+      void invalidate();
+    },
+    onError: () => toast.error("Could not delete message"),
+  });
+
   const signOut = async () => {
     await queryClient.cancelQueries();
     queryClient.clear();
     await supabase.auth.signOut();
     await navigate({ to: "/auth", replace: true });
   };
+
 
   const sessions = new Map<string, AdminChatLog[]>();
   for (const log of data?.chatLogs ?? []) {
@@ -77,6 +108,26 @@ function AdminPage() {
       {data ? (
         <>
           <section className="mt-12">
+            <h2 className="text-xl font-semibold">Unique visitors</h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { label: "Last 24 hours", value: data.visitors.day },
+                { label: "Last 7 days", value: data.visitors.week },
+                { label: "Last 30 days", value: data.visitors.month },
+                { label: "All time", value: data.visitors.total },
+              ].map((stat) => (
+                <div key={stat.label} className="panel p-5">
+                  <p className="font-mono text-3xl font-bold text-primary">{stat.value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-12">
+
             <h2 className="text-xl font-semibold">CV downloads</h2>
             <div className="mt-5 panel p-6">
               <p className="font-mono text-4xl font-bold text-primary">{data.cvDownloadCount}</p>
@@ -157,17 +208,41 @@ function AdminPage() {
                         {first.language ?? "en"}
                       </span>
                       <span className="ml-auto font-mono">{formatDate(first.created_at)}</span>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        disabled={sessionMutation.isPending}
+                        onClick={() => {
+                          if (window.confirm("Delete this whole conversation?")) {
+                            sessionMutation.mutate(sessionId);
+                          }
+                        }}
+                        className="text-destructive hover:text-destructive"
+                      >
+                        Delete chat
+                      </Button>
                     </div>
                     <div className="mt-4 space-y-3">
                       {ordered.map((log) => (
-                        <div key={log.id} className="text-sm">
-                          <p className="font-mono text-[11px] uppercase text-primary">
-                            {log.role === "user" ? "Visitor" : "Greta AI"}
-                          </p>
+                        <div key={log.id} className="group text-sm">
+                          <div className="flex items-center gap-2">
+                            <p className="font-mono text-[11px] uppercase text-primary">
+                              {log.role === "user" ? "Visitor" : "Greta AI"}
+                            </p>
+                            <button
+                              type="button"
+                              disabled={messageMutation.isPending}
+                              onClick={() => messageMutation.mutate(log.id)}
+                              className="text-[11px] text-muted-foreground underline-offset-2 hover:text-destructive hover:underline"
+                            >
+                              delete
+                            </button>
+                          </div>
                           <p className="mt-1 whitespace-pre-wrap text-muted-foreground">{log.content}</p>
                         </div>
                       ))}
                     </div>
+
                   </article>
                 );
               })}
