@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -75,6 +75,13 @@ export function ContactFooter() {
 
             <div className="mt-8 space-y-3 text-sm">
               <a
+                href="tel:+306975835277"
+                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Phone className="size-4 shrink-0" />
+                {t.contact.phoneNumber}
+              </a>
+              <a
                 href="mailto:greta.rusecke@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
@@ -99,6 +106,21 @@ export function ContactFooter() {
                 <Github className="size-4 shrink-0" />
                 github.com/spurg1ta13
               </a>
+            </div>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="hero" className="gap-2">
+                <a href="tel:+306975835277">
+                  <Phone className="size-4" />
+                  {t.contact.phone}
+                </a>
+              </Button>
+              <Button asChild variant="outlineSignal" className="gap-2">
+                <a href="mailto:greta.rusecke@gmail.com">
+                  <Mail className="size-4" />
+                  {t.contact.email}
+                </a>
+              </Button>
             </div>
           </Reveal>
 
