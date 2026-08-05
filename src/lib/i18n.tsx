@@ -247,6 +247,12 @@ export const dictionaries = {
       heading:
         "Από τη διαχείριση παράδοσης, στη διασφάλιση ποιότητας, μέχρι τη δημιουργία του προϊόντος.",
       lead: "QA Product Engineer που συνδέει την επιχειρησιακή λογική με την τεχνική υλοποίηση σε SaaS, ERP, CRM και e-commerce — και πλέον φτιάχνει και τα ίδια τα προϊόντα.",
+      globalReach: "Συνεργάστηκε με διαλειτουργικές ομάδες και B2B πελάτες στις ΗΠΑ, ΗΒ, Ισπανία, Λετονία και Νέα Ζηλανδία.",
+      credentials: {
+        heading: "Πιστοποιήσεις & Εκπαίδευση",
+        certifications: "ISTQB Certified Tester (CTFL) · Cyber Hygiene at Work — Εθνικό Κέντρο Κυβερνοασφάλειας (2025)",
+        education: "Πανεπιστήμιο Βίλνιους — Πτυχίο στη Διοίκηση Επιχειρήσεων (2011-2016)",
+      },
       steps: [
         {
           period: "2016 — 2018",
@@ -280,6 +286,7 @@ export const dictionaries = {
         },
       ],
     },
+
     projects: {
       eyebrow: "02 / Έργα",
       heading: "Υλοποιημένα, ελεγμένα, live.",
