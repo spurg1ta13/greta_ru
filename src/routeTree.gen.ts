@@ -18,6 +18,7 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiPublicCvDownloadRouteImport } from './routes/api/public/cv-download'
 import { Route as ApiPublicGeoRouteImport } from './routes/api/public/geo'
+import { Route as ApiPublicVisitRouteImport } from './routes/api/public/visit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -63,6 +64,11 @@ const ApiPublicGeoRoute = ApiPublicGeoRouteImport.update({
   path: '/api/public/geo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicVisitRoute = ApiPublicVisitRouteImport.update({
+  id: '/api/public/visit',
+  path: '/api/public/visit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
+  '/api/public/visit': typeof ApiPublicVisitRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
+  '/api/public/visit': typeof ApiPublicVisitRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
+  '/api/public/visit': typeof ApiPublicVisitRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/public/cv-download'
     | '/api/public/geo'
+    | '/api/public/visit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/public/cv-download'
     | '/api/public/geo'
+    | '/api/public/visit'
   id:
     | '__root__'
     | '/'
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/public/cv-download'
     | '/api/public/geo'
+    | '/api/public/visit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiPublicCvDownloadRoute: typeof ApiPublicCvDownloadRoute
   ApiPublicGeoRoute: typeof ApiPublicGeoRoute
+  ApiPublicVisitRoute: typeof ApiPublicVisitRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -206,6 +219,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicGeoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/visit': {
+      id: '/api/public/visit'
+      path: '/api/public/visit'
+      fullPath: '/api/public/visit'
+      preLoaderRoute: typeof ApiPublicVisitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -229,17 +249,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiPublicCvDownloadRoute: ApiPublicCvDownloadRoute,
   ApiPublicGeoRoute: ApiPublicGeoRoute,
+  ApiPublicVisitRoute: ApiPublicVisitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
