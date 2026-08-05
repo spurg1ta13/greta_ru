@@ -12,7 +12,7 @@
 - Location: Thessaloniki, Greece
 - Languages: English, Greek, Lithuanian, Russian
 - Education: Vilnius University — Bachelor's in Business Administration (2011-2016)
-- Certifications: ISTQB Certified Tester (Foundation Level), ISTQB Software Testing Foundation Level Course — The Knowledge Academy (Oct 2023), Cyber Hygiene at Work — National Cyber Security Center (2025), Manual QA Software Testing — Udemy (Mar 2022)
+- Certifications: Cyber Hygiene at Work — National Cyber Security Center (2025), ISTQB Certified Tester (Foundation Level) — Oct 2023, ISTQB Software Testing Foundation Level Course — The Knowledge Academy (Oct 2023), Manual QA Software Testing — Udemy (Mar 2022)
 - Email: greta.rusecke@gmail.com
 - LinkedIn: https://www.linkedin.com/in/gretaruseckeqa
 - GitHub: https://github.com/spurg1ta13

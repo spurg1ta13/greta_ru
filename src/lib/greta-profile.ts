@@ -36,7 +36,7 @@ SKILLS
 - Systems & Frontend: SaaS, ERP, CRM and e-commerce systems; React, TypeScript, Tailwind CSS, responsive web design.
 
 CERTIFICATIONS
+- Cyber Hygiene at Work — National Cyber Security Center (2025).
 - ISTQB Certified Tester Foundation Level — BCS, The Chartered Institute for IT (Oct 2023).
 - ISTQB Software Testing Foundation Level Course — The Knowledge Academy (Oct 2023).
-- Cyber Hygiene at Work — National Cyber Security Center (Oct 2025).
 - Manual QA Software Testing — Udemy (Mar 2022).`;
