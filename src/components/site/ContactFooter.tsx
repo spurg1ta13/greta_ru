@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
+import cvAsset from "@/assets/greta-cv.pdf.asset.json";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -142,6 +143,15 @@ export function ContactFooter() {
                 <a href="mailto:greta.rusecke@gmail.com">
                   <Mail className="size-4" />
                   {t.contact.email}
+                </a>
+              </Button>
+            </div>
+
+            <div className="mt-4">
+              <Button asChild variant="outlineSignal" className="gap-2">
+                <a href={cvAsset.url} download="Greta_Rusecke_CV.pdf">
+                  <Download className="size-4" />
+                  {t.contact.downloadCv}
                 </a>
               </Button>
             </div>
