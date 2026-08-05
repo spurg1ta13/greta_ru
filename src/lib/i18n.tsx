@@ -139,21 +139,23 @@ export const dictionaries = {
         {
           h: "What is collected",
           list: [
-            "Contact form: the name, email address and message you submit. These are stored securely so Greta can reply to you.",
-            "Greta AI chat: the questions you type are sent to an AI model provider to generate an answer. Chat conversations are not saved on this site and disappear when you reload the page.",
+            "Contact form: the name, email address, enquiry type (job offer or custom project) and message you submit. These are stored securely in the site database so Greta can reply to you.",
+            "Greta AI chat: the questions you type and the assistant's replies are sent to an AI model provider and are also stored in the site database, together with the language you used and a random conversation identifier.",
+            "Approximate location and IP address: when you chat with Greta AI, your IP address and the approximate location derived from it (country, and where available city and region) are recorded with the conversation. Your country is also used to decide whether the site is shown in Greek or English.",
+            "Technical storage: your language preference is saved in your browser.",
           ],
         },
         {
           h: "How it is used",
-          p: "Contact details are used only to respond to your enquiry. They are never sold, rented or used for marketing lists.",
+          p: "Contact details are used only to respond to your enquiry. Chat transcripts and their approximate location are used only to understand how the assistant is used, to improve its answers and to prevent abuse. None of this data is sold, rented or used for marketing lists.",
         },
         {
-          h: "Retention",
-          p: "Contact messages are kept for as long as needed to handle the conversation and are deleted on request.",
+          h: "Retention and access",
+          p: "Contact messages and chat transcripts are kept for as long as needed to handle the conversation and improve the assistant, and are deleted on request. They are visible only to Greta through a private, password-protected owner dashboard; visitors cannot read this data.",
         },
         {
           h: "Your rights",
-          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted. Email the address above and the request will be handled promptly.",
+          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted, including chat transcripts and the location data stored with them. Email the address above and the request will be handled promptly.",
         },
         {
           h: "Cookies",
