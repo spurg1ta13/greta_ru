@@ -134,6 +134,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <QueryClientProvider client={queryClient}>
           <LanguageProvider>
             {children}
+            <FloatingCallButton />
             <Toaster position="top-center" />
           </LanguageProvider>
         </QueryClientProvider>
@@ -142,6 +143,7 @@ function RootShell({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
 
 function RootComponent() {
   return (
