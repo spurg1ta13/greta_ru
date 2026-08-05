@@ -26,7 +26,7 @@ const buildSchema = (t: Dictionary) =>
 
 
 export function ContactFooter() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [inquiryType, setInquiryType] = useState<"job" | "project">("job");
   const [errors, setErrors] = useState<Record<string, string>>({});
