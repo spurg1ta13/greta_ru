@@ -67,10 +67,14 @@ export function Timeline() {
               {t.about.credentials.heading}
             </h3>
           </div>
-          <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <p>{t.about.credentials.certifications}</p>
-            <p>{t.about.credentials.education}</p>
-          </div>
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            {t.about.credentials.items.map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-signal" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </Reveal>
     </section>

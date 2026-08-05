@@ -36,8 +36,11 @@ export const dictionaries = {
       globalReach: "Worked with cross-functional teams & B2B clients across the USA, UK, Spain, Latvia & New Zealand.",
       credentials: {
         heading: "Certifications & Education",
-        certifications: "ISTQB Certified Tester (CTFL) · Cyber Hygiene at Work — National Cyber Security Center (2025)",
-        education: "Vilnius University — Bachelor's in Business Administration (2011-2016)",
+        items: [
+          "ISTQB Certified Tester (CTFL)",
+          "Cyber Hygiene at Work — National Cyber Security Center (2025)",
+          "Vilnius University — Bachelor's in Business Administration (2011-2016)",
+        ],
       },
       steps: [
         {
@@ -250,8 +253,11 @@ export const dictionaries = {
       globalReach: "Συνεργάστηκε με διαλειτουργικές ομάδες και B2B πελάτες στις ΗΠΑ, ΗΒ, Ισπανία, Λετονία και Νέα Ζηλανδία.",
       credentials: {
         heading: "Πιστοποιήσεις & Εκπαίδευση",
-        certifications: "ISTQB Certified Tester (CTFL) · Cyber Hygiene at Work — Εθνικό Κέντρο Κυβερνοασφάλειας (2025)",
-        education: "Πανεπιστήμιο Βίλνιους — Πτυχίο στη Διοίκηση Επιχειρήσεων (2011-2016)",
+        items: [
+          "ISTQB Certified Tester (CTFL)",
+          "Cyber Hygiene at Work — Εθνικό Κέντρο Κυβερνοασφάλειας (2025)",
+          "Πανεπιστήμιο Βίλνιους — Πτυχίο στη Διοίκηση Επιχειρήσεων (2011-2016)",
+        ],
       },
       steps: [
         {
