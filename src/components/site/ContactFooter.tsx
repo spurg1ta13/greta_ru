@@ -118,7 +118,7 @@ export function ContactFooter() {
               <Button asChild variant="outlineSignal" className="gap-2">
                 <a href="mailto:greta.rusecke@gmail.com">
                   <Mail className="size-4" />
-                  Email
+                  {t.contact.email}
                 </a>
               </Button>
             </div>
