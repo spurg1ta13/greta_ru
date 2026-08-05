@@ -1,40 +1,25 @@
 import { ArrowUpRight } from "lucide-react";
 
 import { Reveal } from "@/components/site/Reveal";
+import { useLanguage } from "@/lib/i18n";
 
 const projects = [
-  {
-    name: "Devcraft",
-    url: "https://devcraft.gr",
-    summary:
-      "Company landing page featuring an interactive AI assistant that handles client support and qualifies enquiries automatically.",
-    tags: ["AI Assistant", "Lovable", "React", "Vercel"],
-  },
-  {
-    name: "Lotus Bloom",
-    url: "https://lotusbloom.gr",
-    summary:
-      "Beauty salon platform with interactive service menus, transparent pricing and a responsive photo gallery.",
-    tags: ["Tailwind CSS", "UX Design", "Responsive QA"],
-  },
-  {
-    name: "CleanUpSKG",
-    url: "https://cleanupskg.gr",
-    summary:
-      "Informational platform for commercial cleaning services with an integrated blog and lead capture flow.",
-    tags: ["Content Platform", "SEO", "TypeScript"],
-  },
+  { name: "Devcraft", url: "https://devcraft.gr", tags: ["AI Assistant", "Lovable", "React", "Vercel"] },
+  { name: "Lotus Bloom", url: "https://lotusbloom.gr", tags: ["Tailwind CSS", "UX Design", "Responsive QA"] },
+  { name: "CleanUpSKG", url: "https://cleanupskg.gr", tags: ["Content Platform", "SEO", "TypeScript"] },
 ];
 
 export function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section id="projects" className="scroll-mt-24 border-y border-border bg-surface/30 py-24">
       <div className="mx-auto max-w-6xl px-5">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">02 / Projects</p>
-          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">Shipped, tested, live.</h2>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t.projects.eyebrow}</p>
+          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{t.projects.heading}</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Three products designed, built, QA-cycled across devices and deployed independently.
+            {t.projects.lead}
           </p>
         </Reveal>
 
@@ -55,7 +40,7 @@ export function Projects() {
                   {project.url.replace("https://", "")}
                 </p>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {project.summary}
+                  {t.projects.summaries[i]}
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
