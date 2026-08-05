@@ -1,6 +1,8 @@
 import { Github, Linkedin } from "lucide-react";
 
+import gretaPortrait from "@/assets/greta-portrait.png.asset.json";
 import heroBg from "@/assets/hero-bg.jpg";
+
 import { Button } from "@/components/ui/button";
 
 const links = [
@@ -64,26 +66,44 @@ export function Hero() {
       </nav>
 
       <div id="top" className="relative z-10 mx-auto max-w-6xl px-5 pb-24 pt-14 sm:pb-32 sm:pt-24">
-        <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          <span className="size-1.5 rounded-full bg-signal" />
-          Thessaloniki, Greece · Open to work
-        </p>
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
+          <div className="min-w-0">
+            <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              <span className="size-1.5 rounded-full bg-signal" />
+              Thessaloniki, Greece · Open to work
+            </p>
 
-        <h1 className="animate-rise mt-6 max-w-4xl text-4xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-          ISTQB QA Specialist <span className="text-gradient">&amp; AI Product Builder</span>
-        </h1>
+            <h1 className="animate-rise mt-6 max-w-4xl text-4xl font-bold leading-[1.05] sm:text-6xl">
+              ISTQB QA Specialist <span className="text-gradient">&amp; AI Product Builder</span>
+            </h1>
 
-        <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Bridging the gap between QA precision, product logic, and rapid AI-assisted execution.
-        </p>
+            <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Bridging the gap between QA precision, product logic, and rapid AI-assisted execution.
+            </p>
 
-        <div className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg" variant="hero">
-            <a href="#greta-ai">Chat with Greta AI</a>
-          </Button>
-          <Button asChild size="lg" variant="outlineSignal">
-            <a href="#projects">View Projects</a>
-          </Button>
+            <div className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" variant="hero">
+                <a href="#greta-ai">Chat with Greta AI</a>
+              </Button>
+              <Button asChild size="lg" variant="outlineSignal">
+                <a href="#projects">View Projects</a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="animate-rise relative mx-auto w-full max-w-xs lg:max-w-none">
+            <div
+              className="pointer-events-none absolute -inset-3 rounded-3xl blur-2xl"
+              style={{ background: "var(--gradient-signal)", opacity: 0.16 }}
+            />
+            <img
+              src={gretaPortrait.url}
+              alt="Portrait of Greta Rusecke, ISTQB certified QA Product Engineer"
+              width={800}
+              height={1000}
+              className="relative w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-panel)]"
+            />
+          </div>
         </div>
 
         <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
@@ -100,6 +120,7 @@ export function Hero() {
           ))}
         </dl>
       </div>
+
     </header>
   );
 }
