@@ -14,55 +14,61 @@ const links = [
 
 export function Hero() {
   return (
-    <header className="relative overflow-hidden">
-      <img
-        src={heroBg}
-        alt=""
-        aria-hidden="true"
-        width={1920}
-        height={1080}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
-      />
-      <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
-      <div
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full blur-3xl animate-glow"
-        style={{ background: "var(--gradient-signal)", opacity: 0.18 }}
-      />
+    <>
+      <div className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+          <a href="#top" className="font-display text-sm font-bold tracking-tight sm:text-base">
+            Greta<span className="text-gradient">.Rusecke</span>
+          </a>
+          <ul className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="transition-colors hover:text-primary">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="flex shrink-0 items-center gap-1">
+            <a
+              href="https://github.com/spurg1ta13"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Greta Rusecke on GitHub"
+              className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Github className="size-4" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gretaruseckeqa"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Greta Rusecke on LinkedIn"
+              className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Linkedin className="size-4" />
+            </a>
+          </div>
+        </nav>
+      </div>
 
-      <nav className="relative z-10 mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-6">
-        <a href="#top" className="font-display text-sm font-bold tracking-tight sm:text-base">
-          Greta<span className="text-gradient">.Rusecke</span>
-        </a>
-        <ul className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="transition-colors hover:text-primary">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="flex shrink-0 items-center gap-1">
-          <a
-            href="https://github.com/spurg1ta13"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Greta Rusecke on GitHub"
-            className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-          >
-            <Github className="size-4" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gretaruseckeqa"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Greta Rusecke on LinkedIn"
-            className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-          >
-            <Linkedin className="size-4" />
-          </a>
-        </div>
-      </nav>
+      <header className="relative overflow-hidden">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          width={1920}
+          height={1080}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+        />
+        <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
+        <div
+          className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full blur-3xl animate-glow"
+          style={{ background: "var(--gradient-signal)", opacity: 0.18 }}
+        />
+
+
+
 
       <div id="top" className="relative z-10 mx-auto max-w-6xl px-5 pb-24 pt-14 sm:pb-32 sm:pt-24">
         <div>
@@ -107,5 +113,6 @@ export function Hero() {
       </div>
 
     </header>
+    </>
   );
 }
