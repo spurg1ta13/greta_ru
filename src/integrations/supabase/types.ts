@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      chat_logs: {
+        Row: {
+          city: string | null
+          content: string
+          country: string | null
+          created_at: string
+          id: string
+          ip_address: string | null
+          language: string | null
+          region: string | null
+          role: string
+          session_id: string
+        }
+        Insert: {
+          city?: string | null
+          content: string
+          country?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          region?: string | null
+          role: string
+          session_id: string
+        }
+        Update: {
+          city?: string | null
+          content?: string
+          country?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          region?: string | null
+          role?: string
+          session_id?: string
+        }
+        Relationships: []
+      }
       contact_messages: {
         Row: {
           created_at: string
