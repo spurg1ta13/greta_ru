@@ -108,6 +108,26 @@ function AdminPage() {
       {data ? (
         <>
           <section className="mt-12">
+            <h2 className="text-xl font-semibold">Unique visitors</h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { label: "Last 24 hours", value: data.visitors.day },
+                { label: "Last 7 days", value: data.visitors.week },
+                { label: "Last 30 days", value: data.visitors.month },
+                { label: "All time", value: data.visitors.total },
+              ].map((stat) => (
+                <div key={stat.label} className="panel p-5">
+                  <p className="font-mono text-3xl font-bold text-primary">{stat.value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-12">
+
             <h2 className="text-xl font-semibold">CV downloads</h2>
             <div className="mt-5 panel p-6">
               <p className="font-mono text-4xl font-bold text-primary">{data.cvDownloadCount}</p>
