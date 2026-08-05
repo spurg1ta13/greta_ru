@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
-import cvAsset from "@/assets/greta-cv.pdf.asset.json";
+const cvAsset = { url: "/Greta_Rusecke_CV.pdf" };
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
