@@ -75,6 +75,13 @@ export function ContactFooter() {
 
             <div className="mt-8 space-y-3 text-sm">
               <a
+                href="tel:+306975835277"
+                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Phone className="size-4 shrink-0" />
+                {t.contact.phoneNumber}
+              </a>
+              <a
                 href="mailto:greta.rusecke@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
