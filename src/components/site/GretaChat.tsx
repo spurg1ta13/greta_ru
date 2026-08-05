@@ -19,23 +19,19 @@ import {
 } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Reveal } from "@/components/site/Reveal";
+import { useLanguage } from "@/lib/i18n";
 
-const suggestions = [
-  "What does Greta's ISTQB certification cover?",
-  "Tell me about the Devcraft project.",
-  "How did she move from QA into AI building?",
-  "Which testing tools does she use?",
-];
 
 export function GretaChat() {
+  const { t, language } = useLanguage();
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [input, setInput] = useState("");
 
   const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
+    transport: new DefaultChatTransport({ api: "/api/chat", body: { language } }),
     onError: (error) => {
       console.error(error);
-      toast.error("Greta AI is unavailable right now. Please try again in a moment.");
+      toast.error(t.chat.error);
     },
   });
 
@@ -61,7 +57,7 @@ export function GretaChat() {
       <div className="mx-auto max-w-4xl px-5">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
-            04 / Greta AI
+            {t.chat.eyebrow}
           </p>
           <div className="mt-4 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4">
             <img
@@ -73,10 +69,9 @@ export function GretaChat() {
               className="size-12 shrink-0 sm:size-14"
             />
             <div className="min-w-0">
-              <h2 className="text-3xl font-bold sm:text-4xl">Ask Greta AI</h2>
+              <h2 className="text-3xl font-bold sm:text-4xl">{t.chat.heading}</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Her virtual career assistant — trained only on Greta's background, skills and
-                projects.
+                {t.chat.lead}
               </p>
             </div>
           </div>
@@ -89,11 +84,10 @@ export function GretaChat() {
                 {messages.length === 0 ? (
                   <div className="py-8 text-center">
                     <p className="text-sm text-muted-foreground">
-                      Hi, I'm Greta AI. Ask me anything about Greta's QA experience, certifications
-                      or the products she has shipped.
+                      {t.chat.empty}
                     </p>
                     <ul className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-2">
-                      {suggestions.map((s) => (
+                      {t.chat.suggestions.map((s) => (
                         <li key={s}>
                           <button
                             type="button"
@@ -127,7 +121,7 @@ export function GretaChat() {
                 ))}
 
                 {status === "submitted" ? (
-                  <Shimmer className="text-sm">Thinking...</Shimmer>
+                  <Shimmer className="text-sm">{t.chat.thinking}</Shimmer>
                 ) : null}
               </ConversationContent>
               <ConversationScrollButton />
@@ -140,7 +134,7 @@ export function GretaChat() {
                   autoFocus
                   value={input}
                   onChange={(event) => setInput(event.currentTarget.value)}
-                  placeholder="Ask about Greta's QA experience, ISTQB or her AI projects..."
+                  placeholder={t.chat.placeholder}
                 />
                 <PromptInputFooter className="justify-end">
                   <PromptInputSubmit status={status} disabled={!input.trim() && !busy} />
