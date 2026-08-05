@@ -26,9 +26,18 @@ export function GretaChat() {
   const { t, language } = useLanguage();
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [input, setInput] = useState("");
+  const sessionIdRef = useRef<string>(
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : String(Date.now()),
+  );
 
   const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat", body: { language } }),
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+      body: { language, sessionId: sessionIdRef.current },
+    }),
+
     onError: (error) => {
       console.error(error);
       toast.error(t.chat.error);

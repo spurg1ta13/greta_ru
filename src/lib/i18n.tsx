@@ -139,21 +139,23 @@ export const dictionaries = {
         {
           h: "What is collected",
           list: [
-            "Contact form: the name, email address and message you submit. These are stored securely so Greta can reply to you.",
-            "Greta AI chat: the questions you type are sent to an AI model provider to generate an answer. Chat conversations are not saved on this site and disappear when you reload the page.",
+            "Contact form: the name, email address, enquiry type (job offer or custom project) and message you submit. These are stored securely in the site database so Greta can reply to you.",
+            "Greta AI chat: the questions you type and the assistant's replies are sent to an AI model provider and are also stored in the site database, together with the language you used and a random conversation identifier.",
+            "Approximate location and IP address: when you chat with Greta AI, your IP address and the approximate location derived from it (country, and where available city and region) are recorded with the conversation. Your country is also used to decide whether the site is shown in Greek or English.",
+            "Technical storage: your language preference is saved in your browser.",
           ],
         },
         {
           h: "How it is used",
-          p: "Contact details are used only to respond to your enquiry. They are never sold, rented or used for marketing lists.",
+          p: "Contact details are used only to respond to your enquiry. Chat transcripts and their approximate location are used only to understand how the assistant is used, to improve its answers and to prevent abuse. None of this data is sold, rented or used for marketing lists.",
         },
         {
-          h: "Retention",
-          p: "Contact messages are kept for as long as needed to handle the conversation and are deleted on request.",
+          h: "Retention and access",
+          p: "Contact messages and chat transcripts are kept for as long as needed to handle the conversation and improve the assistant, and are deleted on request. They are visible only to Greta through a private, password-protected owner dashboard; visitors cannot read this data.",
         },
         {
           h: "Your rights",
-          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted. Email the address above and the request will be handled promptly.",
+          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted, including chat transcripts and the location data stored with them. Email the address above and the request will be handled promptly.",
         },
         {
           h: "Cookies",
@@ -330,21 +332,23 @@ export const dictionaries = {
         {
           h: "Ποια δεδομένα συλλέγονται",
           list: [
-            "Φόρμα επικοινωνίας: το όνομα, η διεύθυνση email και το μήνυμα που υποβάλλεις. Αποθηκεύονται με ασφάλεια ώστε να μπορεί η Greta να σου απαντήσει.",
-            "Συνομιλία Greta AI: οι ερωτήσεις που πληκτρολογείς αποστέλλονται σε πάροχο μοντέλου AI για τη δημιουργία απάντησης. Οι συνομιλίες δεν αποθηκεύονται στον ιστότοπο και διαγράφονται όταν ανανεώσεις τη σελίδα.",
+            "Φόρμα επικοινωνίας: το όνομα, η διεύθυνση email, ο τύπος αιτήματος (ευκαιρία εργασίας ή έργο κατά παραγγελία) και το μήνυμα που υποβάλλεις. Αποθηκεύονται με ασφάλεια στη βάση δεδομένων του ιστότοπου ώστε να μπορεί η Greta να σου απαντήσει.",
+            "Συνομιλία Greta AI: οι ερωτήσεις που πληκτρολογείς και οι απαντήσεις του βοηθού αποστέλλονται σε πάροχο μοντέλου AI και αποθηκεύονται επίσης στη βάση δεδομένων του ιστότοπου, μαζί με τη γλώσσα που χρησιμοποίησες και ένα τυχαίο αναγνωριστικό συνομιλίας.",
+            "Κατά προσέγγιση τοποθεσία και διεύθυνση IP: όταν συνομιλείς με τη Greta AI, καταγράφονται η διεύθυνση IP σου και η κατά προσέγγιση τοποθεσία που προκύπτει από αυτήν (χώρα και, όπου είναι διαθέσιμα, πόλη και περιοχή). Η χώρα σου χρησιμοποιείται επίσης για να εμφανιστεί ο ιστότοπος στα ελληνικά ή στα αγγλικά.",
+            "Τεχνική αποθήκευση: η προτίμηση γλώσσας αποθηκεύεται στον browser σου.",
           ],
         },
         {
           h: "Πώς χρησιμοποιούνται",
-          p: "Τα στοιχεία επικοινωνίας χρησιμοποιούνται αποκλειστικά για την απάντηση στο αίτημά σου. Δεν πωλούνται, δεν ενοικιάζονται και δεν χρησιμοποιούνται σε λίστες μάρκετινγκ.",
+          p: "Τα στοιχεία επικοινωνίας χρησιμοποιούνται αποκλειστικά για την απάντηση στο αίτημά σου. Τα αρχεία συνομιλιών και η κατά προσέγγιση τοποθεσία χρησιμοποιούνται μόνο για την κατανόηση της χρήσης του βοηθού, τη βελτίωση των απαντήσεων και την αποτροπή κατάχρησης. Κανένα από αυτά τα δεδομένα δεν πωλείται, δεν ενοικιάζεται και δεν χρησιμοποιείται σε λίστες μάρκετινγκ.",
         },
         {
-          h: "Διάρκεια διατήρησης",
-          p: "Τα μηνύματα επικοινωνίας διατηρούνται όσο χρειάζεται για τη διεκπεραίωση της επικοινωνίας και διαγράφονται κατόπιν αιτήματος.",
+          h: "Διατήρηση και πρόσβαση",
+          p: "Τα μηνύματα επικοινωνίας και τα αρχεία συνομιλιών διατηρούνται όσο χρειάζεται για τη διεκπεραίωση της επικοινωνίας και τη βελτίωση του βοηθού και διαγράφονται κατόπιν αιτήματος. Είναι ορατά μόνο στη Greta μέσω ιδιωτικού πίνακα διαχείρισης με κωδικό· οι επισκέπτες δεν έχουν πρόσβαση σε αυτά τα δεδομένα.",
         },
         {
           h: "Τα δικαιώματά σου",
-          p: "Σύμφωνα με τον GDPR μπορείς να ζητήσεις πρόσβαση, διόρθωση ή διαγραφή των προσωπικών δεδομένων που υπέβαλες. Στείλε email στην παραπάνω διεύθυνση και το αίτημα θα διεκπεραιωθεί άμεσα.",
+          p: "Σύμφωνα με τον GDPR μπορείς να ζητήσεις πρόσβαση, διόρθωση ή διαγραφή των προσωπικών δεδομένων που υπέβαλες, συμπεριλαμβανομένων των αρχείων συνομιλίας και των δεδομένων τοποθεσίας που αποθηκεύονται μαζί τους. Στείλε email στην παραπάνω διεύθυνση και το αίτημα θα διεκπεραιωθεί άμεσα.",
         },
         {
           h: "Cookies",
