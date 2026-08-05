@@ -35,8 +35,8 @@ export function Timeline() {
               <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4 sm:flex sm:flex-wrap sm:justify-between">
                 <div className="min-w-0">
                   <h3 className="text-lg font-semibold sm:text-xl">{step.role}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{step.org}</p>
                 </div>
+
                 <span className="shrink-0 rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground">
                   {step.period}
                 </span>
