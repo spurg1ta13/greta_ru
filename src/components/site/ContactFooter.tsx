@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -29,9 +29,29 @@ export function ContactFooter() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
+  // Bot protection: hidden honeypot field + minimum time-on-form + submit cooldown.
+  const [honeypot, setHoneypot] = useState("");
+  const mountedAt = useRef(Date.now());
+  const lastSubmit = useRef(0);
+
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Honeypot filled or form submitted suspiciously fast => silently drop (bot).
+    if (honeypot.trim() !== "" || Date.now() - mountedAt.current < 3000) {
+      toast.success(t.contact.success);
+      setValues({ name: "", email: "", message: "" });
+      return;
+    }
+    if (Date.now() - lastSubmit.current < 15000) {
+      toast.error(t.contact.failure);
+      return;
+    }
+
     const parsed = buildSchema(t).safeParse(values);
     if (!parsed.success) {
       const fieldErrors: Record<string, string> = {};
@@ -45,6 +65,7 @@ export function ContactFooter() {
 
     setErrors({});
     setSending(true);
+    lastSubmit.current = Date.now();
     const { error } = await supabase.from("contact_messages").insert(parsed.data);
     setSending(false);
 
@@ -125,7 +146,20 @@ export function ContactFooter() {
           </Reveal>
 
           <Reveal delay={120}>
-            <form onSubmit={onSubmit} noValidate className="panel space-y-5 p-6 sm:p-8">
+            <form onSubmit={onSubmit} noValidate className="panel relative space-y-5 p-6 sm:p-8">
+              <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="name">{t.contact.name}</Label>
                 <Input

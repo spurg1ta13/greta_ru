@@ -399,8 +399,30 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLanguageState(stored);
       return;
     }
-    if (navigator.language?.toLowerCase().startsWith("el")) setLanguageState("el");
+
+    let cancelled = false;
+    // No saved preference: pick language from the visitor's country (Greece -> Greek).
+    void fetch("/api/public/geo")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { language?: string } | null) => {
+        if (cancelled) return;
+        if (data?.language === "el" || data?.language === "en") {
+          setLanguageState(data.language);
+          return;
+        }
+        if (navigator.language?.toLowerCase().startsWith("el")) setLanguageState("el");
+      })
+      .catch(() => {
+        if (!cancelled && navigator.language?.toLowerCase().startsWith("el")) {
+          setLanguageState("el");
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
 
   useEffect(() => {
     document.documentElement.lang = language;
