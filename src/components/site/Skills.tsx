@@ -1,61 +1,6 @@
 import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
-const groups = [
-  {
-    title: "AI & Prototyping",
-    items: [
-      "Lovable AI",
-      "AI-Assisted Development",
-      "Prompt Engineering",
-      "GitHub",
-      "Vercel Deployment",
-      "DNS & Env Config",
-    ],
-  },
-  {
-    title: "QA & Testing",
-    items: [
-      "ISTQB Certified",
-      "Test Strategy",
-      "Test Case Design",
-      "Functional & Non-functional",
-      "Regression Testing",
-      "Smoke Testing",
-      "E2E & UAT",
-      "Cross-browser & Cross-platform",
-      "Defect Lifecycle",
-      "BrowserStack",
-    ],
-  },
-  {
-    title: "Management & Agile",
-    items: [
-      "Jira",
-      "Confluence",
-      "Trello",
-      "Scrum",
-      "Kanban",
-      "Sprint Planning",
-      "Requirement Analysis",
-      "Client Communication",
-    ],
-  },
-  {
-    title: "Systems & Frontend",
-    items: [
-      "SaaS",
-      "ERP",
-      "CRM",
-      "E-commerce",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Responsive Web Design",
-    ],
-  },
-];
-
 export function Skills() {
   const { t } = useLanguage();
 
@@ -67,14 +12,14 @@ export function Skills() {
       </Reveal>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
-        {groups.map((group, i) => (
-          <Reveal key={group.title} delay={i * 100}>
+        {t.skills.groups.map((group, i) => (
+          <Reveal key={group} delay={i * 100}>
             <div className="panel h-full p-6">
               <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-signal">
-                {t.skills.groups[i]}
+                {group}
               </h3>
               <ul className="mt-5 flex flex-wrap gap-2">
-                {group.items.map((item) => (
+                {t.skills.items[i]?.map((item) => (
                   <li
                     key={item}
                     className="rounded-lg border border-border bg-background/50 px-3 py-1.5 text-sm text-foreground/90"
@@ -90,3 +35,4 @@ export function Skills() {
     </section>
   );
 }
+

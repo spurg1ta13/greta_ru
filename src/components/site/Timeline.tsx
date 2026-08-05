@@ -1,10 +1,9 @@
-import { Bot, ClipboardCheck, KanbanSquare } from "lucide-react";
+import { Award, Bot, ClipboardCheck, Globe, KanbanSquare } from "lucide-react";
 
 import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
 const icons = [KanbanSquare, ClipboardCheck, Bot];
-
 
 export function Timeline() {
   const { t } = useLanguage();
@@ -19,6 +18,10 @@ export function Timeline() {
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
           {t.about.lead}
+        </p>
+        <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-border/70 bg-surface/60 px-3 py-1.5 text-xs text-muted-foreground">
+          <Globe className="size-3.5 text-primary" />
+          {t.about.globalReach}
         </p>
       </Reveal>
 
@@ -53,6 +56,24 @@ export function Timeline() {
           </Reveal>
         ))}
       </ol>
+
+      <Reveal delay={300}>
+        <div className="mt-10 panel p-6 sm:p-8">
+          <div className="flex items-center gap-3">
+            <span className="grid size-8 place-items-center rounded-full border border-border bg-surface">
+              <Award className="size-4 text-signal" />
+            </span>
+            <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-signal">
+              {t.about.credentials.heading}
+            </h3>
+          </div>
+          <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <p>{t.about.credentials.certifications}</p>
+            <p>{t.about.credentials.education}</p>
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
+

@@ -11,7 +11,8 @@
 - Role: QA Product Engineer & AI Product Builder
 - Location: Thessaloniki, Greece
 - Languages: English, Greek, Lithuanian, Russian
-- Certification: ISTQB Certified Tester, Foundation Level
+- Education: Vilnius University — Bachelor's in Business Administration (2011-2016)
+- Certifications: ISTQB Certified Tester (Foundation Level), Cyber Hygiene at Work — National Cyber Security Center (2025)
 - Email: greta.rusecke@gmail.com
 - LinkedIn: https://www.linkedin.com/in/gretaruseckeqa
 - GitHub: https://github.com/spurg1ta13
@@ -27,7 +28,7 @@
 ## Skills
 
 - QA: test strategy, test case design, functional and non-functional testing, regression, smoke,
-  E2E and UAT, cross-browser and cross-platform testing (Windows, macOS, iOS/iPadOS),
+  E2E and UAT, cross-browser and cross-platform testing (Windows, macOS, iOS/iPadOS via BrowserStack),
   defect lifecycle, bug triage, release readiness, BrowserStack, ISTQB practices.
 - AI product building: prompt engineering, Lovable AI, AI-assisted full-stack prototyping,
   shipping production-ready web apps solo, GitHub and Vercel deployment with DNS/env setup.
@@ -35,6 +36,10 @@
 - Frontend & tooling: React, TypeScript, Tailwind CSS, responsive web design, Jira, Confluence,
   Trello, Git.
 - Management: requirement analysis, sprint planning, stakeholder communication, agile delivery.
+
+## International experience
+
+Worked with cross-functional teams and B2B clients across the USA, UK, Spain, Latvia and New Zealand.
 
 ## Projects
 
@@ -52,3 +57,4 @@
 
 Greta is open to career opportunities and custom product development. Enquiries can be sent
 through the contact form on the home page or by email to greta.rusecke@gmail.com.
+
