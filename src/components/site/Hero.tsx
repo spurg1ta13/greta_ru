@@ -128,7 +128,7 @@ export function Hero() {
         </div>
 
 
-        <dl className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-3">
+        <dl className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-border pt-8 text-center sm:grid-cols-3 mx-auto">
           {t.hero.stats.map((stat) => (
             <div key={stat.v} className="min-w-0">
               <dt className="font-display text-2xl font-bold text-foreground">{stat.k}</dt>
