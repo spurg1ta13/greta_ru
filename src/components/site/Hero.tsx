@@ -118,8 +118,8 @@ export function Hero() {
               aria-hidden="true"
             />
             <img
-              src={heroIllustrationSm.url}
-              srcSet={`${heroIllustrationSm.url} 640w, ${heroIllustration.url} 900w`}
+              src={heroIllustrationSm}
+              srcSet={`${heroIllustrationSm} 640w, ${heroIllustration} 900w`}
               sizes="(min-width: 1024px) 480px, 90vw"
               alt="Greta Rusecke - ISTQB QA Specialist & AI Product Builder illustration showcasing bug hunting, no-code development, and automation."
               width={900}
