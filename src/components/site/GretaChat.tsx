@@ -46,9 +46,14 @@ export function GretaChat() {
 
   const busy = status === "submitted" || status === "streaming";
 
+  const hasInteracted = useRef(false);
+
   useEffect(() => {
-    if (!busy) textareaRef.current?.focus();
+    if (!busy && hasInteracted.current) {
+      textareaRef.current?.focus({ preventScroll: true });
+    }
   }, [busy]);
+
 
   const send = (text: string) => {
     const value = text.trim();
