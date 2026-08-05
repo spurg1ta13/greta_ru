@@ -17,7 +17,7 @@ export const Route = createFileRoute("/privacy")({
       { name: "twitter:card", content: "summary" },
       { name: "robots", content: "noindex" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://gretagreta.eu/privacy" }],
   }),
   component: Privacy,
 });
