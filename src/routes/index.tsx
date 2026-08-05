@@ -1,12 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Suspense, lazy } from "react";
+
+import heroBgWebp from "@/assets/hero-bg.webp";
 
 import { ContactFooter } from "@/components/site/ContactFooter";
-import { GretaChat } from "@/components/site/GretaChat";
+
 import { Hero } from "@/components/site/Hero";
 import { Projects } from "@/components/site/Projects";
 import { Skills } from "@/components/site/Skills";
 import { Timeline } from "@/components/site/Timeline";
 import { projectJsonLdNodes } from "@/lib/project-schema";
+
+const GretaChat = lazy(() =>
+  import("@/components/site/GretaChat").then((m) => ({ default: m.GretaChat })),
+);
 
 const title = "Greta Rusecke — ISTQB QA Specialist & AI Product Builder";
 const description =
@@ -138,6 +145,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: description },
     ],
     links: [
+      { rel: "preload", as: "image", href: heroBgWebp, type: "image/webp", fetchPriority: "high" },
       { rel: "canonical", href: "/" },
       { rel: "alternate", hrefLang: "en", href: "/" },
       { rel: "alternate", hrefLang: "el", href: "/" },
@@ -156,7 +164,9 @@ function Index() {
       <Timeline />
       <Projects />
       <Skills />
-      <GretaChat />
+      <Suspense fallback={<div id="greta-ai" className="min-h-[640px] scroll-mt-24" aria-hidden="true" />}>
+        <GretaChat />
+      </Suspense>
       <ContactFooter />
     </main>
   );

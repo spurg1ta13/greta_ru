@@ -1,6 +1,7 @@
 import { Github, Linkedin } from "lucide-react";
 
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBgJpg from "@/assets/hero-bg.jpg";
+import heroBgWebp from "@/assets/hero-bg.webp";
 
 import { LanguageToggle } from "@/components/site/LanguageToggle";
 import { Button } from "@/components/ui/button";
@@ -57,14 +58,19 @@ export function Hero() {
       </div>
 
       <header className="relative overflow-hidden">
-        <img
-          src={heroBg}
-          alt=""
-          aria-hidden="true"
-          width={1920}
-          height={1080}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
-        />
+        <picture>
+          <source srcSet={heroBgWebp} type="image/webp" />
+          <img
+            src={heroBgJpg}
+            alt=""
+            aria-hidden="true"
+            width={1920}
+            height={1080}
+            decoding="async"
+            fetchPriority="high"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+          />
+        </picture>
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
         <div
           className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full blur-3xl animate-glow"
