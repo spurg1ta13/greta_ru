@@ -2,6 +2,8 @@ import { Github, Linkedin } from "lucide-react";
 
 import heroBgJpg from "@/assets/hero-bg.jpg";
 import heroBgWebp from "@/assets/hero-bg.webp";
+import heroIllustration from "@/assets/greta-hero.webp.asset.json";
+
 
 import { LanguageToggle } from "@/components/site/LanguageToggle";
 import { Button } from "@/components/ui/button";
@@ -81,7 +83,7 @@ export function Hero() {
 
 
       <div id="top" className="relative z-10 mx-auto max-w-6xl px-5 pb-24 pt-14 sm:pb-32 sm:pt-24">
-        <div>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="min-w-0">
             <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <span className="size-1.5 rounded-full bg-signal" />
@@ -106,7 +108,25 @@ export function Hero() {
             </div>
           </div>
 
+          <div className="animate-rise relative mx-auto w-full max-w-md lg:max-w-none">
+            <div
+              className="pointer-events-none absolute -inset-6 rounded-[2rem] blur-2xl"
+              style={{ background: "var(--gradient-signal)", opacity: 0.16 }}
+              aria-hidden="true"
+            />
+            <img
+              src={heroIllustration.url}
+              alt="Greta Rusecke - ISTQB QA Specialist & AI Product Builder illustration showcasing bug hunting, no-code development, and automation."
+              width={900}
+              height={1125}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="relative w-full rounded-2xl border border-border/70 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.9)] ring-1 ring-signal/20"
+            />
+          </div>
         </div>
+
 
         <dl className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-3">
           {t.hero.stats.map((stat) => (
