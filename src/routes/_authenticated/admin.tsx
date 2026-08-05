@@ -43,12 +43,36 @@ function AdminPage() {
     retry: false,
   });
 
+  const removeSession = useServerFn(deleteChatSession);
+  const removeMessage = useServerFn(deleteChatMessage);
+
+  const invalidate = () => queryClient.invalidateQueries({ queryKey: ["admin-data"] });
+
+  const sessionMutation = useMutation({
+    mutationFn: (sessionId: string) => removeSession({ data: { sessionId } }),
+    onSuccess: () => {
+      toast.success("Conversation deleted");
+      void invalidate();
+    },
+    onError: () => toast.error("Could not delete conversation"),
+  });
+
+  const messageMutation = useMutation({
+    mutationFn: (id: string) => removeMessage({ data: { id } }),
+    onSuccess: () => {
+      toast.success("Message deleted");
+      void invalidate();
+    },
+    onError: () => toast.error("Could not delete message"),
+  });
+
   const signOut = async () => {
     await queryClient.cancelQueries();
     queryClient.clear();
     await supabase.auth.signOut();
     await navigate({ to: "/auth", replace: true });
   };
+
 
   const sessions = new Map<string, AdminChatLog[]>();
   for (const log of data?.chatLogs ?? []) {
