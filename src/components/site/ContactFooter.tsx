@@ -28,7 +28,7 @@ const buildSchema = (t: Dictionary) =>
 export function ContactFooter() {
   const { t, language } = useLanguage();
   const [values, setValues] = useState({ name: "", email: "", message: "" });
-  const [inquiryType, setInquiryType] = useState<"job" | "project">("job");
+  const [inquiryType, setInquiryType] = useState<"job" | "project">("project");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   // Bot protection: hidden honeypot field + minimum time-on-form + submit cooldown.
@@ -79,7 +79,7 @@ export function ContactFooter() {
 
     toast.success(t.contact.success);
     setValues({ name: "", email: "", message: "" });
-    setInquiryType("job");
+    setInquiryType("project");
   };
 
   return (
@@ -187,9 +187,10 @@ export function ContactFooter() {
                 <Label>{t.contact.inquiry}</Label>
                 <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label={t.contact.inquiry}>
                   {([
-                    ["job", t.contact.inquiryJob],
                     ["project", t.contact.inquiryProject],
+                    ["job", t.contact.inquiryJob],
                   ] as const).map(([key, label]) => (
+
                     <button
                       key={key}
                       type="button"

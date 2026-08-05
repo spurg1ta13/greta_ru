@@ -118,7 +118,7 @@ function AdminPage() {
                 <article key={m.id} className="panel p-5">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="rounded-full border border-primary/50 px-3 py-1 font-mono text-[11px] uppercase text-primary">
-                      {m.inquiry_type === "project" ? "Custom project" : "Job offer"}
+                      {m.inquiry_type === "project" ? "Project" : "Offer"}
                     </span>
                     <span className="font-semibold">{m.name}</span>
                     <a href={`mailto:${m.email}`} className="text-sm text-muted-foreground hover:text-primary">

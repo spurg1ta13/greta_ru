@@ -133,8 +133,10 @@ export const dictionaries = {
       heading: "Let's build something that ships clean.",
       lead: "Open to career opportunities and custom product development. Let's turn your idea into a production-ready application.",
       inquiry: "What is this about?",
-      inquiryJob: "Job opportunity",
-      inquiryProject: "Custom project",
+      inquiryProject: "Project",
+      inquiryJob: "Offer",
+
+
       phone: "Call",
       phoneNumber: "+30 697 583 5277",
       downloadCv: "Download my CV here!",
@@ -171,7 +173,7 @@ export const dictionaries = {
         {
           h: "What is collected",
           list: [
-            "Contact form: the name, email address, enquiry type (job offer or custom project) and message you submit. These are stored securely in the site database so Greta can reply to you.",
+            "Contact form: the name, email address, enquiry type (project or offer) and message you submit. These are stored securely in the site database so Greta can reply to you.",
             "Greta AI chat: the questions you type and the assistant's replies are sent to an AI model provider and are also stored in the site database, together with the language you used and a random conversation identifier.",
             "Approximate location and IP address: when you chat with Greta AI, your IP address and the approximate location derived from it (country, and where available city and region) are recorded with the conversation. Your country is also used to decide whether the site is shown in Greek or English.",
             "Technical storage: your language preference is saved in your browser.",
@@ -353,8 +355,10 @@ export const dictionaries = {
       heading: "Ας φτιάξουμε κάτι που κυκλοφορεί χωρίς σφάλματα.",
       lead: "Ανοιχτή σε επαγγελματικές ευκαιρίες και ανάπτυξη προϊόντων κατά παραγγελία. Ας μετατρέψουμε την ιδέα σου σε μια εφαρμογή έτοιμη για παραγωγή.",
       inquiry: "Για ποιο θέμα επικοινωνείς;",
-      inquiryJob: "Ευκαιρία εργασίας",
-      inquiryProject: "Έργο κατά παραγγελία",
+      inquiryProject: "Έργο",
+      inquiryJob: "Προσφορά",
+
+
       phone: "Κλήση",
       phoneNumber: "+30 697 583 5277",
       downloadCv: "Κατέβασε το βιογραφικό μου εδώ!",
@@ -391,7 +395,7 @@ export const dictionaries = {
         {
           h: "Ποια δεδομένα συλλέγονται",
           list: [
-            "Φόρμα επικοινωνίας: το όνομα, η διεύθυνση email, ο τύπος αιτήματος (ευκαιρία εργασίας ή έργο κατά παραγγελία) και το μήνυμα που υποβάλλεις. Αποθηκεύονται με ασφάλεια στη βάση δεδομένων του ιστότοπου ώστε να μπορεί η Greta να σου απαντήσει.",
+            "Φόρμα επικοινωνίας: το όνομα, η διεύθυνση email, ο τύπος αιτήματος (έργο ή προσφορά) και το μήνυμα που υποβάλλεις. Αποθηκεύονται με ασφάλεια στη βάση δεδομένων του ιστότοπου ώστε να μπορεί η Greta να σου απαντήσει.",
             "Συνομιλία Greta AI: οι ερωτήσεις που πληκτρολογείς και οι απαντήσεις του βοηθού αποστέλλονται σε πάροχο μοντέλου AI και αποθηκεύονται επίσης στη βάση δεδομένων του ιστότοπου, μαζί με τη γλώσσα που χρησιμοποίησες και ένα τυχαίο αναγνωριστικό συνομιλίας.",
             "Κατά προσέγγιση τοποθεσία και διεύθυνση IP: όταν συνομιλείς με τη Greta AI, καταγράφονται η διεύθυνση IP σου και η κατά προσέγγιση τοποθεσία που προκύπτει από αυτήν (χώρα και, όπου είναι διαθέσιμα, πόλη και περιοχή). Η χώρα σου χρησιμοποιείται επίσης για να εμφανιστεί ο ιστότοπος στα ελληνικά ή στα αγγλικά.",
             "Τεχνική αποθήκευση: η προτίμηση γλώσσας αποθηκεύεται στον browser σου.",
