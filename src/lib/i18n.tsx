@@ -300,13 +300,27 @@ export const dictionaries = {
     skills: {
       eyebrow: "03 / Δεξιότητες",
       heading: "Τα εργαλεία μου.",
-      groups: [
-        "AI & Prototyping",
-        "QA & Έλεγχος λογισμικού",
-        "Διοίκηση & Agile",
-        "Frontend τεχνολογίες",
+      groups: ["AI & Prototyping", "QA & Έλεγχος λογισμικού", "Διοίκηση & Agile", "Systems & Frontend"],
+      items: [
+        ["Lovable AI", "AI-Assisted Development", "Prompt Engineering", "GitHub", "Deploy σε Vercel", "Ρυθμίσεις DNS & Env"],
+        [
+          "Πιστοποίηση ISTQB",
+          "Στρατηγική Ελέγχου",
+          "Σχεδιασμός Test Cases",
+          "Λειτουργικός & Μη λειτουργικός",
+          "Regression Testing",
+          "Smoke Testing",
+          "E2E & UAT",
+          "Cross-browser & Cross-platform",
+          "Cross-Platform Testing (iOS, macOS, Windows μέσω BrowserStack)",
+          "Κύκλος ζωής σφαλμάτων",
+          "BrowserStack",
+        ],
+        ["Jira", "Confluence", "Trello", "Scrum", "Kanban", "Σχεδιασμός Sprint", "Ανάλυση Απαιτήσεων", "Επικοινωνία με πελάτες"],
+        ["SaaS", "ERP", "CRM", "E-commerce", "React", "TypeScript", "Tailwind CSS", "Responsive Web Design"],
       ],
     },
+
     chat: {
       eyebrow: "04 / Greta AI",
       heading: "Ρώτησε το Greta AI",
