@@ -30,10 +30,10 @@ PROJECTS (all built, QA-tested and launched by Greta)
 All three passed complete manual QA cycles across multiple devices and viewports with zero critical launch bugs.
 
 SKILLS
-- AI & Prototyping: Lovable.dev, AI-assisted development, prompt engineering, Vercel deployment.
-- QA & Testing: ISTQB certified, test strategy, test case design, manual/functional/non-functional testing, regression, smoke, cross-browser and cross-platform testing, API testing, defect lifecycle, bug tracking, BrowserStack.
-- Management & Agile: Jira, Confluence, Trello, Scrum, Kanban, sprint planning, product logic, client communication.
-- Frontend stack: React, TypeScript, Tailwind CSS, Vite.
+- AI & Prototyping: Lovable AI (no-code), AI-assisted development, prompt engineering, GitHub, Vercel deployment with environment and DNS configuration.
+- QA & Testing: ISTQB certified, test strategy, test case design, manual/functional/non-functional testing, regression, smoke, E2E and UAT, cross-browser and cross-platform testing (Windows, macOS, iOS/iPadOS), defect lifecycle, bug tracking, BrowserStack.
+- Management & Agile: Jira, Confluence, Trello, Scrum, Kanban, sprint planning, requirement analysis, product logic, client communication.
+- Systems & Frontend: SaaS, ERP, CRM and e-commerce systems; React, TypeScript, Tailwind CSS, responsive web design.
 
 CERTIFICATIONS
 - ISTQB Certified Tester Foundation Level — BCS, The Chartered Institute for IT (Oct 2023).
