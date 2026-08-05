@@ -2,8 +2,8 @@ import { Github, Linkedin } from "lucide-react";
 
 import heroBgJpg from "@/assets/hero-bg.jpg";
 import heroBgWebp from "@/assets/hero-bg.webp";
-import heroIllustration from "@/assets/greta-hero.webp.asset.json";
-import heroIllustrationSm from "@/assets/greta-hero-sm.webp.asset.json";
+const heroIllustration = "/greta-hero.webp";
+const heroIllustrationSm = "/greta-hero-sm.webp";
 
 
 import { LanguageToggle } from "@/components/site/LanguageToggle";
