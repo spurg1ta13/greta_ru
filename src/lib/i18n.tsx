@@ -172,7 +172,7 @@ export const dictionaries = {
         {
           h: "What is collected",
           list: [
-            "Contact form: the name, email address, enquiry type (job offer or custom project) and message you submit. These are stored securely in the site database so Greta can reply to you.",
+            "Contact form: the name, email address, enquiry type (project or offer) and message you submit. These are stored securely in the site database so Greta can reply to you.",
             "Greta AI chat: the questions you type and the assistant's replies are sent to an AI model provider and are also stored in the site database, together with the language you used and a random conversation identifier.",
             "Approximate location and IP address: when you chat with Greta AI, your IP address and the approximate location derived from it (country, and where available city and region) are recorded with the conversation. Your country is also used to decide whether the site is shown in Greek or English.",
             "Technical storage: your language preference is saved in your browser.",
