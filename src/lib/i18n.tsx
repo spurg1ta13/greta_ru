@@ -61,7 +61,7 @@ export const dictionaries = {
           points: [
             "Prototypes and ships production-ready apps with AI tooling — days of work compressed into hours.",
             "Owns the whole pipeline: prototype, QA cycle, GitHub version control, Vercel deploy, DNS and env config.",
-            "Three live products launched solo with zero critical launch bugs.",
+            "Live products launched solo with zero critical launch bugs.",
           ],
         },
       ],
@@ -69,7 +69,7 @@ export const dictionaries = {
     projects: {
       eyebrow: "02 / Projects",
       heading: "Shipped, tested, live.",
-      lead: "Three products designed, built, QA-cycled across devices and deployed independently.",
+      lead: "Products designed, built, QA-cycled across devices and deployed independently.",
       summaries: [
         "Company landing page featuring an interactive AI assistant that handles client support and qualifies enquiries automatically.",
         "Beauty salon platform with interactive service menus, transparent pricing and a responsive photo gallery.",
@@ -249,7 +249,7 @@ export const dictionaries = {
           points: [
             "Δημιουργία prototypes και έτοιμων για παραγωγή εφαρμογών με εργαλεία AI — ημέρες δουλειάς σε λίγες ώρες.",
             "Διαχείριση όλης της ροής: prototype, κύκλος QA, έλεγχος εκδόσεων στο GitHub, deploy στο Vercel, ρυθμίσεις DNS και env.",
-            "Τρία live προϊόντα σε παραγωγή, υλοποιημένα solo, χωρίς κρίσιμα σφάλματα στην κυκλοφορία.",
+            "Live προϊόντα σε παραγωγή, υλοποιημένα solo, χωρίς κρίσιμα σφάλματα στην κυκλοφορία.",
           ],
         },
       ],
@@ -257,7 +257,7 @@ export const dictionaries = {
     projects: {
       eyebrow: "02 / Έργα",
       heading: "Υλοποιημένα, ελεγμένα, live.",
-      lead: "Τρία προϊόντα σχεδιασμένα, υλοποιημένα, ελεγμένα σε διαφορετικές συσκευές και δημοσιευμένα ανεξάρτητα.",
+      lead: "Προϊόντα σχεδιασμένα, υλοποιημένα, ελεγμένα σε διαφορετικές συσκευές και δημοσιευμένα ανεξάρτητα.",
       summaries: [
         "Εταιρική σελίδα προορισμού με διαδραστικό βοηθό AI που εξυπηρετεί πελάτες και αξιολογεί αυτόματα τα αιτήματα.",
         "Πλατφόρμα για σαλόνι ομορφιάς με διαδραστικούς καταλόγους υπηρεσιών, διαφανή τιμολόγηση και responsive γκαλερί φωτογραφιών.",
