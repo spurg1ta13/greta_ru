@@ -38,5 +38,5 @@ SKILLS
 CERTIFICATIONS
 - ISTQB Certified Tester Foundation Level — BCS, The Chartered Institute for IT (Oct 2023).
 - ISTQB Software Testing Foundation Level Course — The Knowledge Academy (Oct 2023).
-- Cyber hygiene at work — National Cyber Security Center (Oct 2025).
+- Cyber Hygiene at Work — National Cyber Security Center (Oct 2025).
 - Manual QA Software Testing — Udemy (Mar 2022).`;
