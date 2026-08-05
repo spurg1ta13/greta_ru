@@ -31,5 +31,5 @@ To run this project locally on your machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/gretagreta.eu.git](https://github.com/your-username/gretagreta.eu.git)
-   cd gretagreta.eu
+   git clone https://github.com/spurg1ta13/greta-spark-insight.git
+   cd greta-spark-insight
