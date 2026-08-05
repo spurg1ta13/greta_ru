@@ -24,7 +24,11 @@ export const Route = createFileRoute("/terms")({
 
 function Terms() {
   const { t } = useLanguage();
-  const sections = t.legal.terms;
+  const sections = t.legal.terms as ReadonlyArray<{
+    h: string;
+    p?: string;
+    list?: readonly string[];
+  }>;
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-20">
@@ -38,8 +42,8 @@ function Terms() {
         {sections.map((section) => (
           <section key={section.h}>
             <h2 className="text-lg font-semibold text-foreground">{section.h}</h2>
-            {"p" in section && section.p ? <p className="mt-2">{section.p}</p> : null}
-            {"list" in section && section.list ? (
+            {section.p ? <p className="mt-2">{section.p}</p> : null}
+            {section.list ? (
               <ul className="mt-2 list-disc space-y-2 pl-5">
                 {section.list.map((item) => (
                   <li key={item}>{item}</li>
