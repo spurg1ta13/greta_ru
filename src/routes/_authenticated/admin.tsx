@@ -208,17 +208,41 @@ function AdminPage() {
                         {first.language ?? "en"}
                       </span>
                       <span className="ml-auto font-mono">{formatDate(first.created_at)}</span>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        disabled={sessionMutation.isPending}
+                        onClick={() => {
+                          if (window.confirm("Delete this whole conversation?")) {
+                            sessionMutation.mutate(sessionId);
+                          }
+                        }}
+                        className="text-destructive hover:text-destructive"
+                      >
+                        Delete chat
+                      </Button>
                     </div>
                     <div className="mt-4 space-y-3">
                       {ordered.map((log) => (
-                        <div key={log.id} className="text-sm">
-                          <p className="font-mono text-[11px] uppercase text-primary">
-                            {log.role === "user" ? "Visitor" : "Greta AI"}
-                          </p>
+                        <div key={log.id} className="group text-sm">
+                          <div className="flex items-center gap-2">
+                            <p className="font-mono text-[11px] uppercase text-primary">
+                              {log.role === "user" ? "Visitor" : "Greta AI"}
+                            </p>
+                            <button
+                              type="button"
+                              disabled={messageMutation.isPending}
+                              onClick={() => messageMutation.mutate(log.id)}
+                              className="text-[11px] text-muted-foreground underline-offset-2 hover:text-destructive hover:underline"
+                            >
+                              delete
+                            </button>
+                          </div>
                           <p className="mt-1 whitespace-pre-wrap text-muted-foreground">{log.content}</p>
                         </div>
                       ))}
                     </div>
+
                   </article>
                 );
               })}
