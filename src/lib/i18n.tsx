@@ -33,6 +33,12 @@ export const dictionaries = {
       eyebrow: "01 / About",
       heading: "From managing delivery, to guarding quality, to building the product.",
       lead: "A QA Product Engineer who connects business logic with technical execution across SaaS, ERP, CRM and e-commerce — and now builds the products too.",
+      globalReach: "Worked with cross-functional teams & B2B clients across the USA, UK, Spain, Latvia & New Zealand.",
+      credentials: {
+        heading: "Certifications & Education",
+        certifications: "ISTQB Certified Tester (CTFL) · Cyber Hygiene at Work — National Cyber Security Center (2025)",
+        education: "Vilnius University — Bachelor's in Business Administration (2011-2016)",
+      },
       steps: [
         {
           period: "2016 — 2018",
@@ -66,6 +72,7 @@ export const dictionaries = {
         },
       ],
     },
+
     projects: {
       eyebrow: "02 / Projects",
       heading: "Shipped, tested, live.",
