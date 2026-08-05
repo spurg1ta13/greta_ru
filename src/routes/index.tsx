@@ -158,9 +158,16 @@ export const Route = createFileRoute("/")({
 
 
 function Index() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.history.scrollRestoration) window.history.scrollRestoration = "manual";
+    if (!window.location.hash) window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, []);
+
   return (
     <main>
       <Hero />
+
       <Timeline />
       <Projects />
       <Skills />
