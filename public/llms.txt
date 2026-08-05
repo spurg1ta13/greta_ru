@@ -1,0 +1,51 @@
+# Greta Rusecke — ISTQB Certified QA Specialist & AI Product Builder
+
+> Personal portfolio of Greta Rusecke, an ISTQB Certified Tester (Foundation Level) working as a
+> QA Product Engineer and AI product builder in Thessaloniki, Greece. The site is available in
+> English and Greek and includes an AI assistant ("Greta AI") that answers questions about her
+> career, skills and projects.
+
+## Profile
+
+- Name: Greta Rusecke
+- Role: QA Product Engineer & AI Product Builder
+- Location: Thessaloniki, Greece
+- Languages: English, Greek, Lithuanian, Russian
+- Certification: ISTQB Certified Tester, Foundation Level
+- Email: greta.rusecke@gmail.com
+- LinkedIn: https://www.linkedin.com/in/gretaruseckeqa
+- GitHub: https://github.com/spurg1ta13
+
+## Career summary
+
+- IT Project Manager (2016–2018) — coordinated delivery teams, requirements and release planning.
+- Manual QA Engineer (2021–2023) — functional, regression and exploratory testing; defect
+  reporting and test documentation.
+- QA Product Engineer (2024–2026) — end-to-end quality ownership, test strategy, release
+  readiness, and AI-assisted product prototyping.
+
+## Skills
+
+- QA: test strategy, test case design, regression and exploratory testing, E2E testing,
+  API testing, bug triage, release readiness, ISTQB practices.
+- AI product building: prompt engineering, AI-assisted full-stack prototyping, shipping
+  production-ready web apps solo.
+- Frontend & tooling: React, TypeScript, Tailwind CSS, Supabase, Jira, Git.
+- Management: requirement analysis, stakeholder communication, agile delivery.
+
+## Projects
+
+- Devcraft — an AI-assisted product built and shipped end to end.
+- Lotus Bloom — a web product designed, built and tested solo.
+- CleanUpSKG — a community-focused web application for Thessaloniki.
+
+## Pages
+
+- [Home](/): hero, career timeline, featured projects, skills, Greta AI assistant, contact form.
+- [Privacy Policy](/privacy): what data the contact form and AI assistant collect and how it is used.
+- [Terms & Conditions](/terms): site usage terms and AI assistant disclaimers.
+
+## Contact
+
+Greta is open to career opportunities and custom product development. Enquiries can be sent
+through the contact form on the home page or by email to greta.rusecke@gmail.com.
