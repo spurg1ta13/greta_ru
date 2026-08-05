@@ -107,6 +107,21 @@ export function ContactFooter() {
                 github.com/spurg1ta13
               </a>
             </div>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="hero" className="gap-2">
+                <a href="tel:+306975835277">
+                  <Phone className="size-4" />
+                  {t.contact.phone}
+                </a>
+              </Button>
+              <Button asChild variant="outlineSignal" className="gap-2">
+                <a href="mailto:greta.rusecke@gmail.com">
+                  <Mail className="size-4" />
+                  Email
+                </a>
+              </Button>
+            </div>
           </Reveal>
 
           <Reveal delay={120}>
