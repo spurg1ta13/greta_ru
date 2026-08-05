@@ -11,8 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Toaster } from "../components/ui/sonner";
+import { FloatingCallButton } from "../components/site/FloatingCallButton";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LanguageProvider } from "../lib/i18n";
+
 
 
 function NotFoundComponent() {
@@ -132,6 +134,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <QueryClientProvider client={queryClient}>
           <LanguageProvider>
             {children}
+            <FloatingCallButton />
             <Toaster position="top-center" />
           </LanguageProvider>
         </QueryClientProvider>
@@ -140,6 +143,7 @@ function RootShell({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
 
 function RootComponent() {
   return (
