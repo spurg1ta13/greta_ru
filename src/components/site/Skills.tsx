@@ -4,26 +4,55 @@ import { useLanguage } from "@/lib/i18n";
 const groups = [
   {
     title: "AI & Prototyping",
-    items: ["Lovable.dev", "AI-Assisted Development", "Prompt Engineering", "Vercel Deployment"],
+    items: [
+      "Lovable AI",
+      "AI-Assisted Development",
+      "Prompt Engineering",
+      "GitHub",
+      "Vercel Deployment",
+      "DNS & Env Config",
+    ],
   },
   {
     title: "QA & Testing",
     items: [
       "ISTQB Certified",
       "Test Strategy",
-      "Test Cases",
+      "Test Case Design",
+      "Functional & Non-functional",
       "Regression Testing",
-      "API Testing",
-      "Bug Tracking",
+      "Smoke Testing",
+      "E2E & UAT",
+      "Cross-browser & Cross-platform",
+      "Defect Lifecycle",
+      "BrowserStack",
     ],
   },
   {
     title: "Management & Agile",
-    items: ["Jira", "Scrum", "Kanban", "Product Logic", "Client Communication"],
+    items: [
+      "Jira",
+      "Confluence",
+      "Trello",
+      "Scrum",
+      "Kanban",
+      "Sprint Planning",
+      "Requirement Analysis",
+      "Client Communication",
+    ],
   },
   {
-    title: "Frontend Stack",
-    items: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    title: "Systems & Frontend",
+    items: [
+      "SaaS",
+      "ERP",
+      "CRM",
+      "E-commerce",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Responsive Web Design",
+    ],
   },
 ];
 
