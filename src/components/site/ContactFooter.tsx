@@ -106,11 +106,11 @@ export function ContactFooter() {
                 {t.contact.phoneNumber}
               </a>
               <a
-                href="mailto:greta.rusecke@gmail.com"
+                href="mailto:greta@gretagreta.eu"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
                 <Mail className="size-4 shrink-0" />
-                greta.rusecke@gmail.com
+                greta@gretagreta.eu
               </a>
               <a
                 href="https://www.linkedin.com/in/gretaruseckeqa"
@@ -140,7 +140,7 @@ export function ContactFooter() {
                 </a>
               </Button>
               <Button asChild variant="outlineSignal" className="gap-2">
-                <a href="mailto:greta.rusecke@gmail.com">
+                <a href="mailto:greta@gretagreta.eu">
                   <Mail className="size-4" />
                   {t.contact.email}
                 </a>
