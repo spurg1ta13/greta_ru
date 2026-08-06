@@ -135,6 +135,10 @@ export const dictionaries = {
       inquiry: "What is this about?",
       inquiryProject: "Project",
       inquiryJob: "Offer",
+      consentPre: "I agree to the",
+      consentPrivacy: "Privacy Policy",
+      consentAnd: "and the",
+      consentTerms: "Terms of Service",
 
 
       phone: "Call",
@@ -156,6 +160,7 @@ export const dictionaries = {
         email: "Enter a valid email address",
         message: "Please write at least 10 characters",
         messageLong: "Message is too long",
+        consent: "Please accept the Privacy Policy and Terms of Service",
       },
       rights: "All rights reserved.",
       privacy: "Privacy Policy",
@@ -357,6 +362,10 @@ export const dictionaries = {
       inquiry: "Για ποιο θέμα επικοινωνείς;",
       inquiryProject: "Έργο",
       inquiryJob: "Προσφορά",
+      consentPre: "Συμφωνώ με την",
+      consentPrivacy: "Πολιτική Απορρήτου",
+      consentAnd: "και τους",
+      consentTerms: "Όρους Χρήσης",
 
 
       phone: "Κλήση",
@@ -378,6 +387,7 @@ export const dictionaries = {
         email: "Δώσε μια έγκυρη διεύθυνση email",
         message: "Γράψε τουλάχιστον 10 χαρακτήρες",
         messageLong: "Το μήνυμα είναι πολύ μεγάλο",
+        consent: "Αποδέξου την Πολιτική Απορρήτου και τους Όρους Χρήσης",
       },
       rights: "Με επιφύλαξη παντός δικαιώματος.",
       privacy: "Πολιτική Απορρήτου",
