@@ -29,6 +29,7 @@ export function ContactFooter() {
   const { t, language } = useLanguage();
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [inquiryType, setInquiryType] = useState<"job" | "project">("project");
+  const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   // Bot protection: hidden honeypot field + minimum time-on-form + submit cooldown.
@@ -51,6 +52,11 @@ export function ContactFooter() {
     }
     if (Date.now() - lastSubmit.current < 15000) {
       toast.error(t.contact.failure);
+      return;
+    }
+
+    if (!consent) {
+      setErrors({ consent: t.contact.errors.consent });
       return;
     }
 
@@ -80,6 +86,7 @@ export function ContactFooter() {
     toast.success(t.contact.success);
     setValues({ name: "", email: "", message: "" });
     setInquiryType("project");
+    setConsent(false);
   };
 
   return (
@@ -250,6 +257,35 @@ export function ContactFooter() {
                 />
                 {errors["message"] ? (
                   <p className="text-xs text-destructive">{errors["message"]}</p>
+                ) : null}
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-start gap-3">
+                  <input
+                    id="consent"
+                    type="checkbox"
+                    required
+                    checked={consent}
+                    onChange={(e) => {
+                      setConsent(e.target.checked);
+                      if (e.target.checked) setErrors((prev) => ({ ...prev, consent: "" }));
+                    }}
+                    className="mt-1 size-4 shrink-0 cursor-pointer accent-primary"
+                  />
+                  <Label htmlFor="consent" className="text-sm font-normal leading-relaxed text-muted-foreground">
+                    {t.contact.consentPre}{" "}
+                    <Link to="/privacy" className="text-primary underline underline-offset-4 hover:opacity-80">
+                      {t.contact.consentPrivacy}
+                    </Link>{" "}
+                    {t.contact.consentAnd}{" "}
+                    <Link to="/terms" className="text-primary underline underline-offset-4 hover:opacity-80">
+                      {t.contact.consentTerms}
+                    </Link>
+                  </Label>
+                </div>
+                {errors["consent"] ? (
+                  <p className="text-xs text-destructive">{errors["consent"]}</p>
                 ) : null}
               </div>
 
