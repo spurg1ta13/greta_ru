@@ -149,7 +149,7 @@ export const dictionaries = {
       send: "Send message",
       sending: "Sending...",
       success: "Thanks! Your message reached Greta's inbox.",
-      failure: "Message could not be sent. Please email greta.rusecke@gmail.com instead.",
+      failure: "Message could not be sent. Please email greta@gretagreta.eu instead.",
       errors: {
         name: "Please add your name",
         nameLong: "Name is too long",
@@ -168,7 +168,7 @@ export const dictionaries = {
       privacy: [
         {
           h: "Who runs this site",
-          p: "This personal portfolio is maintained by Greta Rusecke (Thessaloniki, Greece). For any privacy question, write to greta.rusecke@gmail.com.",
+          p: "This personal portfolio is maintained by Greta Rusecke (Thessaloniki, Greece). For any privacy question, write to greta@gretagreta.eu.",
         },
         {
           h: "What is collected",
@@ -371,7 +371,7 @@ export const dictionaries = {
       send: "Αποστολή μηνύματος",
       sending: "Αποστολή...",
       success: "Ευχαριστώ! Το μήνυμά σου έφτασε στη Greta.",
-      failure: "Το μήνυμα δεν στάλθηκε. Στείλε email στο greta.rusecke@gmail.com.",
+      failure: "Το μήνυμα δεν στάλθηκε. Στείλε email στο greta@gretagreta.eu.",
       errors: {
         name: "Συμπλήρωσε το όνομά σου",
         nameLong: "Το όνομα είναι πολύ μεγάλο",
@@ -390,7 +390,7 @@ export const dictionaries = {
       privacy: [
         {
           h: "Ποιος διαχειρίζεται τον ιστότοπο",
-          p: "Αυτό το προσωπικό portfolio διατηρείται από την Greta Rusecke (Θεσσαλονίκη, Ελλάδα). Για οποιοδήποτε ζήτημα απορρήτου, γράψε στο greta.rusecke@gmail.com.",
+          p: "Αυτό το προσωπικό portfolio διατηρείται από την Greta Rusecke (Θεσσαλονίκη, Ελλάδα). Για οποιοδήποτε ζήτημα απορρήτου, γράψε στο greta@gretagreta.eu.",
         },
         {
           h: "Ποια δεδομένα συλλέγονται",

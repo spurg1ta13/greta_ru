@@ -27,7 +27,7 @@ const person = {
   jobTitle: "QA Product Engineer & AI Product Builder",
   description:
     "ISTQB Certified Tester (Foundation Level) working as a QA Product Engineer and AI product builder in Thessaloniki, Greece.",
-  email: "mailto:greta.rusecke@gmail.com",
+  email: "mailto:greta@gretagreta.eu",
   telephone: "+306975835277",
   url: "/",
   address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
@@ -88,7 +88,7 @@ const faq = {
       name: "Is Greta available for work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. She is open to career opportunities and custom product development, and can be reached through the contact form on this site or at greta.rusecke@gmail.com.",
+        text: "Yes. She is open to career opportunities and custom product development, and can be reached through the contact form on this site or at greta@gretagreta.eu.",
       },
     },
   ],
