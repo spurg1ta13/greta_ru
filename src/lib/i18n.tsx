@@ -165,6 +165,10 @@ export const dictionaries = {
       rights: "All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms & Conditions",
+      cookieText:
+        "This site uses cookies to improve your experience. By continuing to browse, you agree to the use of cookies.",
+      cookieAccept: "Accept",
+      cookieDecline: "Decline",
     },
     legal: {
       back: "← Back to portfolio",
@@ -392,6 +396,10 @@ export const dictionaries = {
       rights: "Με επιφύλαξη παντός δικαιώματος.",
       privacy: "Πολιτική Απορρήτου",
       terms: "Όροι Χρήσης",
+      cookieText:
+        "Αυτός ο ιστότοπος χρησιμοποιεί cookies για να βελτιώσει την εμπειρία σας. Συνεχίζοντας την περιήγηση, συμφωνείτε με τη χρήση cookies.",
+      cookieAccept: "Αποδοχή",
+      cookieDecline: "Απόρριψη",
     },
     legal: {
       back: "← Επιστροφή στο portfolio",
