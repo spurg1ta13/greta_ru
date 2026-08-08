@@ -143,6 +143,7 @@ function RootShell({ children }: { children: ReactNode }) {
           <LanguageProvider>
             {children}
             <FloatingCallButton />
+            <CookieBanner />
             <Toaster position="top-center" />
           </LanguageProvider>
         </QueryClientProvider>
