@@ -249,7 +249,7 @@ export const dictionaries = {
       titleA: "Ειδικός QA με πιστοποίηση ISTQB ",
       titleB: "& AI Product Builder",
       tagline: "Κατασκευάζω έτοιμες για παραγωγή ιστοσελίδες & εργαλεία AI σε 48 ώρες.",
-      ctaProjects: "Δες τα έργα",
+      ctaChat: "Μίλησε με το Greta AI",
       stats: [
         { k: "8+ έτη", v: "Εμπειρία σε IT & QA" },
         { k: "ISTQB", v: "Πιστοποιημένη Tester (CTFL)" },
