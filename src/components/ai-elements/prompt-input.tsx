@@ -1055,6 +1055,7 @@ export const PromptInputTextarea = ({
 
   return (
     <InputGroupTextarea
+      aria-label={typeof placeholder === "string" && placeholder ? placeholder : "Message"}
       className={cn("field-sizing-content max-h-48 min-h-16", className)}
       name="message"
       onCompositionEnd={handleCompositionEnd}

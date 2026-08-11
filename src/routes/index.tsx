@@ -22,14 +22,14 @@ const description =
 
 const person = {
   "@type": "Person",
-  "@id": "/#greta",
+  "@id": "https://gretagreta.eu/#greta",
   name: "Greta Rusecke",
   jobTitle: "QA Product Engineer & AI Product Builder",
   description:
     "ISTQB Certified Tester (Foundation Level) working as a QA Product Engineer and AI product builder in Thessaloniki, Greece.",
   email: "mailto:greta@gretagreta.eu",
   telephone: "+306975835277",
-  url: "/",
+  url: "https://gretagreta.eu/",
   address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
   sameAs: ["https://github.com/spurg1ta13", "https://www.linkedin.com/in/gretaruseckeqa"],
   knowsLanguage: ["en", "el", "lt", "ru"],
@@ -57,7 +57,7 @@ const person = {
 
 const faq = {
   "@type": "FAQPage",
-  "@id": "/#faq",
+  "@id": "https://gretagreta.eu/#faq",
   mainEntity: [
     {
       "@type": "Question",
@@ -94,27 +94,46 @@ const faq = {
   ],
 };
 
+const localBusiness = {
+  "@type": "ProfessionalService",
+  "@id": "https://gretagreta.eu/#business",
+  name: "Greta Rusecke — QA & AI Product Development",
+  description:
+    "Independent QA consulting and AI-assisted product development: test strategy, E2E testing and production-ready web applications.",
+  url: "https://gretagreta.eu/",
+  email: "mailto:greta@gretagreta.eu",
+  telephone: "+306975835277",
+  image:
+    "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png",
+  address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
+  areaServed: "Worldwide",
+  availableLanguage: ["en", "el", "lt", "ru"],
+  founder: { "@id": "https://gretagreta.eu/#greta" },
+  sameAs: ["https://github.com/spurg1ta13", "https://www.linkedin.com/in/gretaruseckeqa"],
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     person,
+    localBusiness,
     {
       "@type": "WebSite",
-      "@id": "/#website",
+      "@id": "https://gretagreta.eu/#website",
       name: "Greta Rusecke — Portfolio",
-      url: "/",
+      url: "https://gretagreta.eu/",
       inLanguage: ["en", "el"],
-      about: { "@id": "/#greta" },
-      publisher: { "@id": "/#greta" },
+      about: { "@id": "https://gretagreta.eu/#greta" },
+      publisher: { "@id": "https://gretagreta.eu/#greta" },
     },
     {
       "@type": "ProfilePage",
-      "@id": "/#profilepage",
+      "@id": "https://gretagreta.eu/#profilepage",
       name: title,
       description,
-      isPartOf: { "@id": "/#website" },
-      mainEntity: { "@id": "/#greta" },
-      hasPart: { "@id": "/#projects" },
+      isPartOf: { "@id": "https://gretagreta.eu/#website" },
+      mainEntity: { "@id": "https://gretagreta.eu/#greta" },
+      hasPart: { "@id": "https://gretagreta.eu/#projects" },
     },
     faq,
     ...projectJsonLdNodes,
@@ -144,6 +163,16 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png",
+      },
     ],
     links: [
       { rel: "preload", as: "image", href: heroBgWebp, type: "image/webp", fetchPriority: "high" },
