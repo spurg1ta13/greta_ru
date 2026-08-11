@@ -22,6 +22,7 @@ export const dictionaries = {
       tagline: "Building production-ready websites & AI tools in 48 hours.",
       ctaChat: "Chat with Greta AI",
       ctaProjects: "View Projects",
+      stats: [
         { k: "8+ yrs", v: "IT & QA experience" },
         { k: "ISTQB", v: "Certified Tester (CTFL)" },
         { k: "4 live", v: "Products shipped solo" },
