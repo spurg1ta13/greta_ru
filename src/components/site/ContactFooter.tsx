@@ -191,32 +191,6 @@ export function ContactFooter() {
               </div>
 
               <div className="space-y-2">
-                <Label>{t.contact.inquiry}</Label>
-                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label={t.contact.inquiry}>
-                  {([
-                    ["project", t.contact.inquiryProject],
-                    ["job", t.contact.inquiryJob],
-                  ] as const).map(([key, label]) => (
-
-                    <button
-                      key={key}
-                      type="button"
-                      role="radio"
-                      aria-checked={inquiryType === key}
-                      onClick={() => setInquiryType(key)}
-                      className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
-                        inquiryType === key
-                          ? "border-primary bg-primary/10 text-primary"
-                          : "border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2">
                 <Label htmlFor="name">{t.contact.name}</Label>
                 <Input
                   id="name"
