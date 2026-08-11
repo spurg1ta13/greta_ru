@@ -371,7 +371,7 @@ export const dictionaries = {
       email: "Email",
       emailPlaceholder: "you@company.com",
       message: "Μήνυμα",
-      messagePlaceholder: "Πες στη Greta για τη θέση ή το έργο...",
+      messagePlaceholder: "Στείλε μήνυμα στη Greta",
       send: "Αποστολή μηνύματος",
       sending: "Αποστολή...",
       success: "Ευχαριστώ! Το μήνυμά σου έφτασε στη Greta.",
