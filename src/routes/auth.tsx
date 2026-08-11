@@ -11,10 +11,19 @@ export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
       { title: "Sign in — Greta Rusecke" },
-      { name: "description", content: "Private sign-in for the site owner dashboard." },
+      {
+        name: "description",
+        content:
+          "Private owner sign-in for the Greta Rusecke portfolio dashboard, used to review contact messages, assistant chat logs and site activity.",
+      },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Sign in — Greta Rusecke" },
-      { property: "og:description", content: "Private sign-in for the site owner dashboard." },
+      {
+        property: "og:description",
+        content:
+          "Private owner sign-in for the Greta Rusecke portfolio dashboard, used to review contact messages, assistant chat logs and site activity.",
+      },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: AuthPage,
