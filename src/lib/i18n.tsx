@@ -20,7 +20,7 @@ export const dictionaries = {
       titleA: "ISTQB QA Specialist ",
       titleB: "& AI Product Builder",
       tagline: "Building production-ready websites & AI tools in 48 hours.",
-      ctaProjects: "View Projects",
+      ctaChat: "Chat with Greta AI",
       stats: [
         { k: "8+ yrs", v: "IT & QA experience" },
         { k: "ISTQB", v: "Certified Tester (CTFL)" },
