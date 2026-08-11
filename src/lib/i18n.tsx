@@ -19,9 +19,7 @@ export const dictionaries = {
       badge: "Thessaloniki, Greece · Open to work",
       titleA: "ISTQB QA Specialist ",
       titleB: "& AI Product Builder",
-      tagline:
-        "Bridging the gap between QA precision, product logic, and rapid AI-assisted execution.",
-      ctaChat: "Chat with Greta AI",
+      tagline: "Building production-ready websites & AI tools in 48 hours.",
       ctaProjects: "View Projects",
       stats: [
         { k: "8+ yrs", v: "IT & QA experience" },
