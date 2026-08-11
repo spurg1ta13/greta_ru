@@ -22,14 +22,14 @@ const description =
 
 const person = {
   "@type": "Person",
-  "@id": "/#greta",
+  "@id": "https://gretagreta.eu/#greta",
   name: "Greta Rusecke",
   jobTitle: "QA Product Engineer & AI Product Builder",
   description:
     "ISTQB Certified Tester (Foundation Level) working as a QA Product Engineer and AI product builder in Thessaloniki, Greece.",
   email: "mailto:greta@gretagreta.eu",
   telephone: "+306975835277",
-  url: "/",
+  url: "https://gretagreta.eu/",
   address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
   sameAs: ["https://github.com/spurg1ta13", "https://www.linkedin.com/in/gretaruseckeqa"],
   knowsLanguage: ["en", "el", "lt", "ru"],
@@ -57,7 +57,7 @@ const person = {
 
 const faq = {
   "@type": "FAQPage",
-  "@id": "/#faq",
+  "@id": "https://gretagreta.eu/#faq",
   mainEntity: [
     {
       "@type": "Question",
@@ -128,12 +128,12 @@ const jsonLd = {
     },
     {
       "@type": "ProfilePage",
-      "@id": "/#profilepage",
+      "@id": "https://gretagreta.eu/#profilepage",
       name: title,
       description,
-      isPartOf: { "@id": "/#website" },
-      mainEntity: { "@id": "/#greta" },
-      hasPart: { "@id": "/#projects" },
+      isPartOf: { "@id": "https://gretagreta.eu/#website" },
+      mainEntity: { "@id": "https://gretagreta.eu/#greta" },
+      hasPart: { "@id": "https://gretagreta.eu/#projects" },
     },
     faq,
     ...projectJsonLdNodes,
