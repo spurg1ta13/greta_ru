@@ -19,8 +19,7 @@ export const dictionaries = {
       badge: "Thessaloniki, Greece · Open to work",
       titleA: "ISTQB QA Specialist ",
       titleB: "& AI Product Builder",
-      tagline:
-        "Bridging the gap between QA precision, product logic, and rapid AI-assisted execution.",
+      tagline: "Building production-ready websites & AI tools in 48 hours.",
       ctaChat: "Chat with Greta AI",
       ctaProjects: "View Projects",
       stats: [
@@ -249,10 +248,8 @@ export const dictionaries = {
       badge: "Θεσσαλονίκη, Ελλάδα · Διαθέσιμη για εργασία",
       titleA: "Ειδικός QA με πιστοποίηση ISTQB ",
       titleB: "& AI Product Builder",
-      tagline:
-        "Γεφυρώνω την ακρίβεια του QA, τη λογική του προϊόντος και την ταχεία υλοποίηση με εργαλεία AI.",
+      tagline: "Κατασκευάζω έτοιμες για παραγωγή ιστοσελίδες & εργαλεία AI σε 48 ώρες.",
       ctaChat: "Μίλησε με το Greta AI",
-      ctaProjects: "Δες τα έργα",
       stats: [
         { k: "8+ έτη", v: "Εμπειρία σε IT & QA" },
         { k: "ISTQB", v: "Πιστοποιημένη Tester (CTFL)" },
