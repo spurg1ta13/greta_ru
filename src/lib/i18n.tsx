@@ -148,7 +148,7 @@ export const dictionaries = {
       email: "Email",
       emailPlaceholder: "you@company.com",
       message: "Message",
-      messagePlaceholder: "Tell Greta about the role or project...",
+      messagePlaceholder: "Drop Greta a message",
       send: "Send message",
       sending: "Sending...",
       success: "Thanks! Your message reached Greta's inbox.",
