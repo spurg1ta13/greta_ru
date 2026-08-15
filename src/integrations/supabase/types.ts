@@ -85,6 +85,7 @@ export type Database = {
           city: string | null
           country: string | null
           created_at: string
+          event_type: string
           id: string
           ip_address: string | null
           language: string | null
@@ -94,6 +95,7 @@ export type Database = {
           city?: string | null
           country?: string | null
           created_at?: string
+          event_type?: string
           id?: string
           ip_address?: string | null
           language?: string | null
@@ -103,6 +105,7 @@ export type Database = {
           city?: string | null
           country?: string | null
           created_at?: string
+          event_type?: string
           id?: string
           ip_address?: string | null
           language?: string | null
