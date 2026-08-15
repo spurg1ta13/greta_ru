@@ -16,9 +16,11 @@ export const Route = createFileRoute("/api/public/cv-download")({
     handlers: {
       POST: async ({ request }) => {
         let language: string | null = null;
+        let eventType = "click";
         try {
-          const body = (await request.json()) as { language?: unknown };
+          const body = (await request.json()) as { language?: unknown; event?: unknown };
           if (body.language === "el" || body.language === "en") language = body.language;
+          if (body.event === "completed" || body.event === "click") eventType = body.event;
         } catch {
           language = null;
         }
@@ -29,6 +31,7 @@ export const Route = createFileRoute("/api/public/cv-download")({
           const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
           await supabaseAdmin.from("cv_downloads").insert({
             language,
+            event_type: eventType,
             ip_address: pickIp(request),
             country: country ? country.toUpperCase() : null,
             city: header(request, "cf-ipcity") ?? header(request, "x-vercel-ip-city"),

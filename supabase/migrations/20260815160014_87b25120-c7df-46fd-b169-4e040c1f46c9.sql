@@ -1,0 +1,2 @@
+ALTER TABLE public.cv_downloads ADD COLUMN IF NOT EXISTS event_type text NOT NULL DEFAULT 'click';
+CREATE INDEX IF NOT EXISTS cv_downloads_event_type_idx ON public.cv_downloads (event_type, created_at DESC);

@@ -30,6 +30,7 @@ export type AdminCvDownload = {
   country: string | null;
   city: string | null;
   region: string | null;
+  event_type: string | null;
   created_at: string;
 };
 
@@ -58,7 +59,7 @@ export const getAdminData = createServerFn({ method: "GET" })
     const now = Date.now();
     const since = (days: number) => new Date(now - days * 86400000).toISOString();
 
-    const [messages, logs, downloads, downloadCount, visits] = await Promise.all([
+    const [messages, logs, downloads, downloadCount, completedCount, visits] = await Promise.all([
       supabaseAdmin
         .from("contact_messages")
         .select("id, name, email, message, inquiry_type, created_at")
@@ -71,10 +72,11 @@ export const getAdminData = createServerFn({ method: "GET" })
         .limit(500),
       supabaseAdmin
         .from("cv_downloads")
-        .select("id, language, country, city, region, created_at")
+        .select("id, language, country, city, region, event_type, created_at")
         .order("created_at", { ascending: false })
         .limit(50),
-      supabaseAdmin.from("cv_downloads").select("id", { count: "exact", head: true }),
+      supabaseAdmin.from("cv_downloads").select("id", { count: "exact", head: true }).eq("event_type", "click"),
+      supabaseAdmin.from("cv_downloads").select("id", { count: "exact", head: true }).eq("event_type", "completed"),
       supabaseAdmin
         .from("site_visits")
         .select("visitor_id, created_at")
@@ -102,6 +104,7 @@ export const getAdminData = createServerFn({ method: "GET" })
       chatLogs: (logs.data ?? []) as AdminChatLog[],
       cvDownloads: (downloads.data ?? []) as AdminCvDownload[],
       cvDownloadCount: downloadCount.count ?? 0,
+      cvCompletedCount: completedCount.count ?? 0,
       visitors,
     };
   });
