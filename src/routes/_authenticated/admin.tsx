@@ -130,10 +130,20 @@ function AdminPage() {
 
             <h2 className="text-xl font-semibold">CV downloads</h2>
             <div className="mt-5 panel p-6">
-              <p className="font-mono text-4xl font-bold text-primary">{data.cvDownloadCount}</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Total clicks on the "Download my CV" button.
-              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p className="font-mono text-4xl font-bold text-primary">{data.cvDownloadCount}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Clicks on the "Download my CV" button.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-mono text-4xl font-bold text-primary">{data.cvCompletedCount}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Successful PDF downloads (file delivered).
+                  </p>
+                </div>
+              </div>
               {data.cvDownloads.length > 0 ? (
                 <ul className="mt-5 space-y-2 border-t border-border pt-4">
                   {data.cvDownloads.map((d) => (
@@ -146,6 +156,9 @@ function AdminPage() {
                       </span>
                       <span className="rounded-full border border-border px-3 py-1 uppercase">
                         {d.language ?? "en"}
+                      </span>
+                      <span className="rounded-full border border-border px-3 py-1 uppercase">
+                        {d.event_type === "completed" ? "downloaded" : "click"}
                       </span>
                       <span className="ml-auto font-mono">{formatDate(d.created_at)}</span>
                     </li>
