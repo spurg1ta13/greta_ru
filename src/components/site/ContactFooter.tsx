@@ -160,12 +160,20 @@ export function ContactFooter() {
                   href={cvAsset.url}
                   download="Greta_Rusecke_CV.pdf"
                   onClick={() => {
-                    void fetch("/api/public/cv-download", {
-                      method: "POST",
-                      headers: { "content-type": "application/json" },
-                      body: JSON.stringify({ language }),
-                      keepalive: true,
-                    }).catch(() => undefined);
+                    const track = (event: "click" | "completed") =>
+                      fetch("/api/public/cv-download", {
+                        method: "POST",
+                        headers: { "content-type": "application/json" },
+                        body: JSON.stringify({ language, event }),
+                        keepalive: true,
+                      }).catch(() => undefined);
+
+                    void track("click");
+                    void fetch(cvAsset.url, { method: "HEAD", cache: "no-store" })
+                      .then((res) => {
+                        if (res.ok) void track("completed");
+                      })
+                      .catch(() => undefined);
                   }}
                 >
                   <Download className="size-4" />
