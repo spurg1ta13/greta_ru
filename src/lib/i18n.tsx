@@ -32,7 +32,7 @@ export const dictionaries = {
       eyebrow: "01 / About",
       heading: "From managing delivery, to guarding quality, to building the product.",
       lead: "A QA Product Engineer who connects business logic with technical execution across SaaS, ERP, CRM and e-commerce — and now builds the products too.",
-      globalReach: "Worked with cross-functional teams & B2B clients across the USA, UK, Spain, Latvia & New Zealand.",
+      globalReach: "Worked with cross-functional teams & B2B clients across the USA, UK, Spain, Latvia, Lithuania, Norway & New Zealand.",
       credentials: {
         heading: "Certifications & Education",
         items: [
@@ -50,7 +50,7 @@ export const dictionaries = {
           org: "SJ Digital · Capital Realty (Lithuania)",
           points: [
             "Ran agile delivery for .NET, PHP and Ruby teams — standups, sprint planning, timelines.",
-            "Owned client relations with B2B stakeholders in the USA, UK, Spain, New Zealand and Latvia.",
+            "Owned client relations with B2B stakeholders in the USA, UK, Spain, New Zealand, Latvia, Lithuania and Norway.",
             "Stayed hands-on with manual QA for every release before it reached the client.",
           ],
         },
@@ -258,7 +258,7 @@ export const dictionaries = {
       heading:
         "Από τη διαχείριση παράδοσης, στη διασφάλιση ποιότητας, μέχρι τη δημιουργία του προϊόντος.",
       lead: "QA Product Engineer που συνδέει την επιχειρησιακή λογική με την τεχνική υλοποίηση σε SaaS, ERP, CRM και e-commerce — και πλέον φτιάχνει και τα ίδια τα προϊόντα.",
-      globalReach: "Συνεργάστηκε με διαλειτουργικές ομάδες και B2B πελάτες στις ΗΠΑ, ΗΒ, Ισπανία, Λετονία και Νέα Ζηλανδία.",
+      globalReach: "Συνεργάστηκε με διαλειτουργικές ομάδες και B2B πελάτες στις ΗΠΑ, ΗΒ, Ισπανία, Λετονία, Λιθουανία, Νορβηγία και Νέα Ζηλανδία.",
       credentials: {
         heading: "Πιστοποιήσεις & Εκπαίδευση",
         items: [
@@ -276,7 +276,7 @@ export const dictionaries = {
           org: "SJ Digital · Capital Realty (Λιθουανία)",
           points: [
             "Διαχείριση agile παράδοσης για ομάδες .NET, PHP και Ruby — standups, σχεδιασμός sprint, χρονοδιαγράμματα.",
-            "Υπεύθυνη επικοινωνίας με B2B πελάτες σε ΗΠΑ, Ηνωμένο Βασίλειο, Ισπανία, Νέα Ζηλανδία και Λετονία.",
+            "Υπεύθυνη επικοινωνίας με B2B πελάτες σε ΗΠΑ, Ηνωμένο Βασίλειο, Ισπανία, Νέα Ζηλανδία, Λετονία, Λιθουανία και Νορβηγία.",
             "Ενεργή συμμετοχή σε manual QA για κάθε έκδοση πριν φτάσει στον πελάτη.",
           ],
         },
