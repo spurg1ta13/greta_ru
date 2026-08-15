@@ -14,7 +14,7 @@ LinkedIn: linkedin.com/in/gretaruseckeqa — GitHub: github.com/spurg1ta13
 Languages: Lithuanian (native), English C1, Russian B1, Greek A1 (beginner).
 Education: Vilnius University, Lithuania — Bachelor in Business Administration (2011-2016).
 
-Positioning: She bridges QA precision, product logic and rapid AI-assisted execution. She is the person who connects business logic with technical execution, making requirements clearer and releases more confident. Experience spans SaaS, ERP, CRM and e-commerce.
+Positioning: She bridges QA precision, product logic and rapid AI-assisted execution. She is the person who connects business logic with technical execution, making requirements clearer and releases more confident. Experience spans SaaS, ERP, CRM and e-commerce. She has worked with cross-functional teams and B2B clients across the USA, UK, Spain, Latvia, Lithuania, Norway and New Zealand.
 
 CAREER TIMELINE
 1) IT Project Manager — SJ DIGITAL LLC, Lithuania (May 2016 - Nov 2017): agile management, daily standups and sprint planning for .NET and PHP teams; primary contact for B2B clients in the USA and New Zealand; hands-on manual QA of every release.
