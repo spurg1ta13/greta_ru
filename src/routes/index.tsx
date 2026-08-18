@@ -169,10 +169,27 @@ export const Route = createFileRoute("/")({
           "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png",
       },
       {
+        property: "og:image:secure_url",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png",
+      },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Greta Rusecke — ISTQB QA Specialist & AI Product Builder portfolio preview",
+      },
+      {
         name: "twitter:image",
         content:
           "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/623d0f94-4d37-40c9-bc9c-ca33c2063794/id-preview-91efc197--7b07a86f-6a5c-4be8-8cd6-b2b3157e6469.lovable.app-1785937822203.png",
       },
+      {
+        name: "twitter:image:alt",
+        content: "Greta Rusecke — ISTQB QA Specialist & AI Product Builder portfolio preview",
+      },
+
     ],
     links: [
       { rel: "preload", as: "image", href: heroBgWebp, type: "image/webp", fetchPriority: "high" },
