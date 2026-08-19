@@ -247,6 +247,7 @@ export const dictionaries = {
       titleB: "& AI Product Builder",
       tagline: "Κατασκευάζω έτοιμες για παραγωγή ιστοσελίδες & εργαλεία AI σε 48 ώρες.",
       ctaChat: "Μίλησε με το Greta AI",
+      ctaProjects: "Δες τα Έργα",
       stats: [
         { k: "8+ έτη", v: "Εμπειρία σε IT & QA" },
         { k: "ISTQB", v: "Πιστοποιημένη Tester (CTFL)" },
