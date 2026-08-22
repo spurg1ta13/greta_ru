@@ -75,7 +75,6 @@ export const projectJsonLdNodes = [
     author: { "@id": `${BASE}/#greta` },
     creator: { "@id": `${BASE}/#greta` },
     maintainer: { "@id": `${BASE}/#greta` },
-    mainEntityOfPage: { "@id": `${BASE}/#profilepage` },
     offers: {
       "@type": "Offer",
       price: "0",
