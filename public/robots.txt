@@ -38,3 +38,5 @@ Allow: /
 
 User-agent: CCBot
 Allow: /
+
+Sitemap: https://gretagreta.eu/sitemap.xml
