@@ -25,7 +25,6 @@ export const dictionaries = {
       stats: [
         { k: "8+ yrs", v: "IT & QA experience" },
         { k: "ISTQB", v: "Certified Tester (CTFL)" },
-        { k: "4 live", v: "Products shipped solo" },
       ],
     },
     about: {
@@ -251,7 +250,6 @@ export const dictionaries = {
       stats: [
         { k: "8+ έτη", v: "Εμπειρία σε IT & QA" },
         { k: "ISTQB", v: "Πιστοποιημένη Tester (CTFL)" },
-        { k: "4 live", v: "Προϊόντα υλοποιημένα solo" },
       ],
     },
     about: {
