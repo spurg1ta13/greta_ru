@@ -41,10 +41,12 @@ export const projectSchemas: ProjectSchema[] = [
   },
 ];
 
+const BASE = "https://gretagreta.eu";
+
 export const projectJsonLdNodes = [
   {
     "@type": "ItemList",
-    "@id": "/#projects",
+    "@id": `${BASE}/#projects`,
     name: "Products built and shipped by Greta Rusecke",
     numberOfItems: projectSchemas.length,
     itemListOrder: "https://schema.org/ItemListOrderAscending",
@@ -52,12 +54,12 @@ export const projectJsonLdNodes = [
       "@type": "ListItem",
       position: index + 1,
       url: project.url,
-      item: { "@id": `/#project-${project.id}` },
+      item: { "@id": `${BASE}/#project-${project.id}` },
     })),
   },
   ...projectSchemas.map((project) => ({
     "@type": ["SoftwareApplication", "CreativeWork"],
-    "@id": `/#project-${project.id}`,
+    "@id": `${BASE}/#project-${project.id}`,
     name: project.name,
     url: project.url,
     sameAs: [project.url],
@@ -70,10 +72,10 @@ export const projectJsonLdNodes = [
     datePublished: project.datePublished,
     inLanguage: ["en", "el"],
     isAccessibleForFree: true,
-    author: { "@id": "/#greta" },
-    creator: { "@id": "/#greta" },
-    maintainer: { "@id": "/#greta" },
-    mainEntityOfPage: { "@id": "/#profilepage" },
+    author: { "@id": `${BASE}/#greta` },
+    creator: { "@id": `${BASE}/#greta` },
+    maintainer: { "@id": `${BASE}/#greta` },
+    mainEntityOfPage: { "@id": `${BASE}/#profilepage` },
     offers: {
       "@type": "Offer",
       price: "0",
