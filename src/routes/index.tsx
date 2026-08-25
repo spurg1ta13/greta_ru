@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 
 import heroBgWebp from "@/assets/hero-bg.webp";
 
@@ -204,6 +204,40 @@ export const Route = createFileRoute("/")({
 });
 
 
+function DeferredGretaChat() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      setShow(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShow(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  if (show) {
+    return (
+      <Suspense fallback={<div id="greta-ai" className="min-h-[880px] scroll-mt-24" aria-hidden="true" />}>
+        <GretaChat />
+      </Suspense>
+    );
+  }
+
+  return <div ref={ref} id="greta-ai" className="min-h-[880px] scroll-mt-24" aria-hidden="true" />;
+}
+
 function Index() {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -220,9 +254,7 @@ function Index() {
       <Timeline />
       <Projects />
       <Skills />
-      <Suspense fallback={<div id="greta-ai" className="min-h-[880px] scroll-mt-24" aria-hidden="true" />}>
-        <GretaChat />
-      </Suspense>
+      <DeferredGretaChat />
       <ContactFooter />
     </main>
   );

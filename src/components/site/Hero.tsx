@@ -4,6 +4,7 @@ import heroBgJpg from "@/assets/hero-bg.jpg";
 import heroBgWebp from "@/assets/hero-bg.webp";
 const heroIllustration = "/greta-hero.webp";
 const heroIllustrationSm = "/greta-hero-sm.webp";
+const heroIllustrationXs = "/greta-hero-xs.webp";
 
 
 import { LanguageToggle } from "@/components/site/LanguageToggle";
@@ -119,8 +120,8 @@ export function Hero() {
             />
             <img
               src={heroIllustrationSm}
-              srcSet={`${heroIllustrationSm} 640w, ${heroIllustration} 900w`}
-              sizes="(min-width: 1024px) 480px, 90vw"
+              srcSet={`${heroIllustrationXs} 480w, ${heroIllustrationSm} 640w, ${heroIllustration} 900w`}
+              sizes="(min-width: 1024px) 480px, (min-width: 640px) 60vw, 82vw"
               alt="Greta Rusecke - ISTQB QA Specialist & AI Product Builder illustration showcasing bug hunting, no-code development, and automation."
               width={900}
               height={1125}
