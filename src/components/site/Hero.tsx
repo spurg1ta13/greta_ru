@@ -4,6 +4,7 @@ import heroBgJpg from "@/assets/hero-bg.jpg";
 import heroBgWebp from "@/assets/hero-bg.webp";
 const heroIllustration = "/greta-hero.webp";
 const heroIllustrationSm = "/greta-hero-sm.webp";
+const heroIllustrationXs = "/greta-hero-xs.webp";
 
 
 import { LanguageToggle } from "@/components/site/LanguageToggle";
