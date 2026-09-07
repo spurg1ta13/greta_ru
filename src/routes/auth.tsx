@@ -31,7 +31,6 @@ export const Route = createFileRoute("/auth")({
 
 function AuthPage() {
   const navigate = useNavigate();
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -46,23 +45,6 @@ function AuthPage() {
     event.preventDefault();
     setBusy(true);
     try {
-      if (mode === "signup") {
-        const { data, error } = await supabase.auth.signUp({
-          email: email.trim(),
-          password,
-          options: { emailRedirectTo: `${window.location.origin}/admin` },
-        });
-        if (error) throw error;
-        if (data.session) {
-          await navigate({ to: "/admin", replace: true });
-          return;
-        }
-        toast.success("Account created. You can sign in now.");
-        setMode("signin");
-        return;
-      }
-
-
       const { error } = await supabase.auth.signInWithPassword({
         email: email.trim(),
         password,
@@ -102,7 +84,7 @@ function AuthPage() {
             <Input
               id="auth-password"
               type="password"
-              autoComplete={mode === "signup" ? "new-password" : "current-password"}
+              autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               minLength={8}
@@ -110,17 +92,9 @@ function AuthPage() {
             />
           </div>
           <Button type="submit" variant="hero" className="w-full" disabled={busy}>
-            {busy ? "Please wait..." : mode === "signup" ? "Create account" : "Sign in"}
+            {busy ? "Please wait..." : "Sign in"}
           </Button>
         </form>
-
-        <button
-          type="button"
-          onClick={() => setMode(mode === "signup" ? "signin" : "signup")}
-          className="mt-6 text-xs text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-        >
-          {mode === "signup" ? "Already have an account? Sign in" : "First time? Create the owner account"}
-        </button>
       </div>
     </main>
   );
