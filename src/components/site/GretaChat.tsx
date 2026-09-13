@@ -22,10 +22,22 @@ import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
 
+const CONSENT_KEY = "gdpr_consent_accepted";
+
+type ConsentStep = "prompt" | "declined" | null;
+
 export function GretaChat() {
   const { t, language } = useLanguage();
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [input, setInput] = useState("");
+  const [consented, setConsented] = useState<boolean>(() => {
+    try {
+      return typeof window !== "undefined" && localStorage.getItem(CONSENT_KEY) === "true";
+    } catch {
+      return false;
+    }
+  });
+  const [consentStep, setConsentStep] = useState<ConsentStep>(null);
   const sessionIdRef = useRef<string>(
     typeof crypto !== "undefined" && "randomUUID" in crypto
       ? crypto.randomUUID()
