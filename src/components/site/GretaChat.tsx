@@ -22,10 +22,24 @@ import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
 
+const CONSENT_KEY = "gdpr_consent_accepted";
+
+type ConsentStep = "prompt" | "declined" | null;
+
 export function GretaChat() {
   const { t, language } = useLanguage();
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [input, setInput] = useState("");
+  const [consented, setConsented] = useState<boolean>(() => {
+    try {
+      return typeof window !== "undefined" && localStorage.getItem(CONSENT_KEY) === "true";
+    } catch {
+      return false;
+    }
+  });
+  const [consentStep, setConsentStep] = useState<ConsentStep>(null);
+  const [unconsentedText, setUnconsentedText] = useState("");
+  const pendingTextRef = useRef<string>("");
   const sessionIdRef = useRef<string>(
     typeof crypto !== "undefined" && "randomUUID" in crypto
       ? crypto.randomUUID()
@@ -60,8 +74,41 @@ export function GretaChat() {
     if (!value || busy) return;
     hasInteracted.current = true;
     setInput("");
+    if (!consented) {
+      pendingTextRef.current = value;
+      setUnconsentedText(value);
+      setConsentStep("prompt");
+      return;
+    }
     void sendMessage({ text: value });
   };
+
+  const acceptConsent = () => {
+    try {
+      localStorage.setItem(CONSENT_KEY, "true");
+    } catch {
+      /* storage blocked */
+    }
+    setConsented(true);
+    setConsentStep(null);
+    setUnconsentedText("");
+    const pending = pendingTextRef.current;
+    pendingTextRef.current = "";
+    if (pending) void sendMessage({ text: pending });
+  };
+
+  const declineConsent = () => {
+    setConsentStep("declined");
+  };
+
+  const consentAsk =
+    language === "el"
+      ? "Πριν συνεχίσουμε τη συνομιλία μας, παρακαλώ αποδεχτείτε τη Συγκατάθεση Cookies GDPR και τους όρους της Πολιτικής Απορρήτου."
+      : "Before we continue our conversation, please accept our GDPR Cookie Consent and Privacy Policy terms.";
+  const consentNo =
+    language === "el"
+      ? "Δεν μπορώ να επεξεργαστώ τα αιτήματά σας χωρίς τη συγκατάθεσή σας στους όρους GDPR και Πολιτικής Απορρήτου. Για να χρησιμοποιήσετε τον βοηθό AI, παρακαλώ αποδεχτείτε τους όρους."
+      : "I cannot process your requests without your consent to our GDPR and Privacy Policy terms. To use the AI assistant, please accept the terms.";
 
 
   const handleSubmit = (message: PromptInputMessage) => {
@@ -135,6 +182,43 @@ export function GretaChat() {
                     </MessageContent>
                   </Message>
                 ))}
+
+                {consentStep && !consented ? (
+                  <>
+                    {unconsentedText ? (
+                      <Message from="user">
+                        <MessageContent className="bg-primary text-primary-foreground">
+                          {unconsentedText}
+                        </MessageContent>
+                      </Message>
+                    ) : null}
+                  <Message from="assistant">
+                    <MessageContent className="bg-transparent p-0 text-foreground">
+                      <div className="space-y-3">
+                        <p className="text-sm">
+                          {consentStep === "prompt" ? consentAsk : consentNo}
+                        </p>
+                        <div className="flex gap-2">
+                          <button
+                            type="button"
+                            onClick={acceptConsent}
+                            className="rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                          >
+                            YES
+                          </button>
+                          <button
+                            type="button"
+                            onClick={declineConsent}
+                            className="rounded-full border border-border bg-background/60 px-4 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                          >
+                            NO
+                          </button>
+                        </div>
+                      </div>
+                    </MessageContent>
+                  </Message>
+                  </>
+                ) : null}
 
                 {status === "submitted" ? (
                   <Shimmer className="text-sm">{t.chat.thinking}</Shimmer>
