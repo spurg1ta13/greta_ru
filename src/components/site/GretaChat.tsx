@@ -72,8 +72,35 @@ export function GretaChat() {
     if (!value || busy) return;
     hasInteracted.current = true;
     setInput("");
+    if (!consented) {
+      setConsentStep("prompt");
+      return;
+    }
     void sendMessage({ text: value });
   };
+
+  const acceptConsent = () => {
+    try {
+      localStorage.setItem(CONSENT_KEY, "true");
+    } catch {
+      /* storage blocked */
+    }
+    setConsented(true);
+    setConsentStep(null);
+  };
+
+  const declineConsent = () => {
+    setConsentStep("declined");
+  };
+
+  const consentAsk =
+    language === "el"
+      ? "Πριν συνεχίσουμε τη συνομιλία μας, παρακαλώ αποδεχτείτε τη Συγκατάθεση Cookies GDPR και τους όρους της Πολιτικής Απορρήτου."
+      : "Before we continue our conversation, please accept our GDPR Cookie Consent and Privacy Policy terms.";
+  const consentNo =
+    language === "el"
+      ? "Δεν μπορώ να επεξεργαστώ τα αιτήματά σας χωρίς τη συγκατάθεσή σας στους όρους GDPR και Πολιτικής Απορρήτου. Για να χρησιμοποιήσετε τον βοηθό AI, παρακαλώ αποδεχτείτε τους όρους."
+      : "I cannot process your requests without your consent to our GDPR and Privacy Policy terms. To use the AI assistant, please accept the terms.";
 
 
   const handleSubmit = (message: PromptInputMessage) => {
