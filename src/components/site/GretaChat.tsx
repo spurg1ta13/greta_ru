@@ -91,6 +91,7 @@ export function GretaChat() {
     }
     setConsented(true);
     setConsentStep(null);
+    setUnconsentedText("");
     const pending = pendingTextRef.current;
     pendingTextRef.current = "";
     if (pending) void sendMessage({ text: pending });
@@ -183,6 +184,14 @@ export function GretaChat() {
                 ))}
 
                 {consentStep && !consented ? (
+                  <>
+                    {unconsentedText ? (
+                      <Message from="user">
+                        <MessageContent className="bg-primary text-primary-foreground">
+                          {unconsentedText}
+                        </MessageContent>
+                      </Message>
+                    ) : null}
                   <Message from="assistant">
                     <MessageContent className="bg-transparent p-0 text-foreground">
                       <div className="space-y-3">
