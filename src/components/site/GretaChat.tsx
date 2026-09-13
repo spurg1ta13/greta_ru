@@ -180,6 +180,34 @@ export function GretaChat() {
                   </Message>
                 ))}
 
+                {consentStep && !consented ? (
+                  <Message from="assistant">
+                    <MessageContent className="bg-transparent p-0 text-foreground">
+                      <div className="space-y-3">
+                        <p className="text-sm">
+                          {consentStep === "prompt" ? consentAsk : consentNo}
+                        </p>
+                        <div className="flex gap-2">
+                          <button
+                            type="button"
+                            onClick={acceptConsent}
+                            className="rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                          >
+                            YES
+                          </button>
+                          <button
+                            type="button"
+                            onClick={declineConsent}
+                            className="rounded-full border border-border bg-background/60 px-4 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                          >
+                            NO
+                          </button>
+                        </div>
+                      </div>
+                    </MessageContent>
+                  </Message>
+                ) : null}
+
                 {status === "submitted" ? (
                   <Shimmer className="text-sm">{t.chat.thinking}</Shimmer>
                 ) : null}
