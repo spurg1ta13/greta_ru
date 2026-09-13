@@ -38,6 +38,7 @@ export function GretaChat() {
     }
   });
   const [consentStep, setConsentStep] = useState<ConsentStep>(null);
+  const pendingTextRef = useRef<string>("");
   const sessionIdRef = useRef<string>(
     typeof crypto !== "undefined" && "randomUUID" in crypto
       ? crypto.randomUUID()
@@ -73,6 +74,7 @@ export function GretaChat() {
     hasInteracted.current = true;
     setInput("");
     if (!consented) {
+      pendingTextRef.current = value;
       setConsentStep("prompt");
       return;
     }
@@ -87,6 +89,9 @@ export function GretaChat() {
     }
     setConsented(true);
     setConsentStep(null);
+    const pending = pendingTextRef.current;
+    pendingTextRef.current = "";
+    if (pending) void sendMessage({ text: pending });
   };
 
   const declineConsent = () => {
