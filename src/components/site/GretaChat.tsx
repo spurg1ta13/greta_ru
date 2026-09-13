@@ -217,6 +217,7 @@ export function GretaChat() {
                       </div>
                     </MessageContent>
                   </Message>
+                  </>
                 ) : null}
 
                 {status === "submitted" ? (
