@@ -69,7 +69,7 @@ export const getAdminData = createServerFn({ method: "GET" })
         .from("chat_logs")
         .select("id, session_id, role, content, language, country, city, region, ip_address, created_at")
         .order("created_at", { ascending: false })
-        .limit(500),
+        .limit(5000),
       supabaseAdmin
         .from("cv_downloads")
         .select("id, language, country, city, region, event_type, created_at")
