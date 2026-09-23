@@ -214,9 +214,6 @@ function AdminPage() {
                     <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                       <span className="font-mono">{sessionId.slice(0, 8)}</span>
                       <span className="rounded-full border border-border px-3 py-1">{locationOf(first)}</span>
-                      {first.ip_address ? (
-                        <span className="font-mono">IP {first.ip_address}</span>
-                      ) : null}
 
                       <span className="rounded-full border border-border px-3 py-1 uppercase">
                         {first.language ?? "en"}
