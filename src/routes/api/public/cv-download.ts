@@ -32,7 +32,7 @@ export const Route = createFileRoute("/api/public/cv-download")({
           await supabaseAdmin.from("cv_downloads").insert({
             language,
             event_type: eventType,
-            ip_address: pickIp(request),
+            ip_address: null,
             country: country ? country.toUpperCase() : null,
             city: header(request, "cf-ipcity") ?? header(request, "x-vercel-ip-city"),
             region: header(request, "cf-region") ?? header(request, "x-vercel-ip-country-region"),

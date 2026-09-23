@@ -11,6 +11,10 @@ function pickIp(request: Request): string | null {
   return header(request, "cf-connecting-ip") ?? header(request, "x-real-ip");
 }
 
+// Note: the visitor's IP address is never stored — only the country/city/region
+// derived from it at request time.
+
+
 export const Route = createFileRoute("/api/public/visit")({
   server: {
     handlers: {
@@ -49,7 +53,7 @@ export const Route = createFileRoute("/api/public/visit")({
             visitor_id: visitorId,
             path,
             language,
-            ip_address: pickIp(request),
+            ip_address: null,
             country: country ? country.toUpperCase() : null,
             city: header(request, "cf-ipcity") ?? header(request, "x-vercel-ip-city"),
             region: header(request, "cf-region") ?? header(request, "x-vercel-ip-country-region"),

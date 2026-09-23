@@ -217,6 +217,7 @@ function AdminPage() {
                       {first.ip_address ? (
                         <span className="font-mono">IP {first.ip_address}</span>
                       ) : null}
+
                       <span className="rounded-full border border-border px-3 py-1 uppercase">
                         {first.language ?? "en"}
                       </span>

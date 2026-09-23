@@ -15,14 +15,9 @@ function textOf(message: UIMessage | undefined): string {
 }
 
 function geoOf(request: Request) {
+  // Only the approximate location derived from the IP is stored — the IP itself is never saved.
   const h = request.headers;
-  const ip =
-    h.get("cf-connecting-ip") ??
-    h.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    h.get("x-real-ip") ??
-    null;
   return {
-    ip_address: ip,
     country: h.get("cf-ipcountry") ?? h.get("x-vercel-ip-country"),
     city: h.get("cf-ipcity") ?? h.get("x-vercel-ip-city"),
     region: h.get("cf-region") ?? h.get("x-vercel-ip-country-region"),
