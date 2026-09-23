@@ -20,7 +20,6 @@ export type AdminChatLog = {
   country: string | null;
   city: string | null;
   region: string | null;
-  ip_address: string | null;
   created_at: string;
 };
 
@@ -67,7 +66,7 @@ export const getAdminData = createServerFn({ method: "GET" })
         .limit(200),
       supabaseAdmin
         .from("chat_logs")
-        .select("id, session_id, role, content, language, country, city, region, ip_address, created_at")
+        .select("id, session_id, role, content, language, country, city, region, created_at")
         .order("created_at", { ascending: false })
         .limit(5000),
       supabaseAdmin

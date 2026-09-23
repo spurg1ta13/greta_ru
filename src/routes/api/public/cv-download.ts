@@ -5,11 +5,9 @@ function header(request: Request, name: string): string | null {
   return value && value.length > 0 ? value : null;
 }
 
-function pickIp(request: Request): string | null {
-  const forwarded = header(request, "x-forwarded-for");
-  if (forwarded) return forwarded.split(",")[0]!.trim();
-  return header(request, "cf-connecting-ip") ?? header(request, "x-real-ip");
-}
+// Note: the visitor's IP address is never stored — only the country/city/region
+// derived from it at request time.
+
 
 export const Route = createFileRoute("/api/public/cv-download")({
   server: {
@@ -32,7 +30,7 @@ export const Route = createFileRoute("/api/public/cv-download")({
           await supabaseAdmin.from("cv_downloads").insert({
             language,
             event_type: eventType,
-            ip_address: pickIp(request),
+            ip_address: null,
             country: country ? country.toUpperCase() : null,
             city: header(request, "cf-ipcity") ?? header(request, "x-vercel-ip-city"),
             region: header(request, "cf-region") ?? header(request, "x-vercel-ip-country-region"),
