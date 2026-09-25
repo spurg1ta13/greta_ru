@@ -1,6 +1,7 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
-import { blogPosts, getPost } from "@/lib/blog-posts";
+import { blogPosts, blogUi, getPost, localizePost } from "@/lib/blog-posts";
+import { useLanguage } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -45,7 +46,7 @@ export const Route = createFileRoute("/blog/$slug")({
                 mainEntityOfPage: url,
                 datePublished: post.datePublished,
                 dateModified: post.datePublished,
-                inLanguage: "en",
+                inLanguage: ["en", "el"],
                 keywords: post.tags.join(", "),
                 author: {
                   "@type": "Person",
@@ -94,19 +95,20 @@ function PostNotFound() {
 }
 
 function BlogPost() {
-  const { post } = Route.useLoaderData();
-  const others = blogPosts.filter((p) => p.slug !== post.slug);
+  const { language } = useLanguage();
+  const u = blogUi[language === "el" ? "el" : "en"];
+  const post = localizePost(Route.useLoaderData().post, language);
+  const others = blogPosts.filter((p) => p.slug !== post.slug).map((p) => localizePost(p, language));
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-20">
       <nav aria-label="Breadcrumb" className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
-        <Link to="/">Home</Link> / <Link to="/blog">Blog</Link>
+        <Link to="/">{u.home}</Link> / <Link to="/blog">{u.blog}</Link>
       </nav>
       <article className="mt-8">
         <header>
           <p className="font-mono text-xs text-muted-foreground">
-            <time dateTime={post.datePublished}>{post.datePublished}</time> · {post.readMinutes} min read · by
-            Greta Rusecke, ISTQB Certified QA Specialist
+            <time dateTime={post.datePublished}>{post.datePublished}</time> · {post.readMinutes} {u.min} · {u.by}
           </p>
           <h1 className="mt-3 text-4xl font-bold leading-tight">{post.title}</h1>
           <p className="mt-6 rounded-lg border border-primary/40 bg-card p-5 text-foreground">
@@ -135,7 +137,7 @@ function BlogPost() {
           ))}
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground">Frequently asked questions</h2>
+            <h2 className="text-2xl font-semibold text-foreground">{u.faq}</h2>
             <dl className="mt-4 space-y-5">
               {post.faq.map((f) => (
                 <div key={f.q}>
@@ -149,15 +151,15 @@ function BlogPost() {
       </article>
 
       <aside className="mt-16 rounded-lg border border-border bg-card p-6">
-        <p className="text-foreground">Need QA or a security review for your product?</p>
+        <p className="text-foreground">{u.cta}</p>
         <Link to="/" hash="contact" className="mt-3 inline-block font-mono text-xs uppercase tracking-[0.2em] text-primary">
-          Contact Greta →
+          {u.contact}
         </Link>
       </aside>
 
       {others.length ? (
         <div className="mt-12">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Read next</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{u.next}</p>
           {others.map((p) => (
             <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="mt-3 block text-lg font-semibold hover:text-primary">
               {p.title}
