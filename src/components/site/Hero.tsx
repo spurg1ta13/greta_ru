@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Github, Linkedin } from "lucide-react";
 
 import heroBgJpg from "@/assets/hero-bg.jpg";
@@ -36,6 +37,11 @@ export function Hero() {
                 </a>
               </li>
             ))}
+            <li>
+              <Link to="/blog" className="transition-colors hover:text-primary">
+                Blog
+              </Link>
+            </li>
           </ul>
           <div className="flex shrink-0 items-center gap-1">
             <LanguageToggle />
