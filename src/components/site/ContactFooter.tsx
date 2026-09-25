@@ -289,6 +289,15 @@ export function ContactFooter() {
             </Link>
           </nav>
         </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="https://gretagreta.eu/"
+            className="inline-block font-mono text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-primary"
+          >
+            Powered by <span className="text-gradient">gretagreta.eu</span>
+          </a>
+        </div>
       </div>
     </footer>
   );
