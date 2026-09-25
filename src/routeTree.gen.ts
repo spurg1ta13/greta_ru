@@ -12,10 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiPublicCvDownloadRouteImport } from './routes/api/public/cv-download'
 import { Route as ApiPublicGeoRouteImport } from './routes/api/public/geo'
 import { Route as ApiPublicVisitRouteImport } from './routes/api/public/visit'
@@ -32,6 +35,11 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -54,6 +62,16 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 const ApiPublicCvDownloadRoute = ApiPublicCvDownloadRouteImport.update({
   id: '/api/public/cv-download',
   path: '/api/public/cv-download',
@@ -73,10 +91,13 @@ const ApiPublicVisitRoute = ApiPublicVisitRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
@@ -88,6 +109,8 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
@@ -97,10 +120,13 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
@@ -110,10 +136,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/blog'
     | '/privacy'
     | '/terms'
     | '/admin'
     | '/api/chat'
+    | '/blog/$slug'
+    | '/blog/'
     | '/api/public/cv-download'
     | '/api/public/geo'
     | '/api/public/visit'
@@ -125,6 +154,8 @@ export interface FileRouteTypes {
     | '/terms'
     | '/admin'
     | '/api/chat'
+    | '/blog/$slug'
+    | '/blog'
     | '/api/public/cv-download'
     | '/api/public/geo'
     | '/api/public/visit'
@@ -133,10 +164,13 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/blog'
     | '/privacy'
     | '/terms'
     | '/_authenticated/admin'
     | '/api/chat'
+    | '/blog/$slug'
+    | '/blog/'
     | '/api/public/cv-download'
     | '/api/public/geo'
     | '/api/public/visit'
@@ -146,6 +180,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  BlogRoute: typeof BlogRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -177,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -204,6 +246,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/chat'
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/api/public/cv-download': {
       id: '/api/public/cv-download'
@@ -240,10 +296,23 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  BlogRoute: BlogRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   ApiChatRoute: ApiChatRoute,
