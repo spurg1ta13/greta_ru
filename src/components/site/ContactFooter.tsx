@@ -281,6 +281,9 @@ export function ContactFooter() {
         <div className="mt-16 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex sm:justify-between">
           <p className="min-w-0">© {new Date().getFullYear()} Greta Rusecke. {t.contact.rights}</p>
           <nav className="flex shrink-0 items-center gap-4">
+            <Link to="/blog" className="hover:text-primary">
+              Blog
+            </Link>
             <Link to="/privacy" target="_blank" rel="noreferrer" className="hover:text-primary">
               {t.contact.privacy}
             </Link>

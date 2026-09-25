@@ -58,3 +58,7 @@ Worked with cross-functional teams and B2B clients across the USA, UK, Spain, La
 Greta is open to career opportunities and custom product development. Enquiries can be sent
 through the contact form on the home page or by email to greta@gretagreta.eu.
 
+
+## Blog
+- [Why QA Testing Matters Before and After Launch](https://gretagreta.eu/blog/why-qa-testing-matters-before-and-after-launch): pre-launch vs post-launch testing, regression, smoke tests, QA checklist.
+- [Why Regular Penetration Testing Keeps Your Product Safe](https://gretagreta.eu/blog/why-regular-penetration-testing-keeps-you-safe): what pentesting is, why one test is not enough, recommended frequency.
