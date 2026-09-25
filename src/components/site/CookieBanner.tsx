@@ -21,6 +21,9 @@ export function CookieBanner() {
   const close = (choice: "accepted" | "declined") => {
     try {
       sessionStorage.setItem(SESSION_KEY, choice);
+      if (choice === "accepted") localStorage.setItem("gdpr_consent_accepted", "true");
+      else localStorage.removeItem("gdpr_consent_accepted");
+      window.dispatchEvent(new Event("gdpr-consent-change"));
     } catch {
       /* ignore */
     }

@@ -69,12 +69,36 @@ export function GretaChat() {
   }, [busy]);
 
 
+  useEffect(() => {
+    const sync = () => {
+      try {
+        setConsented(localStorage.getItem(CONSENT_KEY) === "true");
+      } catch {
+        setConsented(false);
+      }
+    };
+    sync();
+    window.addEventListener("gdpr-consent-change", sync);
+    window.addEventListener("storage", sync);
+    return () => {
+      window.removeEventListener("gdpr-consent-change", sync);
+      window.removeEventListener("storage", sync);
+    };
+  }, []);
+
   const send = (text: string) => {
     const value = text.trim();
     if (!value || busy) return;
     hasInteracted.current = true;
     setInput("");
-    if (!consented) {
+    let hasConsent = false;
+    try {
+      hasConsent = localStorage.getItem(CONSENT_KEY) === "true";
+    } catch {
+      /* blocked */
+    }
+    if (!hasConsent || !consented) {
+      setConsented(false);
       pendingTextRef.current = value;
       setUnconsentedText(value);
       setConsentStep("prompt");
