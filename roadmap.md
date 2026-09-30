@@ -1,0 +1,2 @@
+- [x] Verify bilingual blog and header navigation
+- [x] Shorten contact opportunity sentence in both relevant languages
