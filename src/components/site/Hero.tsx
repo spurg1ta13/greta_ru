@@ -44,6 +44,12 @@ export function Hero() {
             </li>
           </ul>
           <div className="flex shrink-0 items-center gap-1">
+            <Link
+              to="/blog"
+              className="mr-1 text-sm text-muted-foreground transition-colors hover:text-primary md:hidden"
+            >
+              Blog
+            </Link>
             <LanguageToggle />
             <a
               href="https://github.com/spurg1ta13"

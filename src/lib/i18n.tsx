@@ -129,7 +129,7 @@ export const dictionaries = {
     contact: {
       eyebrow: "05 / Contact",
       heading: "Let's build something that ships clean.",
-      lead: "Open to career opportunities and custom product development. Let's turn your idea into a production-ready application.",
+      lead: "Open to custom product development. Let's turn your idea into a production-ready application.",
       consentPre: "I agree to the",
       consentPrivacy: "Privacy Policy",
       consentAnd: "and the",
@@ -355,7 +355,7 @@ export const dictionaries = {
     contact: {
       eyebrow: "05 / Επικοινωνία",
       heading: "Ας φτιάξουμε κάτι που κυκλοφορεί χωρίς σφάλματα.",
-      lead: "Ανοιχτή σε επαγγελματικές ευκαιρίες και ανάπτυξη προϊόντων κατά παραγγελία. Ας μετατρέψουμε την ιδέα σου σε μια εφαρμογή έτοιμη για παραγωγή.",
+      lead: "Ανοιχτή σε ανάπτυξη προϊόντων κατά παραγγελία. Ας μετατρέψουμε την ιδέα σου σε μια εφαρμογή έτοιμη για παραγωγή.",
       consentPre: "Συμφωνώ με την",
       consentPrivacy: "Πολιτική Απορρήτου",
       consentAnd: "και τους",
