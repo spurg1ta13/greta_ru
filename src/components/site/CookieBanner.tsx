@@ -18,6 +18,27 @@ export function CookieBanner() {
     }
   }, []);
 
+  // Hide the banner as soon as the visitor accepts the Privacy Policy
+  // (chat consent gate or contact-form checkbox) in the same session.
+  useEffect(() => {
+    const sync = () => {
+      try {
+        if (localStorage.getItem("gdpr_consent_accepted") === "true") {
+          sessionStorage.setItem(SESSION_KEY, "accepted");
+          setVisible(false);
+        }
+      } catch {
+        /* ignore */
+      }
+    };
+    window.addEventListener("gdpr-consent-change", sync);
+    window.addEventListener("storage", sync);
+    return () => {
+      window.removeEventListener("gdpr-consent-change", sync);
+      window.removeEventListener("storage", sync);
+    };
+  }, []);
+
   const close = (choice: "accepted" | "declined") => {
     try {
       sessionStorage.setItem(SESSION_KEY, choice);
