@@ -251,7 +251,15 @@ export function ContactFooter() {
                     checked={consent}
                     onChange={(e) => {
                       setConsent(e.target.checked);
-                      if (e.target.checked) setErrors((prev) => ({ ...prev, consent: "" }));
+                      if (e.target.checked) {
+                        setErrors((prev) => ({ ...prev, consent: "" }));
+                        try {
+                          localStorage.setItem("gdpr_consent_accepted", "true");
+                        } catch {
+                          /* storage blocked */
+                        }
+                        window.dispatchEvent(new Event("gdpr-consent-change"));
+                      }
                     }}
                     className="mt-1 size-4 shrink-0 cursor-pointer accent-primary"
                   />
