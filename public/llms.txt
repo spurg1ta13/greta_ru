@@ -8,9 +8,9 @@
 ## Profile
 
 - Name: Greta Rusecke
-- Role: QA Product Engineer & AI Product Builder
+- Role: Technical Product & QA Specialist · AI Product Builder (8+ years in project management, QA and AI-assisted building)
 - Location: Thessaloniki, Greece
-- Languages: English, Greek, Lithuanian, Russian
+- Languages: Lithuanian (native), English (C1), Russian (B1), Greek (A1)
 - Education: Vilnius University — Bachelor's in Business Administration (2011-2016)
 - Certifications: Cyber Hygiene at Work — National Cyber Security Center (2025), ISTQB Certified Tester (Foundation Level) — Oct 2023, ISTQB Software Testing Foundation Level Course — The Knowledge Academy (Oct 2023), Manual QA Software Testing — Udemy (Mar 2022)
 - Email: greta@gretagreta.eu
@@ -27,15 +27,11 @@
 
 ## Skills
 
-- QA: test strategy, test case design, functional and non-functional testing, regression, smoke,
-  E2E and UAT, cross-browser and cross-platform testing (Windows, macOS, iOS/iPadOS via BrowserStack),
-  defect lifecycle, bug triage, release readiness, BrowserStack, ISTQB practices.
-- AI product building: prompt engineering, Lovable AI, AI-assisted full-stack prototyping,
-  shipping production-ready web apps solo, GitHub and Vercel deployment with DNS/env setup.
+- Product & delivery: requirements analysis, Agile/Scrum, Kanban, sprint planning, stakeholder management, Jira, Confluence, Trello.
+- QA: test strategy and case design, E2E, functional, regression, smoke, exploratory, UAT, mobile and cross-browser testing (BrowserStack; Windows, macOS, iOS/iPadOS).
+- Building with AI: Lovable, prompt engineering, React, TypeScript, Tailwind CSS, Supabase (Postgres, Auth, RLS, Edge Functions), Gemini API, GitHub, Vercel, DNS and environment configuration.
+- Web quality: accessibility (WCAG), Lighthouse performance, technical SEO, i18n, GDPR consent flows.
 - Systems: SaaS, ERP, CRM and e-commerce platforms.
-- Frontend & tooling: React, TypeScript, Tailwind CSS, responsive web design, Jira, Confluence,
-  Trello, Git.
-- Management: requirement analysis, sprint planning, stakeholder communication, agile delivery.
 
 ## International experience
 
@@ -43,9 +39,11 @@ Worked with cross-functional teams and B2B clients across the USA, UK, Spain, La
 
 ## Projects
 
-- Devcraft — an AI-assisted product built and shipped end to end.
-- Lotus Bloom — a web product designed, built and tested solo.
-- CleanUpSKG — a community-focused web application for Thessaloniki.
+- DevCraft (https://devcraft.gr) — bilingual EN/EL studio platform with an embedded Gemini AI assistant, RLS-protected lead capture, role-based admin portal, reCAPTCHA v3, Resend email, structured data and llms.txt.
+- gretagreta.eu — SSR React portfolio with a streaming AI assistant, admin portal, WCAG accessibility, GDPR consent layer, JSON-LD and llms.txt.
+- CleanUp SKG (https://cleanupskg.gr) — multilingual EL/EN/RU service and lead platform with a dynamic pricing calculator and automated email delivery.
+- Lotus Bloom (https://lotusbloom.gr) — bilingual beauty studio site with 100/100 desktop Lighthouse scores and an accessible gallery.
+- Secure client-document vault (prototype) — TOTP MFA, role-based access, row-level security, soft delete and activity log.
 
 ## Pages
 
