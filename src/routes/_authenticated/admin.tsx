@@ -207,7 +207,13 @@ function AdminPage() {
                 <p className="text-sm text-muted-foreground">No conversations logged yet.</p>
               ) : null}
               {[...sessions.entries()].map(([sessionId, logs]) => {
-                const ordered = [...logs].reverse();
+                // Question and answer are saved together with the same timestamp,
+                // so on ties the visitor's message must come before Greta AI's reply.
+                const ordered = [...logs].sort((a, b) => {
+                  const t = a.created_at.localeCompare(b.created_at);
+                  if (t !== 0) return t;
+                  return a.role === b.role ? 0 : a.role === "user" ? -1 : 1;
+                });
                 const first = ordered[0]!;
                 return (
                   <article key={sessionId} className="panel p-5">
