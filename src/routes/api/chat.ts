@@ -49,14 +49,17 @@ export const Route = createFileRoute("/api/chat")({
         ) => {
           try {
             const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+            const base = Date.now();
             await supabaseAdmin.from("chat_logs").insert(
               rows
                 .filter((row) => row.content.length > 0)
-                .map((row) => ({
+                .map((row, i) => ({
                   session_id: session,
                   role: row.role,
                   content: row.content.slice(0, 4000),
                   language: lang,
+                  // Distinct timestamps keep question → answer order stable.
+                  created_at: new Date(base + i).toISOString(),
                   ...geo,
                 })),
             );
