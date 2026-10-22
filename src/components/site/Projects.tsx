@@ -1,6 +1,4 @@
 import { Reveal } from "@/components/site/Reveal";
-
-import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
 type Project = {
