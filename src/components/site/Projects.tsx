@@ -54,3 +54,30 @@ export function Projects() {
     </section>
   );
 }
+
+function CardInner({ project }: { project: Project }) {
+  return (
+    <>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="text-xl font-semibold">{project.name}</h3>
+        {project.url && (
+          <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+        )}
+      </div>
+      {project.url && (
+        <p className="mt-1 font-mono text-xs text-primary">{project.url.replace("https://", "")}</p>
+      )}
+      <CardSummary project={project} />
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {project.tags.map((tag) => (
+          <li
+            key={tag}
+            className="rounded-full border border-border bg-background/60 px-2.5 py-1 text-[11px] text-muted-foreground"
+          >
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
