@@ -35,7 +35,7 @@ SELECTED PRODUCTS (all built, QA-tested end to end and launched by Greta)
 - gretagreta.eu — this portfolio: SSR React app with a streaming AI chat assistant (Greta AI) answering recruiter questions, admin portal tracking visits and CV downloads, WCAG accessibility, GDPR consent layer, JSON-LD and llms.txt.
 - CleanUp SKG — https://cleanupskg.gr — multilingual (EL/EN/RU) service and lead platform: dynamic pricing calculator, modal lead funnels, automated email via Resend; cross-browser, responsive and GDPR validation before launch.
 - Lotus Bloom — https://lotusbloom.gr — bilingual beauty studio site: 100/100 desktop Lighthouse scores, WebP mobile image variants, keyboard-accessible gallery and lightbox with 44x44 px touch targets, validated contact flow with consent.
-- Secure client-document vault (prototype, private internal system): TOTP multi-factor authentication, role-based access (Admin and Superadmin), Supabase row-level security, authenticated in-app document viewer with no download button, soft delete with restore, activity log of views, edits and deletions.
+- Secure client-document vault (live private internal system, in production): TOTP multi-factor authentication, role-based access (Admin and Superadmin), Supabase row-level security, authenticated in-app document viewer with no download button, soft delete with restore, activity log of views, edits and deletions.
 
 SKILLS
 - Product & delivery: requirements analysis, Agile/Scrum, Kanban, sprint planning, stakeholder management, Jira, Confluence, Trello.

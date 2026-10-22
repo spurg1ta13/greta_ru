@@ -43,7 +43,7 @@ Worked with cross-functional teams and B2B clients across the USA, UK, Spain, La
 - gretagreta.eu — SSR React portfolio with a streaming AI assistant, admin portal, WCAG accessibility, GDPR consent layer, JSON-LD and llms.txt.
 - CleanUp SKG (https://cleanupskg.gr) — multilingual EL/EN/RU service and lead platform with a dynamic pricing calculator and automated email delivery.
 - Lotus Bloom (https://lotusbloom.gr) — bilingual beauty studio site with 100/100 desktop Lighthouse scores and an accessible gallery.
-- Secure client-document vault (prototype) — TOTP MFA, role-based access, row-level security, soft delete and activity log.
+- Secure client-document vault (live private system, in production) — TOTP MFA, role-based access, row-level security, soft delete and activity log.
 
 ## Pages
 

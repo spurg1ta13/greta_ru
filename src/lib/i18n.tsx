@@ -70,7 +70,7 @@ export const dictionaries = {
           points: [
             "Prototypes and ships working apps with Lovable, React, TypeScript, Tailwind and Supabase — ideas become testable in hours, not weeks.",
             "Security and compliance built in: row-level security, role-based access, reCAPTCHA v3, GDPR consent flows, WCAG accessibility.",
-            "Four live products shipped solo, plus a secure client-document vault prototype with TOTP MFA and activity logs.",
+            "Four live products shipped solo, plus a secure client-document vault in production with TOTP MFA and activity logs.",
           ],
         },
       ],
@@ -84,7 +84,7 @@ export const dictionaries = {
         "Bilingual EN/EL studio platform with an embedded Gemini AI assistant, RLS-protected lead capture, role-based admin portal, reCAPTCHA v3 and llms.txt.",
         "Bilingual beauty studio site with 100/100 desktop Lighthouse scores, WebP mobile images and a keyboard-accessible gallery.",
         "Multilingual (EL/EN/RU) service and lead platform with a dynamic pricing calculator, modal lead funnels and automated email delivery.",
-        "Secure client-document vault prototype with TOTP multi-factor authentication, role-based access, row-level security, an in-app document viewer without downloads, soft delete with restore and a full activity log.",
+        "Live secure client-document vault with TOTP multi-factor authentication, role-based access, row-level security, an in-app document viewer without downloads, soft delete with restore and a full activity log.",
       ],
     },
     skills: {
@@ -298,7 +298,7 @@ export const dictionaries = {
           points: [
             "Δημιουργεί και κυκλοφορεί λειτουργικές εφαρμογές με Lovable, React, TypeScript, Tailwind και Supabase — οι ιδέες γίνονται δοκιμάσιμες σε ώρες, όχι εβδομάδες.",
             "Ενσωματωμένη ασφάλεια και συμμόρφωση: row-level security, πρόσβαση βάσει ρόλων, reCAPTCHA v3, ροές συγκατάθεσης GDPR, προσβασιμότητα WCAG.",
-            "Τέσσερα live προϊόντα υλοποιημένα solo, καθώς και prototype ασφαλούς αποθετηρίου εγγράφων πελατών με TOTP MFA και αρχείο δραστηριότητας.",
+            "Τέσσερα live προϊόντα υλοποιημένα solo, καθώς και ένα ασφαλές αποθετήριο εγγράφων πελατών σε παραγωγή με TOTP MFA και αρχείο δραστηριότητας.",
           ],
         },
       ],
@@ -312,7 +312,7 @@ export const dictionaries = {
         "Δίγλωσση (EN/EL) πλατφόρμα studio με ενσωματωμένο βοηθό AI Gemini, προστατευμένη με RLS συλλογή αιτημάτων, πύλη διαχείρισης βάσει ρόλων, reCAPTCHA v3 και llms.txt.",
         "Δίγλωσση ιστοσελίδα στούντιο ομορφιάς με βαθμολογία 100/100 στο Lighthouse (desktop), εικόνες WebP για κινητά και γκαλερί προσβάσιμη από πληκτρολόγιο.",
         "Πολύγλωσση (EL/EN/RU) πλατφόρμα υπηρεσιών με δυναμικό υπολογιστή τιμών, φόρμες αιτημάτων σε modal και αυτόματη αποστολή email.",
-        "Πρωτότυπο ασφαλούς θησαυροφυλακίου εγγράφων πελατών με έλεγχο ταυτότητας TOTP δύο παραγόντων, πρόσβαση βάσει ρόλων, ασφάλεια σε επίπεδο γραμμών (RLS), προβολή εγγράφων εντός εφαρμογής χωρίς δυνατότητα λήψης, soft delete με επαναφορά και πλήρες ιστορικό ενεργειών.",
+        "Ζωντανό, παραγωγικό σύστημα ασφαλούς αποθήκευσης εγγράφων πελατών με έλεγχο ταυτότητας TOTP δύο παραγόντων, πρόσβαση βάσει ρόλων, ασφάλεια σε επίπεδο γραμμών (RLS), προβολή εγγράφων εντός εφαρμογής χωρίς δυνατότητα λήψης, soft delete με επαναφορά και πλήρες ιστορικό ενεργειών.",
       ],
     },
     skills: {
