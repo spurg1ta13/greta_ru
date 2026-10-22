@@ -60,3 +60,5 @@ through the contact form on the home page or by email to greta@gretagreta.eu.
 ## Blog
 - [Why QA Testing Matters Before and After Launch](https://gretagreta.eu/blog/why-qa-testing-matters-before-and-after-launch): pre-launch vs post-launch testing, regression, smoke tests, QA checklist.
 - [Why Regular Penetration Testing Keeps Your Product Safe](https://gretagreta.eu/blog/why-regular-penetration-testing-keeps-you-safe): what pentesting is, why one test is not enough, recommended frequency.
+- [GDPR in Greece: What It Means and How It Is Enforced](https://gretagreta.eu/blog/gdpr-in-greece-what-it-means): the Hellenic Data Protection Authority, Greek law 4624/2019, user rights, fines, breach notification.
+- [GDPR Requirements for Websites in Greece: A Practical Checklist](https://gretagreta.eu/blog/gdpr-requirements-websites-greece): privacy policy, HDPA cookie consent rules (no cookie walls, equal Accept/Reject), security and a compliance checklist.

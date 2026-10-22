@@ -152,6 +152,183 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "gdpr-in-greece-what-it-means",
+    title: "GDPR in Greece: What It Means and How It Is Enforced",
+    description:
+      "How the General Data Protection Regulation applies in Greece — the Hellenic Data Protection Authority, law 4624/2019, fines, user rights and what organisations must do.",
+    datePublished: "2026-10-22",
+    readMinutes: 6,
+    tags: ["GDPR", "Data Protection", "Greece", "HDPA", "Compliance"],
+    summary:
+      "GDPR has applied directly in Greece since May 2018, enforced by the Hellenic Data Protection Authority under Greek law 4624/2019. It gives people rights over their data and obliges organisations to protect it — with real fines for those that do not comply.",
+    sections: [
+      {
+        h: "The short answer",
+        p: [
+          "The General Data Protection Regulation (EU) 2016/679 has applied directly in Greece since 25 May 2018. Greek law 4624/2019 adapted national rules to it and re-established the supervisory authority, the Hellenic Data Protection Authority (HDPA). If you process personal data of people in Greece — a name, an email, an IP address, cookie identifiers — GDPR applies to you, no matter where your business is based or how small it is.",
+        ],
+      },
+      {
+        h: "Who enforces GDPR in Greece",
+        p: [
+          "The Hellenic Data Protection Authority (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα) is the independent supervisory authority. It investigates complaints, carries out inspections, issues guidance and imposes fines. Anyone can file a complaint with the HDPA — online, free of charge — and the authority publishes its decisions and guidance so organisations can see in practice what compliance looks like.",
+        ],
+      },
+      {
+        h: "Your rights under GDPR",
+        p: [
+          "GDPR gives individuals concrete rights over their personal data. Organisations must respond to these requests within one month.",
+        ],
+        list: [
+          "Access — a copy of the personal data held about them.",
+          "Rectification — correction of inaccurate or incomplete data.",
+          "Erasure — the \"right to be forgotten\" when there is no good reason to keep the data.",
+          "Restriction — limiting how data is used while a dispute is resolved.",
+          "Data portability — receiving data in a portable, machine-readable format.",
+          "Objection — objecting to processing, including for direct marketing.",
+          "Withdrawal of consent — withdrawing consent at any time, as easily as it was given.",
+        ],
+      },
+      {
+        h: "What organisations must do",
+        list: [
+          "Identify a lawful basis for every processing activity — consent, contract, legal obligation, legitimate interest.",
+          "Provide clear, specific privacy information before collecting data.",
+          "Apply data protection by design and by default.",
+          "Implement appropriate security measures for the data they hold.",
+          "Keep records of processing activities (Article 30).",
+          "Sign data processing agreements with all processors (Article 28).",
+          "Appoint a Data Protection Officer where required — public bodies must appoint one under Greek law.",
+          "Notify the HDPA of a personal data breach within 72 hours.",
+        ],
+      },
+      {
+        h: "Fines and enforcement",
+        p: [
+          "GDPR fines reach up to €20 million or 4% of an organisation's total worldwide annual turnover, whichever is higher. The HDPA enforces actively: in 2022 it audited 30 Greek news websites and found that many cookie banners lacked a proper reject option or visually pushed users towards accepting — a breach of the rules on electronic communications.",
+        ],
+      },
+      {
+        h: "What this means in practice",
+        p: [
+          "Even a simple website with a contact form and analytics collects personal data, so GDPR compliance is a baseline for doing business online in Greece — not an optional extra. The next article walks through the concrete requirements for websites.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does GDPR apply to small businesses in Greece?",
+        a: "Yes. GDPR applies to any organisation processing personal data of people in the EU, regardless of size. Small sites with contact forms, newsletters or analytics are covered.",
+      },
+      {
+        q: "Who is the data protection authority in Greece?",
+        a: "The Hellenic Data Protection Authority (HDPA), an independent authority whose framework was established by Greek law 4624/2019.",
+      },
+      {
+        q: "How large are GDPR fines?",
+        a: "Up to €20 million or 4% of total worldwide annual turnover, whichever is higher, plus possible restrictions on processing.",
+      },
+      {
+        q: "How do I file a GDPR complaint in Greece?",
+        a: "Complaints can be submitted to the HDPA free of charge through its online complaint form; you can also contact the organisation directly first.",
+      },
+    ],
+  },
+  {
+    slug: "gdpr-requirements-websites-greece",
+    title: "GDPR Requirements for Websites in Greece: A Practical Checklist",
+    description:
+      "The concrete GDPR duties for websites in Greece — privacy policy, cookie consent rules from the Hellenic Data Protection Authority, data subject rights, security and breach notification.",
+    datePublished: "2026-10-22",
+    readMinutes: 7,
+    tags: ["GDPR", "Cookie Consent", "Website Compliance", "Privacy Policy", "Greece"],
+    summary:
+      "Any website that collects personal data — a contact form, analytics, cookies — must follow GDPR. In Greece, the HDPA's Recommendations 1/2020 add specific cookie rules: no cookie walls, an equally prominent Reject button, and no pre-ticked consent boxes.",
+    sections: [
+      {
+        h: "Does GDPR apply to your website?",
+        p: [
+          "If your website processes personal data of visitors — a contact form, newsletter sign-up, analytics, cookies or comment fields — GDPR applies. That is true for a one-person business as much as for a large company, and for websites hosted outside the EU that serve visitors in Greece.",
+        ],
+      },
+      {
+        h: "A privacy policy that actually informs",
+        p: [
+          "Your privacy policy must state what personal data you collect, why, on what legal basis, how long you keep it, who it is shared with, and how visitors can exercise their rights. It must be easy to find — linked from every page — and specific, not a generic block buried in the terms of use. The HDPA has stressed that a general mention in the terms of service, or a long policy covering unrelated topics, is not enough information for cookie consent.",
+        ],
+      },
+      {
+        h: "Cookie consent: the HDPA's specific rules",
+        p: [
+          "Beyond GDPR, Greece applies national rules on electronic communications (law 3471/2006). The HDPA's Recommendations 1/2020 set out what a compliant cookie banner looks like:",
+        ],
+        list: [
+          "Prior consent for all non-essential cookies — analytics, statistics and marketing cookies need explicit, active consent.",
+          "No cookie walls — visitors must be able to continue using the site without accepting non-essential cookies.",
+          "Accept and Reject equally easy — the same number of clicks, from the same layer, with buttons of the same size, emphasis and colour.",
+          "No pre-ticked boxes — consent must come from a clear, affirmative action.",
+          "Informed consent — continuing to browse after a notice is not consent; explain the specific purpose of each cookie.",
+          "Easy withdrawal — users must be able to change their mind as easily as they consented.",
+        ],
+      },
+      {
+        h: "The data protection essentials",
+        list: [
+          "A lawful basis for every processing activity.",
+          "Security: HTTPS everywhere, access control, hashed passwords, regular backups, updated software.",
+          "Records of processing activities kept up to date (Article 30).",
+          "Written data processing agreements with hosting, email and analytics providers (Article 28).",
+          "A Data Protection Officer where required — public bodies must appoint one under Greek law.",
+          "A Data Protection Impact Assessment for high-risk processing.",
+          "Breach notification within 72 hours to the HDPA, and to affected individuals when the risk is high.",
+        ],
+      },
+      {
+        h: "Honouring user rights",
+        p: [
+          "Visitors have the right to access their data, correct it, delete it, receive it in a portable format and object to processing. Provide a clear contact channel — your privacy policy should name an email address — and respond within one month.",
+        ],
+      },
+      {
+        h: "A website GDPR checklist",
+        list: [
+          "Privacy policy published and linked from every page.",
+          "Cookie banner with prior consent, equally prominent Accept and Reject, no pre-ticked boxes, no cookie wall.",
+          "Consent recorded and easy to withdraw.",
+          "HTTPS enabled everywhere.",
+          "Data processing agreements in place with all service providers.",
+          "Records of processing activities kept up to date.",
+          "A named contact for data subject requests, answered within one month.",
+          "A breach response procedure with 72-hour notification to the HDPA.",
+        ],
+      },
+      {
+        h: "GDPR is part of QA",
+        p: [
+          "GDPR compliance is not a one-time project. Every new feature, form or integration that touches personal data needs review, consent flows need testing, and security needs regular verification. Treating privacy and security as part of your quality process — the same way you test functionality — keeps your site compliant and your visitors' data safe.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Do I need a cookie banner if my site only uses essential cookies?",
+        a: "No. Cookies strictly necessary for the service (such as session cookies) do not require consent, but you must still inform visitors about them. All non-essential cookies need prior consent.",
+      },
+      {
+        q: "Is a cookie wall allowed in Greece?",
+        a: "No. The HDPA's guidance prohibits cookie walls: visitors must be able to use the site without accepting non-essential cookies.",
+      },
+      {
+        q: "Does my Greek website need a Data Protection Officer?",
+        a: "Not always. Public bodies must appoint one under Greek law 4624/2019, as must organisations whose core activities involve large-scale monitoring or special-category data.",
+      },
+      {
+        q: "How fast must I report a data breach in Greece?",
+        a: "Within 72 hours of becoming aware of the breach, to the Hellenic Data Protection Authority, and to affected individuals without undue delay when the risk is high.",
+      },
+    ],
+  },
 ];
 
 export const getPost = (slug: string) => blogPosts.find((p) => p.slug === slug);
@@ -291,6 +468,175 @@ const el: Record<string, Localized> = {
       },
     ],
   },
+  "gdpr-in-greece-what-it-means": {
+    title: "GDPR στην Ελλάδα: Τι σημαίνει και πώς εφαρμόζεται",
+    description:
+      "Πώς εφαρμόζεται ο Γενικός Κανονισμός Προστασίας Δεδομένων στην Ελλάδα — η Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, ο νόμος 4624/2019, τα πρόστιμα, τα δικαιώματα των χρηστών και οι υποχρεώσεις των οργανισμών.",
+    summary:
+      "Ο GDPR εφαρμόζεται άμεσα στην Ελλάδα από τις 25 Μαΐου 2018, με εποπτική αρχή την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα και εθνικό νόμο 4624/2019. Δίνει στους ανθρώπους δικαιώματα επί των δεδομένων τους και υποχρεώνει τους οργανισμούς να τα προστατεύουν — με πραγματικά πρόστιμα για όσους δεν συμμορφώνονται.",
+    sections: [
+      {
+        h: "Η σύντομη απάντηση",
+        p: [
+          "Ο Γενικός Κανονισμός Προστασίας Δεδομένων (ΕΕ) 2016/679 εφαρμόζεται άμεσα στην Ελλάδα από τις 25 Μαΐου 2018. Ο ελληνικός νόμος 4624/2019 προσάρμοσε τους εθνικούς κανόνες σε αυτόν και επανασύστησε την εποπτική αρχή, την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα. Αν επεξεργάζεστε προσωπικά δεδομένα ανθρώπων στην Ελλάδα — ένα όνομα, ένα email, μια διεύθυνση IP, αναγνωριστικά cookies — ο GDPR εφαρμόζεται σε εσάς, ανεξάρτητα από τον τόπο έδρας της επιχείρησης ή το μέγεθός της.",
+        ],
+      },
+      {
+        h: "Ποιος εποπτεύει τον GDPR στην Ελλάδα",
+        p: [
+          "Η Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα είναι η ανεξάρτητη εποπτική αρχή. Διερευνά καταγγελίες, διενεργεί ελέγχους, εκδίδει κατευθυντήριες οδηγίες και επιβάλλει πρόστιμα. Ο καθένας μπορεί να υποβάλει καταγγελία στην Αρχή — ηλεκτρονικά και δωρεάν — ενώ η Αρχή δημοσιεύει τις αποφάσεις και τις οδηγίες της, ώστε οι οργανισμοί να βλέπουν έμπρακτα τι σημαίνει συμμόρφωση.",
+        ],
+      },
+      {
+        h: "Τα δικαιώματά σας βάσει του GDPR",
+        p: [
+          "Ο GDPR δίνει στα άτομα συγκεκριμένα δικαιώματα επί των προσωπικών τους δεδομένων. Οι οργανισμοί οφείλουν να απαντούν σε αυτά τα αιτήματα εντός ενός μηνός.",
+        ],
+        list: [
+          "Πρόσβαση — αντίγραφο των προσωπικών δεδομένων που τηρούνται γι' αυτούς.",
+          "Διόρθωση — αποκατάσταση ανακριβών ή ελλιπών δεδομένων.",
+          "Διαγραφή — το «δικαίωμα στη λήθη» όταν δεν υπάρχει βάσιμος λόγος διατήρησης των δεδομένων.",
+          "Περιορισμός — περιορισμός της χρήσης των δεδομένων όσο εκκρεμεί μια διαφορά.",
+          "Φορητότητα δεδομένων — λήψη των δεδομένων σε φορητή, αναγνώσιμη από μηχανή μορφή.",
+          "Εναντίωση — αντίρρηση στην επεξεργασία, συμπεριλαμβανομένης της άμεσης προώθησης.",
+          "Ανάκληση συγκατάθεσης — ανάκληση ανά πάσα στιγμή, το ίδιο εύκολα όπως δόθηκε.",
+        ],
+      },
+      {
+        h: "Τι οφείλουν να κάνουν οι οργανισμοί",
+        list: [
+          "Προσδιορισμός νόμιμης βάσης για κάθε επεξεργασία — συγκατάθεση, σύμβαση, νομική υποχρέωση, έννομο συμφέρον.",
+          "Σαφής, συγκεκριμένη ενημέρωση για την ιδιωτικότητα πριν από τη συλλογή δεδομένων.",
+          "Προστασία δεδομένων εκ σχεδιασμού και εξ ορισμού.",
+          "Κατάλληλα μέτρα ασφαλείας για τα δεδομένα που τηρούνται.",
+          "Τήρηση αρχείου δραστηριοτήτων επεξεργασίας (άρθρο 30).",
+          "Υπογραφή συμβάσεων επεξεργασίας με όλους τους εκτελούντες την επεξεργασία (άρθρο 28).",
+          "Διορισμός Υπευθύνου Προστασίας Δεδομένων όπου απαιτείται — οι δημόσιοι φορείς οφείλουν να διορίζουν έναν κατά τον ελληνικό νόμο.",
+          "Γνωστοποίηση παραβίασης προσωπικών δεδομένων στην Αρχή εντός 72 ωρών.",
+        ],
+      },
+      {
+        h: "Πρόστιμα και εφαρμογή",
+        p: [
+          "Τα πρόστιμα του GDPR φτάνουν τα 20 εκατομμύρια ευρώ ή το 4% του συνολικού ετήσιου κύκλου εργασιών παγκοσμίως, όποιο είναι μεγαλύτερο. Η Αρχή εφαρμόζει ενεργά: το 2022 έλεγξε 30 ελληνικές ειδησεογραφικές ιστοσελίδες και διαπίστωσε ότι πολλές δεν είχαν ουσιαστική επιλογή απόρριψης στα cookies ή προωθούσαν οπτικά την αποδοχή — παράβαση των κανόνων για τις ηλεκτρονικές επικοινωνίες.",
+        ],
+      },
+      {
+        h: "Τι σημαίνει αυτό στην πράξη",
+        p: [
+          "Ακόμα και μια απλή ιστοσελίδα με φόρμα επικοινωνίας και αναλυτικά στοιχεία συλλέγει προσωπικά δεδομένα, οπότε η συμμόρφωση με τον GDPR είναι βασική προϋπόθεση για επιχειρηματική δραστηριότητα στο διαδίκτυο στην Ελλάδα — όχι προαιρετική. Το επόμενο άρθρο περιγράφει τις συγκεκριμένες απαιτήσεις για ιστοσελίδες.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Εφαρμόζεται ο GDPR στις μικρές επιχειρήσεις στην Ελλάδα;",
+        a: "Ναι. Ο GDPR εφαρμόζεται σε κάθε οργανισμό που επεξεργάζεται προσωπικά δεδομένα ανθρώπων στην ΕΕ, ανεξαρτήτως μεγέθους. Μικρές ιστοσελίδες με φόρμες επικοινωνίας, newsletters ή αναλυτικά στοιχεία καλύπτονται.",
+      },
+      {
+        q: "Ποια είναι η αρχή προστασίας δεδομένων στην Ελλάδα;",
+        a: "Η Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, ανεξάρτητη αρχή το πλαίσιο της οποίας θεσπίστηκε με τον ελληνικό νόμο 4624/2019.",
+      },
+      {
+        q: "Πόσο μεγάλα είναι τα πρόστιμα του GDPR;",
+        a: "Έως 20 εκατομμύρια ευρώ ή 4% του συνολικού παγκόσμιου ετήσιου κύκλου εργασιών, όποιο είναι μεγαλύτερο, καθώς και πιθανοί περιορισμοί στην επεξεργασία.",
+      },
+      {
+        q: "Πώς υποβάλλω καταγγελία GDPR στην Ελλάδα;",
+        a: "Οι καταγγελίες υποβάλλονται δωρεάν στην Αρχή μέσω της ηλεκτρονικής φόρμας της· μπορείτε επίσης να απευθυνθείτε πρώτα απευθείας στον οργανισμό.",
+      },
+    ],
+  },
+  "gdpr-requirements-websites-greece": {
+    title: "Απαιτήσεις GDPR για ιστοσελίδες στην Ελλάδα: Πρακτική λίστα συμμόρφωσης",
+    description:
+      "Οι συγκεκριμένες υποχρεώσεις GDPR για ιστοσελίδες στην Ελλάδα — πολιτική απορρήτου, κανόνες συγκατάθεσης cookies από την Αρχή Προστασίας Δεδομένων, δικαιώματα χρηστών, ασφάλεια και γνωστοποίηση παραβιάσεων.",
+    summary:
+      "Κάθε ιστοσελίδα που συλλέγει προσωπικά δεδομένα — φόρμα επικοινωνίας, αναλυτικά στοιχεία, cookies — οφείλει να συμμορφώνεται με τον GDPR. Στην Ελλάδα, οι Συστάσεις 1/2020 της Αρχής Προστασίας Δεδομένων προσθέτουν ειδικούς κανόνες: όχι cookie walls, εξίσου εμφανές κουμπί «Απόρριψη» και κανένα προεπιλεγμένο κουτί συγκατάθεσης.",
+    sections: [
+      {
+        h: "Εφαρμόζεται ο GDPR στην ιστοσελίδα σας;",
+        p: [
+          "Αν η ιστοσελίδα σας επεξεργάζεται προσωπικά δεδομένα επισκεπτών — φόρμα επικοινωνίας, εγγραφή σε newsletter, αναλυτικά στοιχεία, cookies ή πεδία σχολίων — ο GDPR εφαρμόζεται. Αυτό ισχύει για μια επιχείρηση ενός ατόμου όσο και για μια μεγάλη εταιρεία, καθώς και για ιστοσελίδες που φιλοξενούνται εκτός ΕΕ και εξυπηρετούν επισκέπτες στην Ελλάδα.",
+        ],
+      },
+      {
+        h: "Μια πολιτική απορρήτου που πραγματικά ενημερώνει",
+        p: [
+          "Η πολιτική απορρήτου σας πρέπει να αναφέρει ποια προσωπικά δεδομένα συλλέγετε, γιατί, με ποια νόμιμη βάση, πόσο καιρό τα διατηρείτε, με ποιους κοινοποιούνται και πώς οι επισκέπτες μπορούν να ασκήσουν τα δικαιώματά τους. Πρέπει να είναι εύκολα προσβάσιμη — με σύνδεσμο από κάθε σελίδα — και συγκεκριμένη, όχι ένα γενικό κείμενο θαμμένο στους όρους χρήσης. Η Αρχή έχει τονίσει ότι μια γενική αναφορά στους όρους χρήσης ή μια μακροσκελής πολιτική που καλύπτει άσχετα θέματα δεν αρκεί ως ενημέρωση για τη συγκατάθεση cookies.",
+        ],
+      },
+      {
+        h: "Συγκατάθεση cookies: οι ειδικοί κανόνες της Αρχής",
+        p: [
+          "Πέρα από τον GDPR, στην Ελλάδα εφαρμόζεται η εθνική νομοθεσία για τις ηλεκτρονικές επικοινωνίες (νόμος 3471/2006). Οι Συστάσεις 1/2020 της Αρχής ορίζουν πώς μοιάζει ένα σύννομο banner cookies:",
+        ],
+        list: [
+          "Προηγούμενη συγκατάθεση για όλα τα μη απαραίτητα cookies — τα cookies αναλυτικών, στατιστικών και μάρκετινγκ απαιτούν ρητή, ενεργή συγκατάθεση.",
+          "Χωρίς cookie walls — οι επισκέπτες πρέπει να μπορούν να συνεχίσουν να χρησιμοποιούν τον ιστότοπο χωρίς να αποδεχτούν τα μη απαραίτητα cookies.",
+          "Αποδοχή και Απόρριψη εξίσου εύκολες — ίδιος αριθμός κλικ, από το ίδιο επίπεδο, με κουμπιά ίδιου μεγέθους, τονισμού και χρώματος.",
+          "Χωρίς προεπιλεγμένα κουτιά — η συγκατάθεση πρέπει να προέρχεται από σαφή, θετική ενέργεια.",
+          "Ενημερωμένη συγκατάθεση — η συνέχιση της περιήγησης μετά από ειδοποίηση δεν αποτελεί συγκατάθεση· εξηγήστε τον συγκεκριμένο σκοπό κάθε cookie.",
+          "Εύκολη ανάκληση — οι χρήστες πρέπει να μπορούν να αλλάξουν γνώμη το ίδιο εύκολα όπως συγκατατέθηκαν.",
+        ],
+      },
+      {
+        h: "Τα βασικά της προστασίας δεδομένων",
+        list: [
+          "Νόμιμη βάση για κάθε δραστηριότητα επεξεργασίας.",
+          "Ασφάλεια: HTTPS παντού, έλεγχος πρόσβασης, κωδικοί με κατακερματισμό, τακτικά αντίγραφα ασφαλείας, ενημερωμένο λογισμικό.",
+          "Ενημερωμένο αρχείο δραστηριοτήτων επεξεργασίας (άρθρο 30).",
+          "Έγγραφες συμβάσεις επεξεργασίας δεδομένων με παρόχους φιλοξενίας, email και αναλυτικών (άρθρο 28).",
+          "Υπεύθυνος Προστασίας Δεδομένων όπου απαιτείται — οι δημόσιοι φορείς οφείλουν να διορίζουν έναν κατά τον ελληνικό νόμο.",
+          "Εκτίμηση Αντικτύπου στην Προστασία Δεδομένων για επεξεργασία υψηλού κινδύνου.",
+          "Γνωστοποίηση παραβίασης εντός 72 ωρών στην Αρχή, και στα θιγόμενα πρόσωπα όταν ο κίνδυνος είναι υψηλός.",
+        ],
+      },
+      {
+        h: "Σεβασμός των δικαιωμάτων των χρηστών",
+        p: [
+          "Οι επισκέπτες έχουν δικαίωμα πρόσβασης στα δεδομένα τους, διόρθωσης, διαγραφής, λήψης τους σε φορητή μορφή και εναντίωσης στην επεξεργασία. Παρέχετε σαφές κανάλι επικοινωνίας — η πολιτική απορρήτου σας πρέπει να αναφέρει διεύθυνση email — και απαντήστε εντός ενός μηνός.",
+        ],
+      },
+      {
+        h: "Λίστα συμμόρφωσης GDPR για ιστοσελίδες",
+        list: [
+          "Πολιτική απορρήτου δημοσιευμένη και συνδεδεμένη από κάθε σελίδα.",
+          "Banner cookies με προηγούμενη συγκατάθεση, εξίσου εμφανή Αποδοχή και Απόρριψη, χωρίς προεπιλεγμένα κουτιά, χωρίς cookie wall.",
+          "Καταγραφή της συγκατάθεσης και εύκολη ανάκλησή της.",
+          "HTTPS ενεργό παντού.",
+          "Συμβάσεις επεξεργασίας δεδομένων με όλους τους παρόχους υπηρεσιών.",
+          "Ενημερωμένο αρχείο δραστηριοτήτων επεξεργασίας.",
+          "Ορισμένο σημείο επικοινωνίας για αιτήματα υποκειμένων, με απάντηση εντός ενός μηνός.",
+          "Διαδικασία απόκρισης σε παραβίαση με γνωστοποίηση 72 ωρών στην Αρχή.",
+        ],
+      },
+      {
+        h: "Ο GDPR είναι μέρος του QA",
+        p: [
+          "Η συμμόρφωση με τον GDPR δεν είναι έργο μίας φοράς. Κάθε νέα λειτουργία, φόρμα ή ενσωμάτωση που αγγίζει προσωπικά δεδομένα χρειάζεται αξιολόγηση, οι ροές συγκατάθεσης χρειάζονται έλεγχο και η ασφάλεια χρειάζεται τακτική επαλήθευση. Αντιμετωπίζοντας την ιδιωτικότητα και την ασφάλεια ως μέρος της διαδικασίας ποιότητάς σας — όπως ακριβώς ελέγχετε τη λειτουργικότητα — κρατάτε τον ιστότοπό σας σύννομο και τα δεδομένα των επισκεπτών σας ασφαλή.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Χρειάζομαι banner cookies αν η ιστοσελίδα μου χρησιμοποιεί μόνο απαραίτητα cookies;",
+        a: "Όχι. Τα cookies που είναι αυστηρά απαραίτητα για την υπηρεσία (όπως τα session cookies) δεν απαιτούν συγκατάθεση, αλλά οφείλετε να ενημερώνετε τους επισκέπτες γι' αυτά. Όλα τα μη απαραίτητα cookies απαιτούν προηγούμενη συγκατάθεση.",
+      },
+      {
+        q: "Επιτρέπεται το cookie wall στην Ελλάδα;",
+        a: "Όχι. Οι οδηγίες της Αρχής απαγορεύουν τα cookie walls: οι επισκέπτες πρέπει να μπορούν να χρησιμοποιούν τον ιστότοπο χωρίς να αποδεχτούν τα μη απαραίτητα cookies.",
+      },
+      {
+        q: "Χρειάζεται η ελληνική ιστοσελίδα μου Υπεύθυνο Προστασίας Δεδομένων;",
+        a: "Όχι πάντα. Οι δημόσιοι φορείς οφείλουν να διορίζουν έναν κατά τον ελληνικό νόμο 4624/2019, όπως και οι οργανισμοί των οποίων η κύρια δραστηριότητα περιλαμβάνει παρακολούθηση μεγάλης κλίμακας ή δεδομένα ειδικών κατηγοριών.",
+      },
+      {
+        q: "Πόσο γρήγορα πρέπει να αναφέρω παραβίαση δεδομένων στην Ελλάδα;",
+        a: "Εντός 72 ωρών από τη στιγμή που λαμβάνετε γνώση της παραβίασης, στην Αρχή Προστασίας Δεδομένων, και στα θιγόμενα πρόσωπα χωρίς αδικαιολόγητη καθυστέρηση όταν ο κίνδυνος είναι υψηλός.",
+      },
+    ],
+  },
 };
 
 export function localizePost(post: BlogPost, lang: string): BlogPost {
@@ -300,8 +646,8 @@ export function localizePost(post: BlogPost, lang: string): BlogPost {
 export const blogUi = {
   en: {
     blog: "Blog",
-    heading: "QA & Security Blog",
-    intro: "Practical articles on software QA testing, release readiness and penetration testing by ISTQB-certified QA specialist Greta Rusecke.",
+    heading: "QA, Security & GDPR Blog",
+    intro: "Practical articles on software QA testing, release readiness, penetration testing and GDPR compliance by ISTQB-certified QA specialist Greta Rusecke.",
     read: "Read article",
     min: "min read",
     by: "by Greta Rusecke, ISTQB Certified QA Specialist",
@@ -313,8 +659,8 @@ export const blogUi = {
   },
   el: {
     blog: "Blog",
-    heading: "Blog για QA & Ασφάλεια",
-    intro: "Πρακτικά άρθρα για τον έλεγχο ποιότητας λογισμικού, την ετοιμότητα κυκλοφορίας και τις δοκιμές διείσδυσης από την πιστοποιημένη κατά ISTQB ειδικό QA Greta Rusecke.",
+    heading: "Blog για QA, Ασφάλεια & GDPR",
+    intro: "Πρακτικά άρθρα για τον έλεγχο ποιότητας λογισμικού, την ετοιμότητα κυκλοφορίας, τις δοκιμές διείσδυσης και τη συμμόρφωση με τον GDPR από την πιστοποιημένη κατά ISTQB ειδικό QA Greta Rusecke.",
     read: "Διάβασε το άρθρο",
     min: "λεπτά ανάγνωσης",
     by: "από τη Greta Rusecke, πιστοποιημένη ειδικό QA κατά ISTQB",
