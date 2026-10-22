@@ -3,9 +3,9 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { blogPosts, blogUi, localizePost } from "@/lib/blog-posts";
 import { useLanguage } from "@/lib/i18n";
 
-const title = "QA & Security Blog — Greta Rusecke";
+const title = "QA, Security & GDPR Blog — Greta Rusecke";
 const description =
-  "Practical articles on software QA testing, release readiness and penetration testing by ISTQB-certified QA specialist Greta Rusecke.";
+  "Practical articles on software QA testing, release readiness, penetration testing and GDPR compliance by ISTQB-certified QA specialist Greta Rusecke.";
 const url = "https://gretagreta.eu/blog";
 
 export const Route = createFileRoute("/blog/")({
