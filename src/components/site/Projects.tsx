@@ -40,11 +40,11 @@ export function Projects() {
                   rel="noreferrer noopener"
                   className="group panel flex h-full flex-col p-6 transition-all hover:-translate-y-1 hover:border-primary/60"
                 >
-                  <CardInner project={project} />
+                  <CardInner project={project} summary={t.projects.summaries[i]} />
                 </a>
               ) : (
                 <div className="panel flex h-full flex-col p-6">
-                  <CardInner project={project} />
+                  <CardInner project={project} summary={t.projects.summaries[i]} />
                 </div>
               )}
             </Reveal>
