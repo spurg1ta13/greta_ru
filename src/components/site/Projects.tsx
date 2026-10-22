@@ -55,7 +55,7 @@ export function Projects() {
   );
 }
 
-function CardInner({ project, summary }: { project: Project; summary?: string }) {
+function CardInner({ project, summary }: { project: Project; summary: string | undefined }) {
   return (
     <>
       <div className="flex items-start justify-between gap-3">
