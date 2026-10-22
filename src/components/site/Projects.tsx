@@ -3,6 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
+type Project = {
+  name: string;
+  url: string | null;
+  tags: string[];
+};
+
 const projects = [
   { name: "Devcraft", url: "https://devcraft.gr", tags: ["AI Assistant", "Lovable", "React", "Vercel"] },
   { name: "Lotus Bloom", url: "https://lotusbloom.gr", tags: ["Tailwind CSS", "UX Design", "Responsive QA"] },
