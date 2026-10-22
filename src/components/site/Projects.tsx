@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/site/Reveal";
 
 import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
