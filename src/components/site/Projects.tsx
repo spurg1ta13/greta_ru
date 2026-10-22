@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-
 import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
@@ -60,9 +58,6 @@ function CardInner({ project, summary }: { project: Project; summary: string | u
     <>
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-xl font-semibold">{project.name}</h3>
-        {project.url && (
-          <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
-        )}
       </div>
       {project.url && (
         <p className="mt-1 font-mono text-xs text-primary">{project.url.replace("https://", "")}</p>
