@@ -84,6 +84,7 @@ export const dictionaries = {
         "Bilingual EN/EL studio platform with an embedded Gemini AI assistant, RLS-protected lead capture, role-based admin portal, reCAPTCHA v3 and llms.txt.",
         "Bilingual beauty studio site with 100/100 desktop Lighthouse scores, WebP mobile images and a keyboard-accessible gallery.",
         "Multilingual (EL/EN/RU) service and lead platform with a dynamic pricing calculator, modal lead funnels and automated email delivery.",
+        "Secure client-document vault prototype with TOTP multi-factor authentication, role-based access, row-level security, an in-app document viewer without downloads, soft delete with restore and a full activity log.",
       ],
     },
     skills: {
