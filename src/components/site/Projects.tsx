@@ -55,7 +55,7 @@ export function Projects() {
   );
 }
 
-function CardInner({ project }: { project: Project }) {
+function CardInner({ project, summary }: { project: Project; summary: string }) {
   return (
     <>
       <div className="flex items-start justify-between gap-3">
@@ -67,7 +67,7 @@ function CardInner({ project }: { project: Project }) {
       {project.url && (
         <p className="mt-1 font-mono text-xs text-primary">{project.url.replace("https://", "")}</p>
       )}
-      <CardSummary project={project} />
+      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{summary}</p>
       <ul className="mt-6 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
           <li
