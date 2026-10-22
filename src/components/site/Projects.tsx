@@ -7,6 +7,7 @@ const projects = [
   { name: "Devcraft", url: "https://devcraft.gr", tags: ["AI Assistant", "Lovable", "React", "Vercel"] },
   { name: "Lotus Bloom", url: "https://lotusbloom.gr", tags: ["Tailwind CSS", "UX Design", "Responsive QA"] },
   { name: "CleanUpSKG", url: "https://cleanupskg.gr", tags: ["Content Platform", "SEO", "TypeScript"] },
+  { name: "NE*** Files storage secure system", url: null, tags: ["TOTP MFA", "Supabase RLS", "Role-Based Access"] },
 ];
 
 export function Projects() {
