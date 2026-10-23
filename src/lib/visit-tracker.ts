@@ -1,22 +1,12 @@
-const VISITOR_KEY = "greta-visitor-id";
+import { getVisitorId, hasConsent } from "@/lib/consent";
+
 const SESSION_KEY = "greta-visit-logged";
 
-function visitorId(): string {
-  let id = localStorage.getItem(VISITOR_KEY);
-  if (!id) {
-    id =
-      typeof crypto !== "undefined" && "randomUUID" in crypto
-        ? crypto.randomUUID()
-        : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    localStorage.setItem(VISITOR_KEY, id);
-  }
-  return id;
-}
-
-/** Logs one visit per browser session. Safe to call on every mount. */
+/** Logs one visit per browser session — only after GDPR consent. */
 export function trackVisit(language: string) {
   if (typeof window === "undefined") return;
   try {
+    if (!hasConsent()) return;
     if (sessionStorage.getItem(SESSION_KEY)) return;
     sessionStorage.setItem(SESSION_KEY, "1");
 
@@ -24,9 +14,10 @@ export function trackVisit(language: string) {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        visitorId: visitorId(),
+        visitorId: getVisitorId(),
         language,
         path: window.location.pathname,
+        consent: true,
       }),
     }).catch(() => undefined);
   } catch {
