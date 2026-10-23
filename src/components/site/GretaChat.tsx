@@ -1,3 +1,4 @@
+import { setConsent as saveConsent } from "@/lib/consent";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useEffect, useRef, useState } from "react";

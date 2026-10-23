@@ -1,3 +1,4 @@
+import { setConsent as saveConsent } from "@/lib/consent";
 import { Link } from "@tanstack/react-router";
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import cvAsset from "@/assets/Greta_Rusecke_CV.pdf.asset.json";
