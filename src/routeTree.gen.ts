@@ -21,6 +21,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiPublicConsentRouteImport } from './routes/api/public/consent'
 import { Route as ApiPublicCvDownloadRouteImport } from './routes/api/public/cv-download'
+import { Route as ApiPublicForgetRouteImport } from './routes/api/public/forget'
 import { Route as ApiPublicGeoRouteImport } from './routes/api/public/geo'
 import { Route as ApiPublicVisitRouteImport } from './routes/api/public/visit'
 
@@ -83,6 +84,11 @@ const ApiPublicCvDownloadRoute = ApiPublicCvDownloadRouteImport.update({
   path: '/api/public/cv-download',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicForgetRoute = ApiPublicForgetRouteImport.update({
+  id: '/api/public/forget',
+  path: '/api/public/forget',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicGeoRoute = ApiPublicGeoRouteImport.update({
   id: '/api/public/geo',
   path: '/api/public/geo',
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/api/public/consent': typeof ApiPublicConsentRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
+  '/api/public/forget': typeof ApiPublicForgetRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
 }
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/api/public/consent': typeof ApiPublicConsentRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
+  '/api/public/forget': typeof ApiPublicForgetRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
 }
@@ -137,6 +145,7 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/api/public/consent': typeof ApiPublicConsentRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
+  '/api/public/forget': typeof ApiPublicForgetRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
 }
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/api/public/consent'
     | '/api/public/cv-download'
+    | '/api/public/forget'
     | '/api/public/geo'
     | '/api/public/visit'
   fileRoutesByTo: FileRoutesByTo
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/api/public/consent'
     | '/api/public/cv-download'
+    | '/api/public/forget'
     | '/api/public/geo'
     | '/api/public/visit'
   id:
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/api/public/consent'
     | '/api/public/cv-download'
+    | '/api/public/forget'
     | '/api/public/geo'
     | '/api/public/visit'
   fileRoutesById: FileRoutesById
@@ -198,6 +210,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiPublicConsentRoute: typeof ApiPublicConsentRoute
   ApiPublicCvDownloadRoute: typeof ApiPublicCvDownloadRoute
+  ApiPublicForgetRoute: typeof ApiPublicForgetRoute
   ApiPublicGeoRoute: typeof ApiPublicGeoRoute
   ApiPublicVisitRoute: typeof ApiPublicVisitRoute
 }
@@ -288,6 +301,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicCvDownloadRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/forget': {
+      id: '/api/public/forget'
+      path: '/api/public/forget'
+      fullPath: '/api/public/forget'
+      preLoaderRoute: typeof ApiPublicForgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/geo': {
       id: '/api/public/geo'
       path: '/api/public/geo'
@@ -338,6 +358,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiPublicConsentRoute: ApiPublicConsentRoute,
   ApiPublicCvDownloadRoute: ApiPublicCvDownloadRoute,
+  ApiPublicForgetRoute: ApiPublicForgetRoute,
   ApiPublicGeoRoute: ApiPublicGeoRoute,
   ApiPublicVisitRoute: ApiPublicVisitRoute,
 }
