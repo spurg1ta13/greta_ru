@@ -333,6 +333,11 @@ export const blogPosts: BlogPost[] = [
 
 export const getPost = (slug: string) => blogPosts.find((p) => p.slug === slug);
 
+/** Posts ordered newest first (by publication date), for listings and structured data. */
+export const blogPostsNewest = [...blogPosts].sort((a, b) =>
+  b.datePublished.localeCompare(a.datePublished),
+);
+
 type Localized = Pick<BlogPost, "title" | "description" | "summary" | "sections" | "faq">;
 
 const el: Record<string, Localized> = {
