@@ -74,7 +74,12 @@ export function ContactFooter() {
     setErrors({});
     setSending(true);
     lastSubmit.current = Date.now();
-    const { error } = await supabase.from("contact_messages").insert({ ...parsed.data, inquiry_type: inquiryType });
+    const { error } = await supabase.from("contact_messages").insert({
+      ...parsed.data,
+      inquiry_type: inquiryType,
+      consent_given: true,
+      consent_at: new Date().toISOString(),
+    });
     setSending(false);
 
     if (error) {
@@ -253,12 +258,7 @@ export function ContactFooter() {
                       setConsent(e.target.checked);
                       if (e.target.checked) {
                         setErrors((prev) => ({ ...prev, consent: "" }));
-                        try {
-                          localStorage.setItem("gdpr_consent_accepted", "true");
-                        } catch {
-                          /* storage blocked */
-                        }
-                        window.dispatchEvent(new Event("gdpr-consent-change"));
+                        saveConsent(true, "contact_form");
                       }
                     }}
                     className="mt-1 size-4 shrink-0 cursor-pointer accent-primary"
