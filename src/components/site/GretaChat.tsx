@@ -1,4 +1,4 @@
-import { setConsent as saveConsent } from "@/lib/consent";
+import { getVisitorId, setConsent as saveConsent } from "@/lib/consent";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useEffect, useRef, useState } from "react";
@@ -50,7 +50,7 @@ export function GretaChat() {
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
-      body: { language, sessionId: sessionIdRef.current },
+      body: () => ({ language, sessionId: sessionIdRef.current, visitorId: getVisitorId() }),
     }),
 
     onError: (error) => {

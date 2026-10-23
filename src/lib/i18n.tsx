@@ -197,7 +197,7 @@ export const dictionaries = {
         },
         {
           h: "Your rights",
-          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted, including chat transcripts and the location data stored with them. Email the address above and the request will be handled promptly.",
+          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted, including chat transcripts and the location data stored with them. You can erase it yourself at any time with the “Delete my data” link at the bottom of the homepage: everything linked to your browser (chat transcripts, contact messages, visit and download statistics and consent records) is deleted immediately. You can also email the address above, quoting the email you used; erasure requests are completed within one month as required by Article 17 GDPR.",
         },
         {
           h: "Cookies",
@@ -427,7 +427,7 @@ export const dictionaries = {
         },
         {
           h: "Τα δικαιώματά σου",
-          p: "Σύμφωνα με τον GDPR μπορείς να ζητήσεις πρόσβαση, διόρθωση ή διαγραφή των προσωπικών δεδομένων που υπέβαλες, συμπεριλαμβανομένων των αρχείων συνομιλίας και των δεδομένων τοποθεσίας που αποθηκεύονται μαζί τους. Στείλε email στην παραπάνω διεύθυνση και το αίτημα θα διεκπεραιωθεί άμεσα.",
+          p: "Σύμφωνα με τον GDPR μπορείς να ζητήσεις πρόσβαση, διόρθωση ή διαγραφή των προσωπικών δεδομένων που υπέβαλες, συμπεριλαμβανομένων των αρχείων συνομιλίας και των δεδομένων τοποθεσίας που αποθηκεύονται μαζί τους. Μπορείς να τα διαγράψεις μόνος/η σου ανά πάσα στιγμή με τον σύνδεσμο «Διαγραφή των δεδομένων μου» στο κάτω μέρος της αρχικής σελίδας: ό,τι συνδέεται με τον browser σου (συνομιλίες, μηνύματα επικοινωνίας, στατιστικά επισκέψεων και λήψεων και αρχεία συγκατάθεσης) διαγράφεται αμέσως. Μπορείς επίσης να στείλεις email στην παραπάνω διεύθυνση αναφέροντας το email που χρησιμοποίησες· τα αιτήματα διαγραφής ολοκληρώνονται εντός ενός μηνός, όπως ορίζει το άρθρο 17 του GDPR.",
         },
         {
           h: "Cookies",

@@ -138,3 +138,44 @@ export const deleteChatMessage = createServerFn({ method: "POST" })
     return { ok: true };
   });
 
+
+export const deleteContactMessage = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((data: { id: string }) => {
+    if (!data || typeof data.id !== "string" || !data.id) throw new Error("id is required");
+    return { id: data.id };
+  })
+  .handler(async ({ data, context }) => {
+    await requireAdmin(context);
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { error } = await supabaseAdmin.from("contact_messages").delete().eq("id", data.id);
+    if (error) throw error;
+    return { ok: true };
+  });
+
+/** Right to be forgotten: erase everything linked to an email and/or visitor id. */
+export const eraseVisitorData = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((data: { query: string }) => {
+    const q = typeof data?.query === "string" ? data.query.trim().slice(0, 255) : "";
+    if (!q) throw new Error("Email or visitor id is required");
+    return { query: q };
+  })
+  .handler(async ({ data, context }) => {
+    await requireAdmin(context);
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { eraseByVisitorIds } = await import("@/lib/erasure.server");
+    const isEmail = data.query.includes("@");
+    const emails = isEmail ? [data.query.toLowerCase(), data.query] : [];
+    const visitorIds = isEmail ? [] : [data.query];
+    if (isEmail) {
+      const { data: rows } = await supabaseAdmin
+        .from("contact_messages")
+        .select("visitor_id")
+        .in("email", emails);
+      for (const r of rows ?? []) if (r.visitor_id) visitorIds.push(r.visitor_id);
+    }
+    const counts = await eraseByVisitorIds(visitorIds, emails);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    return { total, counts };
+  });

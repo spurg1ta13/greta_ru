@@ -1,4 +1,5 @@
-import { setConsent as saveConsent } from "@/lib/consent";
+import { getVisitorId, hasConsent, setConsent as saveConsent } from "@/lib/consent";
+import { ForgetMeButton } from "@/components/site/ForgetMeButton";
 import { Link } from "@tanstack/react-router";
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import cvAsset from "@/assets/Greta_Rusecke_CV.pdf.asset.json";
@@ -79,6 +80,7 @@ export function ContactFooter() {
       ...parsed.data,
       inquiry_type: inquiryType,
       consent_given: true,
+      visitor_id: getVisitorId(),
       consent_at: new Date().toISOString(),
     });
     setSending(false);
@@ -170,7 +172,7 @@ export function ContactFooter() {
                       fetch("/api/public/cv-download", {
                         method: "POST",
                         headers: { "content-type": "application/json" },
-                        body: JSON.stringify({ language, event }),
+                        body: JSON.stringify({ language, event, visitorId: hasConsent() ? getVisitorId() : null }),
                         keepalive: true,
                       }).catch(() => undefined);
 
@@ -299,6 +301,7 @@ export function ContactFooter() {
             <Link to="/terms" target="_blank" rel="noreferrer" className="hover:text-primary">
               {t.contact.terms}
             </Link>
+            <ForgetMeButton />
           </nav>
         </div>
 
