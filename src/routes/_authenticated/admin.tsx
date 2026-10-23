@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
+import { useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,8 @@ import { supabase } from "@/integrations/supabase/client";
 import {
   deleteChatMessage,
   deleteChatSession,
+  deleteContactMessage,
+  eraseVisitorData,
   getAdminData,
   type AdminChatLog,
 } from "@/lib/admin.functions";
@@ -64,6 +67,29 @@ function AdminPage() {
       void invalidate();
     },
     onError: () => toast.error("Could not delete message"),
+  });
+
+  const removeContact = useServerFn(deleteContactMessage);
+  const erase = useServerFn(eraseVisitorData);
+  const [eraseQuery, setEraseQuery] = useState("");
+
+  const contactMutation = useMutation({
+    mutationFn: (id: string) => removeContact({ data: { id } }),
+    onSuccess: () => {
+      toast.success("Contact message deleted");
+      void invalidate();
+    },
+    onError: () => toast.error("Could not delete contact message"),
+  });
+
+  const eraseMutation = useMutation({
+    mutationFn: (query: string) => erase({ data: { query } }),
+    onSuccess: (res) => {
+      toast.success(`Erased ${res.total} record(s)`);
+      setEraseQuery("");
+      void invalidate();
+    },
+    onError: () => toast.error("Erasure failed"),
   });
 
   const signOut = async () => {
@@ -171,6 +197,35 @@ function AdminPage() {
           </section>
 
           <section className="mt-12">
+            <h2 className="text-xl font-semibold">Right to be forgotten</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Erase everything linked to a person: enter their email (from a contact message) or visitor id.
+              Deletes contact messages, chats, visits, CV downloads and consent records. Cannot be undone.
+            </p>
+            <form
+              className="mt-4 flex flex-col gap-3 sm:flex-row"
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!eraseQuery.trim()) return;
+                if (window.confirm(`Permanently erase all data for "${eraseQuery.trim()}"?`)) {
+                  eraseMutation.mutate(eraseQuery.trim());
+                }
+              }}
+            >
+              <input
+                value={eraseQuery}
+                onChange={(e) => setEraseQuery(e.target.value)}
+                placeholder="email@example.com or visitor id"
+                aria-label="Email or visitor id"
+                className="h-10 flex-1 rounded-md border border-input bg-background px-3 text-sm"
+              />
+              <Button type="submit" variant="destructive" disabled={eraseMutation.isPending}>
+                Erase all data
+              </Button>
+            </form>
+          </section>
+
+          <section className="mt-12">
             <h2 className="text-xl font-semibold">
               Contact messages <span className="text-muted-foreground">({data.messages.length})</span>
             </h2>
@@ -191,6 +246,16 @@ function AdminPage() {
                     <span className="ml-auto font-mono text-[11px] text-muted-foreground">
                       {formatDate(m.created_at)}
                     </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled={contactMutation.isPending}
+                      onClick={() => {
+                        if (window.confirm("Delete this contact message?")) contactMutation.mutate(m.id);
+                      }}
+                    >
+                      Delete
+                    </Button>
                   </div>
                   <p className="mt-3 whitespace-pre-wrap text-sm text-muted-foreground">{m.message}</p>
                 </article>

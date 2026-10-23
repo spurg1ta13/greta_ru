@@ -4,7 +4,7 @@ import { convertToModelMessages, streamText, type UIMessage } from "ai";
 import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
 import { GRETA_SYSTEM_PROMPT } from "@/lib/greta-profile";
 
-type ChatRequestBody = { messages?: unknown; language?: unknown; sessionId?: unknown };
+type ChatRequestBody = { messages?: unknown; language?: unknown; sessionId?: unknown; visitorId?: unknown };
 
 function textOf(message: UIMessage | undefined): string {
   if (!message) return "";
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const { messages, language, sessionId } = (await request.json()) as ChatRequestBody;
+        const { messages, language, sessionId, visitorId } = (await request.json()) as ChatRequestBody;
         if (!Array.isArray(messages)) {
           return new Response("Messages are required", { status: 400 });
         }
@@ -55,6 +55,7 @@ export const Route = createFileRoute("/api/chat")({
                 .filter((row) => row.content.length > 0)
                 .map((row, i) => ({
                   session_id: session,
+                  visitor_id: typeof visitorId === "string" ? visitorId.slice(0, 64) : null,
                   role: row.role,
                   content: row.content.slice(0, 4000),
                   language: lang,
