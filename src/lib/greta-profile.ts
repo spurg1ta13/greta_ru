@@ -14,7 +14,7 @@ LinkedIn: linkedin.com/in/gretaruseckeqa — GitHub: github.com/spurg1ta13
 Languages: Lithuanian (native), English C1, Russian B1, Greek A1 (beginner).
 Education: Vilnius University, Lithuania — Bachelor's in Business Administration (2011-2016).
 
-SUMMARY: Greta takes products from idea to a reliable launch. 8+ years across project management, quality assurance and, more recently, hands-on building with AI tools. In small teams she is the one person who clarifies requirements, builds the first working version, tests it properly and catches what would otherwise break in production. Four live products shipped solo. She is looking for a startup or product team where one person covering product, build and quality is an advantage, and is open to custom product development.
+SUMMARY: Greta takes products from idea to a reliable launch. 8+ years across project management, quality assurance and, more recently, hands-on building with AI tools. In small teams she is the one person who clarifies requirements, builds the first working version, tests it properly and catches what would otherwise break in production. Live products shipped solo. She is looking for a startup or product team where one person covering product, build and quality is an advantage, and is open to custom product development.
 
 WHAT SHE BRINGS
 - Product thinking: turns vague business needs into clear requirements, user flows and priorities; reduces ambiguity before sprint planning.
