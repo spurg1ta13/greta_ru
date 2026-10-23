@@ -197,7 +197,7 @@ export const dictionaries = {
         },
         {
           h: "Your rights",
-          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted, including chat transcripts and the location data stored with them. You can erase it yourself at any time with the "Delete my data" link at the bottom of the homepage: everything linked to your browser (chat transcripts, contact messages, visit and download statistics and consent records) is deleted immediately. You can also email the address above, quoting the email you used; erasure requests are completed within one month as required by Article 17 GDPR.",
+          p: "Under the GDPR you may request access to, correction of, or deletion of the personal data you submitted, including chat transcripts and the location data stored with them. You can erase it yourself at any time with the “Delete my data” link at the bottom of the homepage: everything linked to your browser (chat transcripts, contact messages, visit and download statistics and consent records) is deleted immediately. You can also email the address above, quoting the email you used; erasure requests are completed within one month as required by Article 17 GDPR.",
         },
         {
           h: "Cookies",

@@ -23,7 +23,7 @@ const COPY = {
 
 /** Self-service GDPR erasure (right to be forgotten). */
 export function ForgetMeButton() {
-  const { lang } = useLanguage();
+  const { language: lang } = useLanguage();
   const c = COPY[lang === "el" ? "el" : "en"];
   const [busy, setBusy] = useState(false);
 
