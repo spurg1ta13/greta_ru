@@ -9,9 +9,9 @@ export const Route = createFileRoute("/api/public/consent")({
     handlers: {
       POST: async ({ request }) => {
         const bad = () => new Response(JSON.stringify({ ok: false }), { status: 400 });
-        let b: Record<string, unknown>;
+        let b: { visitorId?: unknown; decision?: unknown; source?: unknown; policyVersion?: unknown; language?: unknown };
         try {
-          b = (await request.json()) as Record<string, unknown>;
+          b = (await request.json()) as typeof b;
         } catch {
           return bad();
         }
