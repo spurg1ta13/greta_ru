@@ -70,7 +70,7 @@ export const dictionaries = {
           points: [
             "Prototypes and ships working apps with Lovable, React, TypeScript, Tailwind and Supabase — ideas become testable in hours, not weeks.",
             "Security and compliance built in: row-level security, role-based access, reCAPTCHA v3, GDPR consent flows, WCAG accessibility.",
-            "Four live products shipped solo, plus a secure client-document vault in production with TOTP MFA and activity logs.",
+            "Live products shipped solo, plus a secure client-document vault in production with TOTP MFA and activity logs.",
           ],
         },
       ],
@@ -300,7 +300,7 @@ export const dictionaries = {
           points: [
             "Δημιουργεί και κυκλοφορεί λειτουργικές εφαρμογές με Lovable, React, TypeScript, Tailwind και Supabase — οι ιδέες γίνονται δοκιμάσιμες σε ώρες, όχι εβδομάδες.",
             "Ενσωματωμένη ασφάλεια και συμμόρφωση: row-level security, πρόσβαση βάσει ρόλων, reCAPTCHA v3, ροές συγκατάθεσης GDPR, προσβασιμότητα WCAG.",
-            "Τέσσερα live προϊόντα υλοποιημένα solo, καθώς και ένα ασφαλές αποθετήριο εγγράφων πελατών σε παραγωγή με TOTP MFA και αρχείο δραστηριότητας.",
+            "Live προϊόντα υλοποιημένα solo, καθώς και ένα ασφαλές αποθετήριο εγγράφων πελατών σε παραγωγή με TOTP MFA και αρχείο δραστηριότητας.",
           ],
         },
       ],
