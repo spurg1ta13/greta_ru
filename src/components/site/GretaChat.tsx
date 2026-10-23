@@ -108,12 +108,7 @@ export function GretaChat() {
   };
 
   const acceptConsent = () => {
-    try {
-      localStorage.setItem(CONSENT_KEY, "true");
-      window.dispatchEvent(new Event("gdpr-consent-change"));
-    } catch {
-      /* storage blocked */
-    }
+    saveConsent(true, "chat");
     setConsented(true);
     setConsentStep(null);
     setUnconsentedText("");

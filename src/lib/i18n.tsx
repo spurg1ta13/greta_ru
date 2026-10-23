@@ -163,7 +163,9 @@ export const dictionaries = {
       privacy: "Privacy Policy",
       terms: "Terms & Conditions",
       cookieText:
-        "This site uses cookies to improve your experience. By continuing to browse, you agree to the use of cookies.",
+        "We use essential storage to run this site. With your consent we also record anonymous visit statistics (country only, never your IP) and enable the Greta AI assistant.",
+      cookieCheckbox: "I agree to the processing of my data as described in the",
+      cookieSave: "Save choice",
       cookieAccept: "Accept",
       cookieDecline: "Decline",
     },
@@ -391,7 +393,9 @@ export const dictionaries = {
       privacy: "Πολιτική Απορρήτου",
       terms: "Όροι Χρήσης",
       cookieText:
-        "Αυτός ο ιστότοπος χρησιμοποιεί cookies για να βελτιώσει την εμπειρία σας. Συνεχίζοντας την περιήγηση, συμφωνείτε με τη χρήση cookies.",
+        "Χρησιμοποιούμε απαραίτητη αποθήκευση για τη λειτουργία του ιστότοπου. Με τη συγκατάθεσή σας καταγράφουμε επίσης ανώνυμα στατιστικά επισκέψεων (μόνο χώρα, ποτέ IP) και ενεργοποιούμε τον βοηθό Greta AI.",
+      cookieCheckbox: "Συμφωνώ με την επεξεργασία των δεδομένων μου όπως περιγράφεται στην",
+      cookieSave: "Αποθήκευση επιλογής",
       cookieAccept: "Αποδοχή",
       cookieDecline: "Απόρριψη",
     },

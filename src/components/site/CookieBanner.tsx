@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
+import { setConsent } from "@/lib/consent";
 
 const SESSION_KEY = "greta-cookie-choice";
 
@@ -9,6 +11,7 @@ const SESSION_KEY = "greta-cookie-choice";
 export function CookieBanner() {
   const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     try {
@@ -42,12 +45,10 @@ export function CookieBanner() {
   const close = (choice: "accepted" | "declined") => {
     try {
       sessionStorage.setItem(SESSION_KEY, choice);
-      if (choice === "accepted") localStorage.setItem("gdpr_consent_accepted", "true");
-      else localStorage.removeItem("gdpr_consent_accepted");
-      window.dispatchEvent(new Event("gdpr-consent-change"));
     } catch {
       /* ignore */
     }
+    setConsent(choice === "accepted", "banner");
     setVisible(false);
   };
 
@@ -61,13 +62,30 @@ export function CookieBanner() {
       className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-3xl"
     >
       <div className="panel flex flex-col gap-4 rounded-xl border border-border bg-card/95 p-4 shadow-lg backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:p-5">
-        <p className="text-sm text-muted-foreground">{t.contact.cookieText}</p>
+        <div className="space-y-3">
+          <p className="text-sm text-muted-foreground">{t.contact.cookieText}</p>
+          <label className="flex items-start gap-2 text-sm text-foreground">
+            <input
+              type="checkbox"
+              checked={checked}
+              onChange={(e) => setChecked(e.target.checked)}
+              className="mt-0.5 size-4 shrink-0 cursor-pointer accent-primary"
+            />
+            <span>
+              {t.contact.cookieCheckbox}{" "}
+              <Link to="/privacy" className="text-primary underline underline-offset-2">
+                {t.contact.privacy}
+              </Link>
+              .
+            </span>
+          </label>
+        </div>
         <div className="flex shrink-0 gap-2">
           <Button variant="outlineSignal" size="sm" onClick={() => close("declined")}>
             {t.contact.cookieDecline}
           </Button>
-          <Button variant="hero" size="sm" onClick={() => close("accepted")}>
-            {t.contact.cookieAccept}
+          <Button variant="hero" size="sm" disabled={!checked} onClick={() => close("accepted")}>
+            {t.contact.cookieSave}
           </Button>
         </div>
       </div>

@@ -243,7 +243,10 @@ function Index() {
     if (typeof window === "undefined") return;
     if (window.history.scrollRestoration) window.history.scrollRestoration = "manual";
     if (!window.location.hash) window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-    trackVisit(document.documentElement.lang || "en");
+    const track = () => trackVisit(document.documentElement.lang || "en");
+    track();
+    window.addEventListener("gdpr-consent-change", track);
+    return () => window.removeEventListener("gdpr-consent-change", track);
   }, []);
 
 
