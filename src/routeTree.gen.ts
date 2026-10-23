@@ -19,6 +19,7 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ApiPublicConsentRouteImport } from './routes/api/public/consent'
 import { Route as ApiPublicCvDownloadRouteImport } from './routes/api/public/cv-download'
 import { Route as ApiPublicGeoRouteImport } from './routes/api/public/geo'
 import { Route as ApiPublicVisitRouteImport } from './routes/api/public/visit'
@@ -72,6 +73,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const ApiPublicConsentRoute = ApiPublicConsentRouteImport.update({
+  id: '/api/public/consent',
+  path: '/api/public/consent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicCvDownloadRoute = ApiPublicCvDownloadRouteImport.update({
   id: '/api/public/cv-download',
   path: '/api/public/cv-download',
@@ -98,6 +104,7 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/public/consent': typeof ApiPublicConsentRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/api/public/consent': typeof ApiPublicConsentRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/public/consent': typeof ApiPublicConsentRoute
   '/api/public/cv-download': typeof ApiPublicCvDownloadRoute
   '/api/public/geo': typeof ApiPublicGeoRoute
   '/api/public/visit': typeof ApiPublicVisitRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/$slug'
     | '/blog/'
+    | '/api/public/consent'
     | '/api/public/cv-download'
     | '/api/public/geo'
     | '/api/public/visit'
@@ -156,6 +166,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/$slug'
     | '/blog'
+    | '/api/public/consent'
     | '/api/public/cv-download'
     | '/api/public/geo'
     | '/api/public/visit'
@@ -171,6 +182,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/$slug'
     | '/blog/'
+    | '/api/public/consent'
     | '/api/public/cv-download'
     | '/api/public/geo'
     | '/api/public/visit'
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiPublicConsentRoute: typeof ApiPublicConsentRoute
   ApiPublicCvDownloadRoute: typeof ApiPublicCvDownloadRoute
   ApiPublicGeoRoute: typeof ApiPublicGeoRoute
   ApiPublicVisitRoute: typeof ApiPublicVisitRoute
@@ -261,6 +274,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/api/public/consent': {
+      id: '/api/public/consent'
+      path: '/api/public/consent'
+      fullPath: '/api/public/consent'
+      preLoaderRoute: typeof ApiPublicConsentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/cv-download': {
       id: '/api/public/cv-download'
       path: '/api/public/cv-download'
@@ -316,6 +336,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiPublicConsentRoute: ApiPublicConsentRoute,
   ApiPublicCvDownloadRoute: ApiPublicCvDownloadRoute,
   ApiPublicGeoRoute: ApiPublicGeoRoute,
   ApiPublicVisitRoute: ApiPublicVisitRoute,

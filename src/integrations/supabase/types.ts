@@ -53,8 +53,43 @@ export type Database = {
         }
         Relationships: []
       }
+      consent_records: {
+        Row: {
+          country: string | null
+          created_at: string
+          decision: string
+          id: string
+          language: string | null
+          policy_version: string
+          source: string
+          visitor_id: string
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          decision: string
+          id?: string
+          language?: string | null
+          policy_version: string
+          source: string
+          visitor_id: string
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          decision?: string
+          id?: string
+          language?: string | null
+          policy_version?: string
+          source?: string
+          visitor_id?: string
+        }
+        Relationships: []
+      }
       contact_messages: {
         Row: {
+          consent_at: string | null
+          consent_given: boolean
           created_at: string
           email: string
           id: string
@@ -63,6 +98,8 @@ export type Database = {
           name: string
         }
         Insert: {
+          consent_at?: string | null
+          consent_given?: boolean
           created_at?: string
           email: string
           id?: string
@@ -71,6 +108,8 @@ export type Database = {
           name: string
         }
         Update: {
+          consent_at?: string | null
+          consent_given?: boolean
           created_at?: string
           email?: string
           id?: string

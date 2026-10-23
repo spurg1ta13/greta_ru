@@ -22,7 +22,11 @@ export const Route = createFileRoute("/api/public/visit")({
             visitorId?: unknown;
             language?: unknown;
             path?: unknown;
+            consent?: unknown;
           };
+          if (body.consent !== true) {
+            return new Response(JSON.stringify({ ok: false, reason: "no_consent" }), { status: 403 });
+          }
           if (typeof body.visitorId === "string" && body.visitorId.length > 0) {
             visitorId = body.visitorId.slice(0, 64);
           }

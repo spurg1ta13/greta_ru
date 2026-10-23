@@ -1,3 +1,4 @@
+import { setConsent as saveConsent } from "@/lib/consent";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useEffect, useRef, useState } from "react";
@@ -108,12 +109,7 @@ export function GretaChat() {
   };
 
   const acceptConsent = () => {
-    try {
-      localStorage.setItem(CONSENT_KEY, "true");
-      window.dispatchEvent(new Event("gdpr-consent-change"));
-    } catch {
-      /* storage blocked */
-    }
+    saveConsent(true, "chat");
     setConsented(true);
     setConsentStep(null);
     setUnconsentedText("");
