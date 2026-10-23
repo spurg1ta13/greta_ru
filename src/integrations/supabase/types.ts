@@ -26,6 +26,7 @@ export type Database = {
           region: string | null
           role: string
           session_id: string
+          visitor_id: string | null
         }
         Insert: {
           city?: string | null
@@ -38,6 +39,7 @@ export type Database = {
           region?: string | null
           role: string
           session_id: string
+          visitor_id?: string | null
         }
         Update: {
           city?: string | null
@@ -50,6 +52,7 @@ export type Database = {
           region?: string | null
           role?: string
           session_id?: string
+          visitor_id?: string | null
         }
         Relationships: []
       }
@@ -96,6 +99,7 @@ export type Database = {
           inquiry_type: string
           message: string
           name: string
+          visitor_id: string | null
         }
         Insert: {
           consent_at?: string | null
@@ -106,6 +110,7 @@ export type Database = {
           inquiry_type?: string
           message: string
           name: string
+          visitor_id?: string | null
         }
         Update: {
           consent_at?: string | null
@@ -116,6 +121,7 @@ export type Database = {
           inquiry_type?: string
           message?: string
           name?: string
+          visitor_id?: string | null
         }
         Relationships: []
       }
@@ -129,6 +135,7 @@ export type Database = {
           ip_address: string | null
           language: string | null
           region: string | null
+          visitor_id: string | null
         }
         Insert: {
           city?: string | null
@@ -139,6 +146,7 @@ export type Database = {
           ip_address?: string | null
           language?: string | null
           region?: string | null
+          visitor_id?: string | null
         }
         Update: {
           city?: string | null
@@ -149,6 +157,7 @@ export type Database = {
           ip_address?: string | null
           language?: string | null
           region?: string | null
+          visitor_id?: string | null
         }
         Relationships: []
       }

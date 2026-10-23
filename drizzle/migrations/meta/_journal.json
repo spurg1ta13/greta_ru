@@ -8,6 +8,13 @@
       "when": 1792781210806,
       "tag": "0000_gdpr_consent_records",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792781584098,
+      "tag": "0001_visitor_id_for_erasure",
+      "breakpoints": true
     }
   ]
 }
