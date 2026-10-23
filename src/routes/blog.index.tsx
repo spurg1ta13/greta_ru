@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-import { blogPosts, blogUi, localizePost } from "@/lib/blog-posts";
+import { blogPostsNewest, blogUi, localizePost } from "@/lib/blog-posts";
 import { useLanguage } from "@/lib/i18n";
 
 const title = "QA, Security & GDPR Blog — Greta Rusecke";
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/blog/")({
           description,
           url,
           author: { "@type": "Person", "@id": "https://gretagreta.eu/#greta", name: "Greta Rusecke" },
-          blogPost: blogPosts.map((p) => ({
+          blogPost: blogPostsNewest.map((p) => ({
             "@type": "BlogPosting",
             headline: p.title,
             url: `${url}/${p.slug}`,
@@ -57,7 +57,7 @@ function BlogIndex() {
       <p className="mt-3 text-muted-foreground">{u.intro}</p>
 
       <div className="mt-12 space-y-6">
-        {blogPosts.map((raw) => localizePost(raw, language)).map((p) => (
+        {blogPostsNewest.map((raw) => localizePost(raw, language)).map((p) => (
           <Link
             key={p.slug}
             to="/blog/$slug"

@@ -1,6 +1,6 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
-import { blogPosts, blogUi, getPost, localizePost } from "@/lib/blog-posts";
+import { blogPostsNewest, blogUi, getPost, localizePost } from "@/lib/blog-posts";
 import { useLanguage } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -98,7 +98,9 @@ function BlogPost() {
   const { language } = useLanguage();
   const u = blogUi[language === "el" ? "el" : "en"];
   const post = localizePost(Route.useLoaderData().post, language);
-  const others = blogPosts.filter((p) => p.slug !== post.slug).map((p) => localizePost(p, language));
+  const others = blogPostsNewest
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => localizePost(p, language));
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-20">
