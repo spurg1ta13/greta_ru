@@ -289,16 +289,16 @@ export function ContactFooter() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex sm:justify-between">
-          <p className="min-w-0">© {new Date().getFullYear()} Greta Rusecke. {t.contact.rights}</p>
-          <nav className="flex shrink-0 items-center gap-4">
-            <Link to="/blog" className="hover:text-primary">
+        <div className="mt-16 grid min-w-0 grid-cols-1 gap-4 border-t border-border pt-8 text-xs text-muted-foreground lg:flex lg:items-center lg:justify-between lg:gap-6">
+          <p className="min-w-0 leading-relaxed">© {new Date().getFullYear()} Greta Rusecke. {t.contact.rights}</p>
+          <nav className="grid min-w-0 grid-cols-2 items-start gap-x-6 gap-y-1 text-left [&>button]:min-h-11 [&>button]:min-w-0 [&>button]:text-left [&>button]:leading-relaxed sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 lg:shrink-0">
+            <Link to="/blog" className="flex min-h-11 min-w-0 items-center leading-relaxed hover:text-primary">
               Blog
             </Link>
-            <Link to="/privacy" target="_blank" rel="noreferrer" className="hover:text-primary">
+            <Link to="/privacy" target="_blank" rel="noreferrer" className="flex min-h-11 min-w-0 items-center leading-relaxed hover:text-primary">
               {t.contact.privacy}
             </Link>
-            <Link to="/terms" target="_blank" rel="noreferrer" className="hover:text-primary">
+            <Link to="/terms" target="_blank" rel="noreferrer" className="flex min-h-11 min-w-0 items-center leading-relaxed hover:text-primary">
               {t.contact.terms}
             </Link>
             <ForgetMeButton />
@@ -308,7 +308,7 @@ export function ContactFooter() {
         <div className="mt-10 text-center">
           <a
             href="https://gretagreta.eu/"
-            className="inline-block font-mono text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-primary"
+            className="inline-block max-w-full font-mono text-[11px] font-medium uppercase leading-relaxed tracking-normal text-muted-foreground transition-colors hover:text-primary sm:tracking-[0.25em]"
           >
             Powered by <span className="text-gradient">gretagreta.eu</span>
           </a>
