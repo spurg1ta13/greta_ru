@@ -39,6 +39,16 @@ export const projectSchemas: ProjectSchema[] = [
     category: "BusinessApplication",
     datePublished: "2025-01-01",
   },
+  {
+    id: "tananger-dyreklinikk",
+    name: "Tananger Dyreklinikk",
+    url: "https://tanangerdyreklinikk.no",
+    description:
+      "Bilingual (Norwegian/English) veterinary clinic website in Norway with online appointment booking, a full services catalogue, a blog and local business SEO. Built, QA-tested and launched by Greta Rusecke.",
+    tech: ["Bilingual NO/EN", "Online Booking", "SEO", "Responsive QA"],
+    category: "BusinessApplication",
+    datePublished: "2025-01-01",
+  },
 ];
 
 const BASE = "https://gretagreta.eu";
