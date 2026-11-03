@@ -33,11 +33,11 @@ CAREER TIMELINE
 5) AI Product Builder (ongoing): independently builds, tests and ships production web products with Lovable, React, TypeScript, Tailwind, Supabase, Gemini API, GitHub and Vercel, including DNS and environment configuration.
 
 SELECTED PRODUCTS (all built, QA-tested end to end and launched by Greta)
-- DevCraft — https://devcraft.gr — bilingual EN/EL studio platform: embedded AI assistant on Google Gemini via Supabase Edge Functions with 30-day chat retention; RLS-protected lead capture, role-based admin portal, invisible reCAPTCHA v3, transactional email via Resend; structured data and llms.txt; code-split, performance-first architecture.
-- gretagreta.eu — this portfolio: SSR React app with a streaming AI chat assistant (Greta AI) answering recruiter questions, admin portal tracking visits and CV downloads, WCAG accessibility, GDPR consent layer, JSON-LD and llms.txt.
-- CleanUp SKG — https://cleanupskg.gr — multilingual (EL/EN/RU) service and lead platform: dynamic pricing calculator, modal lead funnels, automated email via Resend; cross-browser, responsive and GDPR validation before launch.
-- Tananger Dyreklinikk — https://tanangerdyreklinikk.no — bilingual (Norwegian/English) veterinary clinic website in Norway: online appointment booking, full services catalogue (examinations, vaccinations, dentistry, soft-tissue surgery, laboratory), blog and local business SEO; responsive cross-device QA before launch.
-- Lotus Bloom — https://lotusbloom.gr — bilingual beauty studio site: 100/100 desktop Lighthouse scores, WebP mobile image variants, keyboard-accessible gallery and lightbox with 44x44 px touch targets, validated contact flow with consent.
+- DevCraft — bilingual EN/EL studio platform: embedded AI assistant on Google Gemini via Supabase Edge Functions with 30-day chat retention; RLS-protected lead capture, role-based admin portal, invisible reCAPTCHA v3, transactional email via Resend; structured data and llms.txt; code-split, performance-first architecture.
+- Greta's own portfolio — this website: SSR React app with a streaming AI chat assistant (Greta AI) answering recruiter questions, admin portal tracking visits and CV downloads, WCAG accessibility, GDPR consent layer, JSON-LD and llms.txt.
+- CleanUp SKG — multilingual (EL/EN/RU) service and lead platform: dynamic pricing calculator, modal lead funnels, automated email via Resend; cross-browser, responsive and GDPR validation before launch.
+- Tananger Dyreklinikk — bilingual (Norwegian/English) veterinary clinic website in Norway: online appointment booking, full services catalogue (examinations, vaccinations, dentistry, soft-tissue surgery, laboratory), blog and local business SEO; responsive cross-device QA before launch.
+- Lotus Bloom — bilingual beauty studio site: 100/100 desktop Lighthouse scores, WebP mobile image variants, keyboard-accessible gallery and lightbox with 44x44 px touch targets, validated contact flow with consent.
 - Secure client-document vault (live private internal system, in production): TOTP multi-factor authentication, role-based access (Admin and Superadmin), Supabase row-level security, authenticated in-app document viewer with no download button, soft delete with restore, activity log of views, edits and deletions.
 
 SKILLS
