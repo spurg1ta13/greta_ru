@@ -2,7 +2,7 @@ import { getVisitorId, hasConsent, setConsent as saveConsent } from "@/lib/conse
 import { ForgetMeButton } from "@/components/site/ForgetMeButton";
 import { Link } from "@tanstack/react-router";
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
-import cvAsset from "@/assets/Greta_Rusecke_CV.pdf.asset.json";
+import cvAsset from "@/assets/Greta_Rusecke_CV-2.pdf.asset.json";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
