@@ -1,7 +1,12 @@
 type Table = "chat_logs" | "contact_messages" | "cv_downloads" | "site_visits" | "consent_records";
 const TABLES: Table[] = ["chat_logs", "contact_messages", "cv_downloads", "site_visits", "consent_records"];
 
-const esc = (s: string) => s.replace(/[%_,()\\]/g, "");
+// Escape LIKE wildcards so they match literally (e.g. "john_doe@x.com").
+export const esc = (s: string) => s.replace(/[\\%_]/g, (c) => `\\${c}`);
+const must = <T extends { error: unknown }>(r: T) => {
+  if (r.error) throw r.error;
+  return r;
+};
 
 /**
  * Erases every row linked to the given visitor ids, emails and phone numbers.
@@ -17,18 +22,18 @@ export async function eraseByVisitorIds(visitorIds: string[], emails: string[] =
 
   for (const email of emails.map((e) => esc(e.trim()))) {
     if (!email) continue;
-    const { data } = await supabaseAdmin.from("contact_messages").select("visitor_id").ilike("email", email);
+    const { data } = must(await supabaseAdmin.from("contact_messages").select("visitor_id").ilike("email", email));
     for (const r of data ?? []) if (r.visitor_id) ids.add(r.visitor_id);
-    const { count } = await supabaseAdmin.from("contact_messages").delete({ count: "exact" }).ilike("email", email);
+    const { count } = must(await supabaseAdmin.from("contact_messages").delete({ count: "exact" }).ilike("email", email));
     counts["contact_messages"] += count ?? 0;
   }
   for (const term of terms) {
-    const c1 = await supabaseAdmin.from("contact_messages").delete({ count: "exact" }).ilike("message", `%${term}%`);
+    const c1 = must(await supabaseAdmin.from("contact_messages").delete({ count: "exact" }).ilike("message", `%${term}%`));
     counts["contact_messages"] += c1.count ?? 0;
-    const { data } = await supabaseAdmin.from("chat_logs").select("session_id").ilike("content", `%${term}%`);
+    const { data } = must(await supabaseAdmin.from("chat_logs").select("session_id").ilike("content", `%${term}%`));
     const sessions = [...new Set((data ?? []).map((r) => r.session_id))];
     if (sessions.length) {
-      const c2 = await supabaseAdmin.from("chat_logs").delete({ count: "exact" }).in("session_id", sessions);
+      const c2 = must(await supabaseAdmin.from("chat_logs").delete({ count: "exact" }).in("session_id", sessions));
       counts["chat_logs"] += c2.count ?? 0;
     }
   }

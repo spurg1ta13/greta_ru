@@ -18,7 +18,12 @@ export const Route = createFileRoute("/api/public/forget")({
         if (!parsed.success) return new Response(JSON.stringify({ ok: false }), { status: 400 });
         const { visitorId, email, phone } = parsed.data;
         const { eraseByVisitorIds } = await import("@/lib/erasure.server");
-        await eraseByVisitorIds(visitorId ? [visitorId] : [], [email], phone ? [phone] : []);
+        try {
+          await eraseByVisitorIds(visitorId ? [visitorId] : [], [email], phone ? [phone] : []);
+        } catch (e) {
+          console.error("erasure failed", e);
+          return new Response(JSON.stringify({ ok: false }), { status: 500 });
+        }
         // Same response whether or not anything matched, so no one can probe for data.
         return new Response(JSON.stringify({ ok: true }), {
           headers: { "content-type": "application/json", "cache-control": "no-store" },
