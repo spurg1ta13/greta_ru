@@ -21,6 +21,7 @@ import {
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Reveal } from "@/components/site/Reveal";
 import { useLanguage } from "@/lib/i18n";
+import { chatRequestMessages } from "@/lib/chat-history";
 
 
 const CONSENT_KEY = "gdpr_consent_accepted";
@@ -51,6 +52,9 @@ export function GretaChat() {
     transport: new DefaultChatTransport({
       api: "/api/chat",
       body: () => ({ consent: hasConsent(), language, sessionId: sessionIdRef.current, visitorId: getVisitorId() }),
+      prepareSendMessagesRequest: ({ messages, body, id, trigger, messageId }) => ({
+        body: { ...body, id, trigger, messageId, messages: chatRequestMessages(messages) },
+      }),
     }),
 
     onError: (error) => {
