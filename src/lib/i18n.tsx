@@ -80,6 +80,7 @@ export const dictionaries = {
       eyebrow: "02 / Projects",
       heading: "Shipped, tested, live.",
       lead: "Products designed, built, QA-cycled across devices and deployed independently.",
+      loadMore: "Load more",
       summaries: [
         "Bilingual EN/EL studio platform with an embedded Gemini AI assistant, RLS-protected lead capture, role-based admin portal, reCAPTCHA v3 and llms.txt.",
         "Bilingual beauty studio site with 100/100 desktop Lighthouse scores, WebP mobile images and a keyboard-accessible gallery.",
@@ -312,6 +313,7 @@ export const dictionaries = {
       eyebrow: "02 / Έργα",
       heading: "Υλοποιημένα, ελεγμένα, live.",
       lead: "Προϊόντα σχεδιασμένα, υλοποιημένα, ελεγμένα σε διαφορετικές συσκευές και δημοσιευμένα ανεξάρτητα.",
+      loadMore: "Δες περισσότερα",
       summaries: [
         "Δίγλωσση (EN/EL) πλατφόρμα studio με ενσωματωμένο βοηθό AI Gemini, προστατευμένη με RLS συλλογή αιτημάτων, πύλη διαχείρισης βάσει ρόλων, reCAPTCHA v3 και llms.txt.",
         "Δίγλωσση ιστοσελίδα στούντιο ομορφιάς με βαθμολογία 100/100 στο Lighthouse (desktop), εικόνες WebP για κινητά και γκαλερί προσβάσιμη από πληκτρολόγιο.",

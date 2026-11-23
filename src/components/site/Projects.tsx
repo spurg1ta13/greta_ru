@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 import { Reveal } from "@/components/site/Reveal";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 type Project = {
   name: string;
@@ -16,8 +20,18 @@ const projects = [
   { name: "NE*** Files storage secure system", url: null, tags: ["TOTP MFA", "Supabase RLS", "Role-Based Access"] },
 ];
 
+const PAGE_SIZE = 4;
+const MAX_VISIBLE = 8;
+
 export function Projects() {
   const { t } = useLanguage();
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  const limit = Math.min(visibleCount, MAX_VISIBLE, projects.length);
+  const canLoadMore = limit < projects.length;
+
+  const loadMore = () =>
+    setVisibleCount((current) => Math.min(current + PAGE_SIZE, MAX_VISIBLE, projects.length));
 
   return (
     <section id="projects" className="scroll-mt-24 border-y border-border bg-surface/30 py-24">
@@ -32,7 +46,12 @@ export function Projects() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {projects.map((project, i) => (
-            <Reveal as="article" key={project.name} delay={i * 120} className="h-full">
+            <Reveal
+              as="article"
+              key={project.name}
+              delay={(i % PAGE_SIZE) * 120}
+              className={cn("h-full", i >= limit && "hidden")}
+            >
               {project.url ? (
                 <a
                   href={project.url}
@@ -50,6 +69,14 @@ export function Projects() {
             </Reveal>
           ))}
         </div>
+
+        {canLoadMore && (
+          <div className="mt-12 flex justify-center">
+            <Button variant="outlineSignal" size="lg" onClick={loadMore}>
+              {t.projects.loadMore}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
