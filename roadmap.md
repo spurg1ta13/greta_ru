@@ -1,2 +1,3 @@
 - [x] Verify bilingual blog and header navigation
 - [x] Shorten contact opportunity sentence in both relevant languages
+- [x] Projects: show 4 first (CleanUpSKG, Tananger, Neorama, NE*** Files) with Load more

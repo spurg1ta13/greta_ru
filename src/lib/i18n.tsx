@@ -82,12 +82,12 @@ export const dictionaries = {
       lead: "Products designed, built, QA-cycled across devices and deployed independently.",
       loadMore: "Load more",
       summaries: [
-        "Bilingual EN/EL studio platform with an embedded Gemini AI assistant, RLS-protected lead capture, role-based admin portal, reCAPTCHA v3 and llms.txt.",
-        "Bilingual beauty studio site with 100/100 desktop Lighthouse scores, WebP mobile images and a keyboard-accessible gallery.",
         "Multilingual (EL/EN/RU) service and lead platform with a dynamic pricing calculator, modal lead funnels and automated email delivery.",
         "Bilingual (NO/EN) veterinary clinic website in Norway with online appointment booking, a full services catalogue, a blog and local business SEO.",
         "Bilingual (EN/EL) residential development site near Thessaloniki: four home models with transparent pricing and plot sizes, construction specifications, an FAQ, a local SEO blog and a consent-checked enquiry form.",
         "Live secure client-document vault with TOTP multi-factor authentication, role-based access, row-level security, an in-app document viewer without downloads, soft delete with restore and a full activity log.",
+        "Bilingual EN/EL studio platform with an embedded Gemini AI assistant, RLS-protected lead capture, role-based admin portal, reCAPTCHA v3 and llms.txt.",
+        "Bilingual beauty studio site with 100/100 desktop Lighthouse scores, WebP mobile images and a keyboard-accessible gallery.",
       ],
     },
     skills: {
@@ -315,12 +315,12 @@ export const dictionaries = {
       lead: "Προϊόντα σχεδιασμένα, υλοποιημένα, ελεγμένα σε διαφορετικές συσκευές και δημοσιευμένα ανεξάρτητα.",
       loadMore: "Δες περισσότερα",
       summaries: [
-        "Δίγλωσση (EN/EL) πλατφόρμα studio με ενσωματωμένο βοηθό AI Gemini, προστατευμένη με RLS συλλογή αιτημάτων, πύλη διαχείρισης βάσει ρόλων, reCAPTCHA v3 και llms.txt.",
-        "Δίγλωσση ιστοσελίδα στούντιο ομορφιάς με βαθμολογία 100/100 στο Lighthouse (desktop), εικόνες WebP για κινητά και γκαλερί προσβάσιμη από πληκτρολόγιο.",
         "Πολύγλωσση (EL/EN/RU) πλατφόρμα υπηρεσιών με δυναμικό υπολογιστή τιμών, φόρμες αιτημάτων σε modal και αυτόματη αποστολή email.",
         "Δίγλωσση (NO/EN) ιστοσελίδα κτηνιατρικής κλινικής στη Νορβηγία με online κράτηση ραντεβού, πλήρη κατάλογο υπηρεσιών, blog και τοπικό SEO για επιχειρήσεις.",
         "Δίγλωσση (EN/EL) ιστοσελίδα κατοικιών κοντά στη Θεσσαλονίκη: τέσσερα μοντέλα κατοικιών με διαφανείς τιμές και εμβαδά οικοπέδων, τεχνικές προδιαγραφές, FAQ, blog τοπικού SEO και φόρμα επικοινωνίας με συγκατάθεση.",
         "Ζωντανό, παραγωγικό σύστημα ασφαλούς αποθήκευσης εγγράφων πελατών με έλεγχο ταυτότητας TOTP δύο παραγόντων, πρόσβαση βάσει ρόλων, ασφάλεια σε επίπεδο γραμμών (RLS), προβολή εγγράφων εντός εφαρμογής χωρίς δυνατότητα λήψης, soft delete με επαναφορά και πλήρες ιστορικό ενεργειών.",
+        "Δίγλωσση (EN/EL) πλατφόρμα studio με ενσωματωμένο βοηθό AI Gemini, προστατευμένη με RLS συλλογή αιτημάτων, πύλη διαχείρισης βάσει ρόλων, reCAPTCHA v3 και llms.txt.",
+        "Δίγλωσση ιστοσελίδα στούντιο ομορφιάς με βαθμολογία 100/100 στο Lighthouse (desktop), εικόνες WebP για κινητά και γκαλερί προσβάσιμη από πληκτρολόγιο.",
       ],
     },
     skills: {

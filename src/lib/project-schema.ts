@@ -10,26 +10,6 @@ export type ProjectSchema = {
 
 export const projectSchemas: ProjectSchema[] = [
   {
-    id: "devcraft",
-    name: "Devcraft",
-    url: "https://devcraft.gr",
-    description:
-      "Company landing page for Devcraft featuring an interactive AI assistant that handles client support and qualifies incoming enquiries automatically. Designed, built, QA-tested and deployed end to end by Greta Rusecke.",
-    tech: ["AI Assistant", "Lovable", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-    category: "BusinessApplication",
-    datePublished: "2025-01-01",
-  },
-  {
-    id: "lotus-bloom",
-    name: "Lotus Bloom",
-    url: "https://lotusbloom.gr",
-    description:
-      "Beauty salon platform with interactive service menus, transparent pricing and a responsive photo gallery, built and cross-device QA-tested by Greta Rusecke.",
-    tech: ["React", "Tailwind CSS", "UX Design", "Responsive QA"],
-    category: "LifestyleApplication",
-    datePublished: "2025-01-01",
-  },
-  {
     id: "cleanupskg",
     name: "CleanUpSKG",
     url: "https://cleanupskg.gr",
@@ -58,6 +38,26 @@ export const projectSchemas: ProjectSchema[] = [
     tech: ["Bilingual EN/EL", "Transparent Pricing", "Lead Capture", "SEO Blog"],
     category: "BusinessApplication",
     datePublished: "2026-09-24",
+  },
+  {
+    id: "devcraft",
+    name: "Devcraft",
+    url: "https://devcraft.gr",
+    description:
+      "Company landing page for Devcraft featuring an interactive AI assistant that handles client support and qualifies incoming enquiries automatically. Designed, built, QA-tested and deployed end to end by Greta Rusecke.",
+    tech: ["AI Assistant", "Lovable", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    category: "BusinessApplication",
+    datePublished: "2025-01-01",
+  },
+  {
+    id: "lotus-bloom",
+    name: "Lotus Bloom",
+    url: "https://lotusbloom.gr",
+    description:
+      "Beauty salon platform with interactive service menus, transparent pricing and a responsive photo gallery, built and cross-device QA-tested by Greta Rusecke.",
+    tech: ["React", "Tailwind CSS", "UX Design", "Responsive QA"],
+    category: "LifestyleApplication",
+    datePublished: "2025-01-01",
   },
 ];
 
