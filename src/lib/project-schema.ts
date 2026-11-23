@@ -49,6 +49,16 @@ export const projectSchemas: ProjectSchema[] = [
     category: "BusinessApplication",
     datePublished: "2025-01-01",
   },
+  {
+    id: "neorama",
+    name: "Neorama",
+    url: "https://neorama.org",
+    description:
+      "Bilingual (English/Greek) residential development website near Thessaloniki with four home models and transparent pricing, construction specifications, an FAQ, a local SEO blog and a consent-checked enquiry form. Built, QA-tested and launched by Greta Rusecke.",
+    tech: ["Bilingual EN/EL", "Transparent Pricing", "Lead Capture", "SEO Blog"],
+    category: "BusinessApplication",
+    datePublished: "2026-09-24",
+  },
 ];
 
 const BASE = "https://gretagreta.eu";
